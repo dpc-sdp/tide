@@ -1,0 +1,52 @@
+<?php
+
+/**
+ * @file
+ * Install and uninstall functions for the Tide profile installation profile.
+ */
+
+/**
+ * Implements hook_install().
+ *
+ * Perform actions to set up the site for Tide profile Profile.
+ *
+ * @see system_install()
+ */
+function tide_install() {
+  // Don't do anything else during config sync.
+  if (\Drupal::isConfigSyncing()) {
+    return;
+  }
+
+  // Set the default and admin theme to Seven. It is important to set themes
+  // only to enabled ones (and we are enabling Seven in profile dependencies).
+  \Drupal::configFactory()
+    ->getEditable('system.theme')
+    ->set('default', 'seven')
+    ->set('admin', 'seven')
+    ->save(TRUE);
+
+  // Set the path to the logo and favicon files based on install directory.
+  $profile_path = drupal_get_path('profile', 'tide');
+  \Drupal::configFactory()
+    ->getEditable('system.theme.global')
+    ->set('logo', [
+      'path' => $profile_path . '/logo.png',
+      'url' => '',
+      'use_default' => FALSE,
+    ])
+    ->set('favicon', [
+      'mimetype' => 'image/vnd.microsoft.icon',
+      'path' => $profile_path . '/favicon.ico',
+      'url' => '',
+      'use_default' => FALSE,
+    ])
+    ->save(TRUE);
+
+  // Workaround for redis module: it must be enabled before configuration can
+  // be bootstrapped. We are already using installation phase to exclude redis
+  // configuration in settings.php and to install the module itself.
+  if (drupal_get_path('module', 'bay') && drupal_get_path('module', 'redis')) {
+    \Drupal::service('module_installer')->install(['redis']);
+  }
+}
