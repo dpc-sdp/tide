@@ -4,7 +4,7 @@ Tide is a Drupal 8 distribution focused on delivering an API first, headless Dru
 ## Tide modules
 - [tide_api](https://github.com/dpc-sdp/tide_api)         
 - [tide_core](https://github.com/dpc-sdp/tide_core)       
-- [tide_landing_page](https://github.com/dpc-sdp/tide_land
+- [tide_landing_page](https://github.com/dpc-sdp/tide_landing_page)
 - [tide_media](https://github.com/dpc-sdp/tide_media)     
 - [tide_monsido](https://github.com/dpc-sdp/tide_monsido) 
 - [tide_news](https://github.com/dpc-sdp/tide_news)       
