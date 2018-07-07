@@ -4,6 +4,7 @@
     "license": "proprietary",
     "require": {
         "composer/installers": "^1.2.0",
+        "cweagans/composer-patches": "^1.6.0",
         "drupal-composer/drupal-scaffold": "^2.3",
         "webflo/drupal-finder": "^1.0",
         "webmozart/path-util": "^2.3"
@@ -134,6 +135,8 @@
     "minimum-stability": "dev",
     "prefer-stable": true,
     "extra": {
+        "enable-patching": true,
+        "composer-exit-on-patch-failure": true,
         "installer-paths": {
             "build/docroot/core": [
                 "type:drupal-core"
