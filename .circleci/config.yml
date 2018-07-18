@@ -3,7 +3,7 @@ aliases:
   # SSH key fingerprint to deploy code. Add private key of the user who is
   # allowed to push to $DEPLOY_REMOTE repo under "SSH Permissions" in
   # CircleCI UI.
-  - &ssh_key_fingerprint "e7:e7:36:79:e2:4c:ac:88:ab:80:e6:39:37:ad:49:57"
+  - &ssh_key_fingerprint "36:03:e3:ca:b3:0b:82:18:e2:e9:ae:5d:81:17:86:b1"
 
   - &build
     working_directory: /app
