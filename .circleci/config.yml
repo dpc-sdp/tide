@@ -1,0 +1,94 @@
+version: 2
+aliases:
+  # SSH key fingerprint to deploy code. Add private key of the user who is
+  # allowed to push to $DEPLOY_REMOTE repo under "SSH Permissions" in
+  # CircleCI UI.
+  - &ssh_key_fingerprint "e7:e7:36:79:e2:4c:ac:88:ab:80:e6:39:37:ad:49:57"
+
+  - &build
+    working_directory: /app
+    docker:
+      - image: singledigital/bay-circle:latest
+        environment: &environment
+          SSH_KEY_FINGERPRINT: *ssh_key_fingerprint
+          COMPOSER_ALLOW_SUPERUSER: 1
+          COMPOSE_PROJECT_NAME: mysite
+          COMPOSE_FILE: docker-compose.yml
+          INSTALL_SUGGEST: 0
+          BEHAT_PROFILE: ""
+    steps:
+      - attach_workspace:
+          at: /workspace
+      - checkout
+      - setup_remote_docker:
+          docker_layer_caching: true
+          version: 17.06.0-ce
+      - add_ssh_keys:
+          fingerprints:
+            - *ssh_key_fingerprint
+      - run:
+          name: Composer validate
+          # @dev
+          command: composer validate --ansi --strict --no-check-all
+      - run:
+          name: Start containers
+          command: |
+            printenv
+            echo "COMPOSE_FILE=$COMPOSE_FILE" >> .env.local
+            echo "GITHUB_TOKEN=$GITHUB_TOKEN" >> .env.local
+            echo "BEHAT_PROFILE=$BEHAT_PROFILE" >> .env.local
+            make docker-start
+      - run:
+          name: Copy files into container
+          command: docker cp -L /app/. $(docker-compose ps -q cli):/app/
+      # @todo: Remove this once all Tide modules are public.
+      - run:
+          name: Configure SSH for CLI container
+          command: |
+            SSH_KEY_FILE="${SSH_KEY_FINGERPRINT//:}" && SSH_KEY_FILE="id_rsa_${SSH_KEY_FILE//\"}" && export $SSH_KEY_FILE
+            docker-compose exec cli bash -c 'rm /home/.ssh/*'
+            docker cp -L ~/.ssh/$SSH_KEY_FILE $(docker-compose ps -q cli):/home/.ssh/key
+      - run:
+          name: Install dev dependencies
+          command: make install
+      - run:
+          name: Lint code
+          command: make lint
+      - run:
+          name: Prepare test fixtures
+          command: make install-site
+      - run:
+          name: Enable current module and dependencies
+          command: make install-module
+      - run:
+          name: Run tests
+          command: |
+            make test-behat || make test-behat -- --rerun
+      - run:
+          name: Copy artifacts
+          command: |
+            mkdir -p /tmp/artifacts/behat
+            docker cp $(docker-compose ps -q cli):/app/screenshots /tmp/artifacts/behat
+          when: always
+      - store_artifacts:
+          path: /tmp/artifacts
+
+jobs:
+  build:
+    <<: *build
+
+  build_suggest:
+    <<: *build
+    docker:
+      - image: singledigital/bay-circle:latest
+        environment:
+          <<: *environment
+          INSTALL_SUGGEST: 1
+          BEHAT_PROFILE: "--profile=suggest"
+
+workflows:
+  version: 2
+  main:
+    jobs:
+      - build
+      - build_suggest

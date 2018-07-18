@@ -1,0 +1,8 @@
+vendor
+vendor-local
+/composer.lock
+build
+screenshots
+composer.dev.json
+composer.build.json
+composer.build.lock
