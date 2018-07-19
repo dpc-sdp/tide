@@ -18,6 +18,7 @@
         "integratedexperts/behat-format-progress-fail": "^0.2",
         "integratedexperts/behat-screenshot": "^0.7",
         "integratedexperts/behat-steps": "^0.1.2",
+        "integratedexperts/behat-relativity": "^0.3",
         "jakub-onderka/php-parallel-lint": "^1.0",
         "php-http/curl-client": "^1.7",
         "wimg/php-compatibility": "^8.1",
