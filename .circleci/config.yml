@@ -61,10 +61,6 @@ aliases:
           name: Enable current module and dependencies
           command: make install-module
       - run:
-          name: Run tests
-          command: |
-            make test-behat || make test-behat -- --rerun
-      - run:
           name: Copy artifacts
           command: |
             mkdir -p /tmp/artifacts/behat
@@ -91,4 +87,3 @@ workflows:
   main:
     jobs:
       - build
-      - build_suggest

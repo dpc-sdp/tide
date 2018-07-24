@@ -22,7 +22,7 @@
         "jakub-onderka/php-parallel-lint": "^1.0",
         "php-http/curl-client": "^1.7",
         "wimg/php-compatibility": "^8.1",
-        "ubirak/rest-api-behat-extension": "dev-feature/drupalextension-compatibility as 7.0.0"
+        "ubirak/rest-api-behat-extension": "dev-feature/drupalextension-compatibility as V7.0.0"
     },    
     "autoload": {
         "classmap": [
@@ -77,6 +77,11 @@
             "type": "vcs",
             "no-api": true,
             "url": "ssh://git@github.com:22/dpc-sdp/tide_search.git"
+        },
+        "dpc-sdp/tide_site": {
+            "type": "vcs",
+            "no-api": true,
+            "url": "ssh://git@github.com:22/dpc-sdp/tide_site.git"
         },
         "dpc-sdp/tide_test": {
             "type": "vcs",

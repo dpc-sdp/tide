@@ -20,7 +20,6 @@ build:
 	$(call exec,$(MAKE) docker-start)
 	$(call exec,$(MAKE) install)
 	$(call exec,$(MAKE) install-site)
-	$(call exec,$(MAKE) install-module)
 	@echo ''
 	$(call title,Build complete)
 
@@ -109,7 +108,7 @@ install-module:
 ## Install site.
 install-site:
 	$(call title,Installing a site)
-	$(call exec,docker-compose exec cli drush -r $(APP)/$(WEBROOT) si testing -y --db-url=mysql://drupal:drupal@$(MYSQL_HOST)/drupal --account-name=admin --account-pass=admin install_configure_form.enable_update_status_module=NULL install_configure_form.enable_update_status_emails=NULL)
+	$(call exec,docker-compose exec cli drush -r $(APP)/$(WEBROOT) si tide -y --db-url=mysql://drupal:drupal@$(MYSQL_HOST)/drupal --account-name=admin --account-pass=admin install_configure_form.enable_update_status_module=NULL install_configure_form.enable_update_status_emails=NULL)
 	$(call exec,docker-compose exec cli bash -c "COMPOSER=$(COMPOSER_BUILD) composer --working-dir=$(APP)/$(BUILD) drupal-post-install")
 
 ## Lint code.
