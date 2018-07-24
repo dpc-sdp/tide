@@ -81,8 +81,6 @@ install:
 	$(call title,Installing dependencies)
 	$(call exec,docker-compose exec cli bash -c "if [ \"$(GITHUB_TOKEN)\" != \"\" ]; then composer config -g github-oauth.github.com $(GITHUB_TOKEN); fi")
 	$(call exec,docker-compose exec cli apk add --update make jq)
-	# Download development config from Tide profile repository.
-	$(call exec,docker-compose exec cli bash -c "curl -L $(COMPOSER_DEV_URL) > $(APP)/composer.dev.json")
 	# Merge module's and development composer configs.
 	$(call exec,docker-compose exec cli bash -c "jq --indent 4 -M -s '.[0] * .[1]' $(APP)/composer.json $(APP)/composer.dev.json > $(COMPOSER_BUILD)")
 	$(call exec,docker-compose exec cli bash -c "COMPOSER=$(COMPOSER_BUILD) composer install -n --ansi --prefer-dist --no-suggest")
