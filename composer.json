@@ -23,7 +23,7 @@
             "url": "https://packages.drupal.org/8"
         }
     },
-    "minimum-stability": "alpha",
+    "minimum-stability": "dev",
     "prefer-stable": true,
     "extra": {
         "enable-patching": true,
