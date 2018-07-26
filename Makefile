@@ -106,6 +106,14 @@ install-module:
 ## Install site.
 install-site:
 	$(call title,Installing a site)
+	# Copy module code into local vendor directory.
+	$(call exec,docker-compose exec cli rm -Rf $(APP)/vendor-local/$(MODULE_NAME))
+	$(call exec,docker-compose exec cli mkdir -p $(APP)/vendor-local/$(MODULE_NAME))
+	$(call exec,docker-compose exec cli bash -c "git ls-tree HEAD --name-only|xargs -I '{}' cp -R '{}' $(APP)/vendor-local/$(MODULE_NAME)/")
+	# Add local module repository.
+	$(call exec,docker-compose exec cli bash -c "COMPOSER=$(COMPOSER_BUILD) composer config repositories.dpc-sdp/$(MODULE_NAME) path vendor-local/$(MODULE_NAME)")
+	# Require module from local repository.
+	$(call exec,docker-compose exec cli bash -c "COMPOSER=$(COMPOSER_BUILD) composer require dpc-sdp/$(MODULE_NAME)")
 	$(call exec,docker-compose exec cli drush -r $(APP)/$(WEBROOT) si tide -y --db-url=mysql://drupal:drupal@$(MYSQL_HOST)/drupal --account-name=admin --account-pass=admin install_configure_form.enable_update_status_module=NULL install_configure_form.enable_update_status_emails=NULL)
 	$(call exec,docker-compose exec cli bash -c "COMPOSER=$(COMPOSER_BUILD) composer --working-dir=$(APP)/$(BUILD) drupal-post-install")
 

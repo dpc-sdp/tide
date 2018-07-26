@@ -55,12 +55,6 @@ aliases:
           name: Lint code
           command: make lint
       - run:
-          name: Prepare test fixtures
-          command: make install-site
-      - run:
-          name: Enable current module and dependencies
-          command: make install-module
-      - run:
           name: Copy artifacts
           command: |
             mkdir -p /tmp/artifacts/behat
