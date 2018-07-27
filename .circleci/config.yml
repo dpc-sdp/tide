@@ -54,14 +54,6 @@ aliases:
       - run:
           name: Lint code
           command: make lint
-      - run:
-          name: Copy artifacts
-          command: |
-            mkdir -p /tmp/artifacts/behat
-            docker cp $(docker-compose ps -q cli):/app/screenshots /tmp/artifacts/behat
-          when: always
-      - store_artifacts:
-          path: /tmp/artifacts
 
 jobs:
   build:
