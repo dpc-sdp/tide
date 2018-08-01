@@ -15,7 +15,7 @@
         "dpc-sdp/tide_test": "@dev",
         "dpc-sdp/tide_monsido": "@dev",
         "dpc-sdp/tide_webform": "@dev",
-        "drupal/core": "8.5.3"
+        "drupal/core": "8.5.6"
     },
     "repositories": {
         "drupal": {
