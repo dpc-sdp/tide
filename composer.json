@@ -3,7 +3,6 @@
     "description": "Tide Drupal 8 profile",
     "type": "drupal-profile",
     "license": "GPL-2.0+",
-    "version": "0.0.1",
     "require": {
         "dpc-sdp/tide_api": "@dev",
         "dpc-sdp/tide_core": "@dev",
