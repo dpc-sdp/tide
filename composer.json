@@ -38,7 +38,7 @@
                 "Installation profiles do not support project:module format for dependencies - https://www.drupal.org/node/2855026": "https://www.drupal.org/files/issues/2855026-30.patch"
             },
             "dpc-sdp/tide_api": {
-                "[SDPA-810]": "./patches/SDPA-810-Json-API-update.patch"
+                "[SDPA-810] Patch to update Json API version": "./patches/SDPA-810-Json-API-update.patch"
             }
         }
     }
