@@ -4,7 +4,7 @@
     "type": "drupal-profile",
     "license": "GPL-2.0+",
     "require": {
-        "dpc-sdp/tide_api": "dev-master",
+        "dpc-sdp/tide_api": "dev-feature/SDPA-810-Json-API-update",
         "dpc-sdp/tide_core": "dev-master",
         "dpc-sdp/tide_landing_page": "dev-master",
         "dpc-sdp/tide_media": "dev-master",
@@ -36,9 +36,6 @@
                 "getUuid() in class MenuLinkContent not returning any value - https://www.drupal.org/node/2737741": "https://www.drupal.org/files/issues/drupal-menulinkcontent-getuuid-return-missing-2737741-2.patch",
                 "RSS view with fields give wrong URL from path field - https://www.drupal.org/node/2673980#comment-12180229": "https://www.drupal.org/files/issues/rss_view_with_fields-2673980-28.patch",
                 "Installation profiles do not support project:module format for dependencies - https://www.drupal.org/node/2855026": "https://www.drupal.org/files/issues/2855026-30.patch"
-            },
-            "dpc-sdp/tide_api": {
-                "[SDPA-810] Patch to update Json API version": "./patches/SDPA-810-Json-API-update.patch"
             }
         }
     }
