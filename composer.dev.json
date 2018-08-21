@@ -36,7 +36,7 @@
         "dpc-sdp/tide": {
             "type": "vcs",
             "no-api": true,
-            "url": "ssh://git@github.com:22/dpc-sdp/tide.git"
+            "url": "git@github.com:dpc-sdp/tide.git"
         },
         "dpc-sdp/tide_api": {
             "type": "vcs",
