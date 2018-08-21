@@ -3,6 +3,10 @@ Tide is a Drupal 8 distribution focused on delivering an API first, headless Dru
 
 [![CircleCI](https://circleci.com/gh/dpc-sdp/tide.svg?style=svg&circle-token=2725c08f9f9c81b430b5c302d4843b20b8deec86)](https://circleci.com/gh/dpc-sdp/tide)
 
+# Caveats
+
+Tide is on the alpha release, use with caution. APIs are likely to change before the stable version, that there will be breaking changes and that we're not supporting it for external production sites at the moment.
+
 ## Tide modules
 - [tide_api](https://github.com/dpc-sdp/tide_api)         
 - [tide_core](https://github.com/dpc-sdp/tide_core)       
