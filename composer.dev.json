@@ -35,7 +35,7 @@
     "repositories": {
         "dpc-sdp/tide": {
             "type": "vcs",
-            "no-api": true,
+            "no-api": false,
             "url": "git@github.com:dpc-sdp/tide.git"
         },
         "dpc-sdp/tide_api": {
