@@ -1,7 +1,7 @@
 # Tide
 Tide is a Drupal 8 distribution focused on delivering an API first, headless Drupal content administration site.
 
-[![CircleCI](https://circleci.com/gh/dpc-sdp/tide.svg?style=svg)](https://circleci.com/gh/dpc-sdp/tide
+[![CircleCI](https://circleci.com/gh/dpc-sdp/tide.svg?style=svg)](https://circleci.com/gh/dpc-sdp/tide)
 
 # Caveats
 
