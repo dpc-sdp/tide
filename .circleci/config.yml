@@ -34,11 +34,11 @@ aliases:
           name: Copy files into container
           command: docker cp -L /app/. $(docker-compose ps -q cli):/app/
       # @todo: Remove this once all Tide modules are public.
-      - run:
-          name: Configure SSH for CLI container
-          command: |
-            docker-compose exec cli bash -c 'rm /home/.ssh/*'
-            docker cp -L ~/.ssh/$SSH_KEY_FILE $(docker-compose ps -q cli):/home/.ssh/key
+      # - run:
+      #     name: Configure SSH for CLI container
+      #     command: |
+      #       docker-compose exec cli bash -c 'rm /home/.ssh/*'
+      #       docker cp -L ~/.ssh/$SSH_KEY_FILE $(docker-compose ps -q cli):/home/.ssh/key
       - run:
           name: Install dev dependencies
           command: make install
