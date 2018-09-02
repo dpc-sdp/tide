@@ -6,7 +6,7 @@
     "require": {
         "dpc-sdp/tide_api": "dev-master",
         "dpc-sdp/tide_core": "dev-master",
-        "dpc-sdp/tide_landing_page": "dev-master",
+        "dpc-sdp/tide_landing_page": "dev-feature/SPDA-347-Latest-News-Listing-Block-Paragraph-2",
         "dpc-sdp/tide_media": "dev-master",
         "dpc-sdp/tide_news": "dev-master",
         "dpc-sdp/tide_page": "dev-master",
