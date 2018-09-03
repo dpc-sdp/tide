@@ -149,6 +149,7 @@
         },
         "ubirak/rest-api-behat-extension": {
             "type": "vcs",
+            "no-api": true,
             "url": "https://github.com/integratedexperts/rest-api-behat-extension"
         }
     },
