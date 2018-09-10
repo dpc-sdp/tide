@@ -15,7 +15,7 @@
         "dpc-sdp/tide_test": "dev-master",
         "dpc-sdp/tide_monsido": "dev-feature/SDPA-843-Update-Drupal-8.6",
         "dpc-sdp/tide_webform": "dev-master",
-        "drupal/core": "8.6.0-rc1"
+        "drupal/core": "8.6.0"
     },
     "repositories": {
         "drupal": {
