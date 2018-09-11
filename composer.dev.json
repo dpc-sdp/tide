@@ -48,6 +48,11 @@
             "no-api": true,
             "url": "https://github.com/dpc-sdp/tide_core.git"
         },
+        "dpc-sdp/tide_event": {
+            "type": "vcs",
+            "no-api": true,
+            "url": "https://github.com/enzolutions/tide_event.git"
+        },
         "dpc-sdp/tide_landing_page": {
             "type": "vcs",
             "no-api": true,
