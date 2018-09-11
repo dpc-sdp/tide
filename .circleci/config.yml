@@ -1,16 +1,11 @@
 version: 2
 aliases:
-  # SSH key fingerprint to deploy code. Add private key of the user who is
-  # allowed to push to $DEPLOY_REMOTE repo under "SSH Permissions" in
-  # CircleCI UI.
-  - &ssh_key_fingerprint "36:03:e3:ca:b3:0b:82:18:e2:e9:ae:5d:81:17:86:b1"
 
   - &build
     working_directory: /app
     docker:
       - image: singledigital/bay-circle:latest
         environment: &environment
-          SSH_KEY_FINGERPRINT: *ssh_key_fingerprint
           COMPOSER_ALLOW_SUPERUSER: 1
           COMPOSE_PROJECT_NAME: mysite
           COMPOSE_FILE: docker-compose.yml
@@ -23,9 +18,6 @@ aliases:
       - setup_remote_docker:
           docker_layer_caching: true
           version: 17.06.0-ce
-      - add_ssh_keys:
-          fingerprints:
-            - *ssh_key_fingerprint
       - run:
           name: Composer validate
           # @dev
@@ -41,13 +33,6 @@ aliases:
       - run:
           name: Copy files into container
           command: docker cp -L /app/. $(docker-compose ps -q cli):/app/
-      # @todo: Remove this once all Tide modules are public.
-      - run:
-          name: Configure SSH for CLI container
-          command: |
-            SSH_KEY_FILE="${SSH_KEY_FINGERPRINT//:}" && SSH_KEY_FILE="id_rsa_${SSH_KEY_FILE//\"}" && export $SSH_KEY_FILE
-            docker-compose exec cli bash -c 'rm /home/.ssh/*'
-            docker cp -L ~/.ssh/$SSH_KEY_FILE $(docker-compose ps -q cli):/home/.ssh/key
       - run:
           name: Install dev dependencies
           command: make install
