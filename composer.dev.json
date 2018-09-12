@@ -51,7 +51,7 @@
         "dpc-sdp/tide_event": {
             "type": "vcs",
             "no-api": true,
-            "url": "https://github.com/dpc-sdp/tide_event"
+            "url": "https://github.com/dpc-sdp/tide_event.git"
         },
         "dpc-sdp/tide_landing_page": {
             "type": "vcs",
