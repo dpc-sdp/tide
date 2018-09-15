@@ -9,7 +9,8 @@ Tide is on the alpha release, use with caution. APIs are likely to change before
 
 ## Tide modules
 - [tide_api](https://github.com/dpc-sdp/tide_api)         
-- [tide_core](https://github.com/dpc-sdp/tide_core)       
+- [tide_core](https://github.com/dpc-sdp/tide_core)
+- [tide_event](https://github.com/dpc-sdp/tide_event)
 - [tide_landing_page](https://github.com/dpc-sdp/tide_landing_page)
 - [tide_media](https://github.com/dpc-sdp/tide_media)     
 - [tide_monsido](https://github.com/dpc-sdp/tide_monsido) 

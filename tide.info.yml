@@ -6,6 +6,7 @@ core: '8.x'
 dependencies:
   - dpc-sdp:tide_api
   - dpc-sdp:tide_core
+  - dpc-sdp:tide_event
   - dpc-sdp:tide_landing_page
   - dpc-sdp:tide_media
   - dpc-sdp:tide_news
