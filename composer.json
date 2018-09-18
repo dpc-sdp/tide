@@ -7,7 +7,7 @@
         "dpc-sdp/tide_api": "dev-master",
         "dpc-sdp/tide_core": "dev-feature/SDPA-904-event-content-type",
         "dpc-sdp/tide_event": "dev-feature/SDPA-904-event-content-type",
-        "dpc-sdp/tide_landing_page": "dev-master",
+        "dpc-sdp/tide_landing_page": "dev-feature/SDPA-904-event-content-type",
         "dpc-sdp/tide_media": "dev-master",
         "dpc-sdp/tide_news": "dev-master",
         "dpc-sdp/tide_page": "dev-master",
