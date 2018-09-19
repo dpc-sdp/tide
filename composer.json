@@ -5,7 +5,7 @@
     "license": "GPL-2.0+",
     "require": {
         "dpc-sdp/tide_api": "dev-master",
-        "dpc-sdp/tide_core": "dev-master",
+        "dpc-sdp/tide_core": "^0.0.1",
         "dpc-sdp/tide_event": "dev-master",
         "dpc-sdp/tide_landing_page": "dev-feature/SDPA-937_intro_banner",
         "dpc-sdp/tide_media": "dev-master",
