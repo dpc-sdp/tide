@@ -36,62 +36,67 @@
         "dpc-sdp/tide": {
             "type": "vcs",
             "no-api": true,
-            "url": "ssh://git@github.com:22/dpc-sdp/tide.git"
+            "url": "https://github.com/dpc-sdp/tide.git"
         },
         "dpc-sdp/tide_api": {
             "type": "vcs",
             "no-api": true,
-            "url": "ssh://git@github.com:22/dpc-sdp/tide_api.git"
+            "url": "https://github.com/dpc-sdp/tide_api.git"
         },
         "dpc-sdp/tide_core": {
             "type": "vcs",
             "no-api": true,
-            "url": "ssh://git@github.com:22/dpc-sdp/tide_core.git"
+            "url": "https://github.com/dpc-sdp/tide_core.git"
+        },
+        "dpc-sdp/tide_event": {
+            "type": "vcs",
+            "no-api": true,
+            "url": "https://github.com/dpc-sdp/tide_event.git"
         },
         "dpc-sdp/tide_landing_page": {
             "type": "vcs",
             "no-api": true,
-            "url": "ssh://git@github.com:22/dpc-sdp/tide_landing_page.git"
+            "url": "https://github.com/dpc-sdp/tide_landing_page.git"
         },
         "dpc-sdp/tide_media": {
             "type": "vcs",
             "no-api": true,
-            "url": "ssh://git@github.com:22/dpc-sdp/tide_media.git"
+            "url": "https://github.com/dpc-sdp/tide_media.git"
         },
         "dpc-sdp/tide_monsido": {
             "type": "vcs",
             "no-api": true,
-            "url": "ssh://git@github.com:22/dpc-sdp/tide_monsido.git"
+            "url": "https://github.com/dpc-sdp/tide_monsido.git"
         },
         "dpc-sdp/tide_news": {
             "type": "vcs",
             "no-api": true,
-            "url": "ssh://git@github.com:22/dpc-sdp/tide_news.git"
+            "url": "https://github.com/dpc-sdp/tide_news.git"
         },
         "dpc-sdp/tide_page": {
             "type": "vcs",
             "no-api": true,
-            "url": "ssh://git@github.com:22/dpc-sdp/tide_page.git"
+            "url": "https://github.com/dpc-sdp/tide_page.git"
         },
         "dpc-sdp/tide_search": {
             "type": "vcs",
             "no-api": true,
-            "url": "ssh://git@github.com:22/dpc-sdp/tide_search.git"
+            "url": "https://github.com/dpc-sdp/tide_search.git"
         },
         "dpc-sdp/tide_site": {
             "type": "vcs",
             "no-api": true,
-            "url": "ssh://git@github.com:22/dpc-sdp/tide_site.git"
+            "url": "https://github.com/dpc-sdp/tide_site.git"
         },
         "dpc-sdp/tide_test": {
             "type": "vcs",
             "no-api": true,
-            "url": "ssh://git@github.com:22/dpc-sdp/tide_test.git"
+            "url": "https://github.com/dpc-sdp/tide_test.git"
         },
         "dpc-sdp/tide_webform": {
             "type": "vcs",
             "no-api": true,
-            "url": "ssh://git@github.com:22/dpc-sdp/tide_webform.git"
+            "url": "https://github.com/dpc-sdp/tide_webform.git"
         },
         "library/dropzone": {
             "type": "package",
@@ -149,6 +154,7 @@
         },
         "ubirak/rest-api-behat-extension": {
             "type": "vcs",
+            "no-api": true,
             "url": "https://github.com/integratedexperts/rest-api-behat-extension"
         }
     },
