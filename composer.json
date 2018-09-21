@@ -14,7 +14,7 @@
         "dpc-sdp/tide_site": "dev-master",
         "dpc-sdp/tide_test": "dev-master",
         "dpc-sdp/tide_monsido": "dev-master",
-        "dpc-sdp/tide_webform": "dev-master",
+        "dpc-sdp/tide_webform": "dev-feature/SDPA-987-Set-webform-specific-version",
         "drupal/core": "8.5.6"
     },
     "repositories": {
