@@ -6,6 +6,7 @@
     "require": {
         "dpc-sdp/tide_api": "dev-master",
         "dpc-sdp/tide_core": "dev-master",
+        "dpc-sdp/tide_event": "dev-feature/SDPA-958-event-search-tide",
         "dpc-sdp/tide_landing_page": "dev-master",
         "dpc-sdp/tide_media": "dev-master",
         "dpc-sdp/tide_news": "dev-master",
