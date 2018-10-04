@@ -6,7 +6,7 @@
     "require": {
         "dpc-sdp/tide_api": "dev-master",
         "dpc-sdp/tide_core": "dev-master",
-        "dpc-sdp/tide_event": "dev-master",
+        "dpc-sdp/tide_event": "dev-feature/SDPA-1053-add-event-requirements-to-search-index",
         "dpc-sdp/tide_landing_page": "dev-master",
         "dpc-sdp/tide_media": "dev-master",
         "dpc-sdp/tide_news": "dev-master",
