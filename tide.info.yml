@@ -6,6 +6,7 @@ core: '8.x'
 dependencies:
   - tide_api
   - tide_core
+  - tide_event
   - tide_landing_page
   - tide_media
   - tide_news
