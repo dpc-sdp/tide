@@ -5,7 +5,7 @@
     "license": "GPL-2.0+",
     "require": {
         "dpc-sdp/tide_api": "dev-master",
-        "dpc-sdp/tide_core": "dev-master",
+        "dpc-sdp/tide_core": "dev-feature/SDPA-843-Update-Drupal-8.6",
         "dpc-sdp/tide_event": "dev-master",
         "dpc-sdp/tide_landing_page": "dev-master",
         "dpc-sdp/tide_media": "dev-master",
@@ -36,6 +36,9 @@
                 "RSS view with fields give wrong URL from path field - https://www.drupal.org/node/2673980#comment-12180229": "https://www.drupal.org/files/issues/rss_view_with_fields-2673980-28.patch",
                 "Installation profiles do not support project:module format for dependencies - https://www.drupal.org/node/2855026": "https://www.drupal.org/files/issues/2855026-30.patch",
                 "DateTimeIso8601::getDateTime() does not specify the storage timezone when constructing DrupalDateTime object - https://www.drupal.org/project/drupal/issues/3002164": "https://www.drupal.org/files/issues/2018-09-25/3002164-7.patch"
+            },
+            "dpc-sdp/tide": {
+                "Update to Drupal Core 8.6.2 to comply with sa-core-2018-006": "https://patch-diff.githubusercontent.com/raw/dpc-sdp/tide/pull/27.patch"
             }
         }
     }
