@@ -12,7 +12,7 @@
         "dpc-sdp/tide_news": "dev-master",
         "dpc-sdp/tide_page": "dev-master",
         "dpc-sdp/tide_search": "dev-master",
-        "dpc-sdp/tide_site": "dev-master",
+        "dpc-sdp/tide_site": "dev-feature/SDPA-843-Update-Drupal-8.6",
         "dpc-sdp/tide_test": "dev-feature/SDPA-843-Update-Drupal-8.6",
         "dpc-sdp/tide_monsido": "dev-feature/SDPA-843-Update-Drupal-8.6",
         "dpc-sdp/tide_webform": "dev-feature/SDPA-843-Update-Drupal-8.6",
