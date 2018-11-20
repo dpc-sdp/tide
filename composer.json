@@ -5,9 +5,9 @@
     "license": "GPL-2.0+",
     "require": {
         "dpc-sdp/tide_api": "dev-master",
-        "dpc-sdp/tide_core": "dev-feature/SDAP-741_timelines",
+        "dpc-sdp/tide_core": "dev-feature/SDPA-741_timelines",
         "dpc-sdp/tide_event": "dev-master",
-        "dpc-sdp/tide_landing_page": "dev-master",
+        "dpc-sdp/tide_landing_page": "dev-feature/SDPA-741_timelines",
         "dpc-sdp/tide_media": "dev-master",
         "dpc-sdp/tide_news": "dev-master",
         "dpc-sdp/tide_page": "dev-master",
