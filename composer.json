@@ -5,7 +5,7 @@
     "license": "GPL-2.0+",
     "require": {
         "dpc-sdp/tide_api": "dev-master",
-        "dpc-sdp/tide_core": "dev-master",
+        "dpc-sdp/tide_core": "dev-feature/SDPA-741_timelines",
         "dpc-sdp/tide_event": "dev-master",
         "dpc-sdp/tide_landing_page": "dev-feature/SDPA-741_timelines",
         "dpc-sdp/tide_media": "dev-master",
@@ -14,9 +14,8 @@
         "dpc-sdp/tide_search": "dev-master",
         "dpc-sdp/tide_site": "dev-master",
         "dpc-sdp/tide_monsido": "dev-master",
-        "dpc-sdp/tide_webform": "dev-master",
-        "drupal/core": "8.5.6",
-        "cweagans/composer-patches": "^1.6.0"
+        "dpc-sdp/tide_webform": "dev-feature/SDPA-741_timelines",
+        "drupal/core": "8.5.6"
     },
     "repositories": {
         "drupal": {
@@ -38,9 +37,6 @@
                 "RSS view with fields give wrong URL from path field - https://www.drupal.org/node/2673980#comment-12180229": "https://www.drupal.org/files/issues/rss_view_with_fields-2673980-28.patch",
                 "Installation profiles do not support project:module format for dependencies - https://www.drupal.org/node/2855026": "https://www.drupal.org/files/issues/2855026-30.patch",
                 "DateTimeIso8601::getDateTime() does not specify the storage timezone when constructing DrupalDateTime object - https://www.drupal.org/project/drupal/issues/3002164": "https://www.drupal.org/files/issues/2018-09-25/3002164-7.patch"
-            },
-            "dpc-sdp/tide_core": {
-                "[SDPA-471]Added Timeline and Timelines paragraph bundles.": "https://patch-diff.githubusercontent.com/raw/dpc-sdp/tide_core/pull/33.patch"
             }
         }
     }
