@@ -39,7 +39,7 @@
                 "DateTimeIso8601::getDateTime() does not specify the storage timezone when constructing DrupalDateTime object - https://www.drupal.org/project/drupal/issues/3002164": "https://www.drupal.org/files/issues/2018-09-25/3002164-7.patch"
             },
             "dpc-sdp/tide_core": {
-                "[SDPA-471]Added Timeline and Timelines paragraph bundles.": "https://patch-diff.githubusercontent.com/raw/dpc-sdp/tide_core/pull/33.patch"
+                "[SDPA-471]Added Timeline and Timelines paragraph bundles.": "https://patch-diff.githubusercontent.com/raw/dpc-sdp/tide_core/pull/33.diff"
             }
         }
     }
