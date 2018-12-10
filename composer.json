@@ -11,7 +11,7 @@
         "dpc-sdp/tide_media": "dev-master",
         "dpc-sdp/tide_news": "dev-master",
         "dpc-sdp/tide_page": "dev-master",
-        "dpc-sdp/tide_search": "dev-master",
+        "dpc-sdp/tide_search": "dev-feature/SDPA-1357-search-index-naming",
         "dpc-sdp/tide_site": "dev-master",
         "dpc-sdp/tide_test": "dev-master",
         "dpc-sdp/tide_monsido": "dev-master",
