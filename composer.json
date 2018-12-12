@@ -15,7 +15,7 @@
         "dpc-sdp/tide_site": "dev-master",
         "dpc-sdp/tide_test": "dev-master",
         "dpc-sdp/tide_monsido": "dev-master",
-        "dpc-sdp/tide_webform": "dev-feature/SDPA-1159-Remove-Field-Show-News-Search-Bloc",
+        "dpc-sdp/tide_webform": "dev-feature/SDPA-1159-Remove-Field-Show-News-Search-Block",
         "drupal/core": "8.5.6"
     },
     "repositories": {
