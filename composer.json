@@ -7,7 +7,7 @@
         "dpc-sdp/tide_api": "dev-master",
         "dpc-sdp/tide_core": "dev-master",
         "dpc-sdp/tide_event": "dev-master",
-        "dpc-sdp/tide_landing_page": "dev-master",
+        "dpc-sdp/tide_landing_page": "dev-feature/SDPA-1497_hero-banner-fields",
         "dpc-sdp/tide_media": "dev-master",
         "dpc-sdp/tide_news": "dev-master",
         "dpc-sdp/tide_page": "dev-master",
