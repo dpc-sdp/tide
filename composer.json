@@ -4,7 +4,7 @@
     "type": "drupal-profile",
     "license": "GPL-2.0+",
     "require": {
-        "dpc-sdp/tide_api": "dev-master",
+        "dpc-sdp/tide_api": "dev-feature/JSONAPI-securiry-update-1-24",
         "dpc-sdp/tide_core": "dev-master",
         "dpc-sdp/tide_event": "dev-master",
         "dpc-sdp/tide_landing_page": "dev-master",
