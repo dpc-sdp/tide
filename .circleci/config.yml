@@ -1,44 +1,26 @@
 version: 2
 aliases:
-
+  # Re-usable job to run different types of builds.
   - &build
     working_directory: /app
     docker:
-      - image: singledigital/bay-circle:latest
-        environment: &environment
-          COMPOSER_ALLOW_SUPERUSER: 1
-          COMPOSE_PROJECT_NAME: mysite
-          COMPOSE_FILE: docker-compose.yml
-          INSTALL_SUGGEST: 0
-          BEHAT_PROFILE: ""
+      - image: &builder-image integratedexperts/ci-builder
     steps:
       - attach_workspace:
           at: /workspace
       - checkout
+      # Init environment for development.
+      - run: if [ -f "./dev-init.sh" ] && [ ! "$DEV_TOOLS" ]; then ./dev-init.sh; fi
       - setup_remote_docker:
           docker_layer_caching: true
-          version: 17.06.0-ce
+      - run: .circleci/build.sh
+      - run: .circleci/test.sh
       - run:
-          name: Composer validate
-          # @dev
-          command: composer validate --ansi --strict --no-check-all
-      - run:
-          name: Start containers
-          command: |
-            printenv
-            echo "COMPOSE_FILE=$COMPOSE_FILE" >> .env.local
-            echo "GITHUB_TOKEN=$GITHUB_TOKEN" >> .env.local
-            echo "BEHAT_PROFILE=$BEHAT_PROFILE" >> .env.local
-            make docker-start
-      - run:
-          name: Copy files into container
-          command: docker cp -L /app/. $(docker-compose ps -q cli):/app/
-      - run:
-          name: Install dev dependencies
-          command: make install
-      - run:
-          name: Lint code
-          command: make lint
+          name: Copy artifacts
+          command: .circleci/test-artifacts.sh
+          when: always
+      - store_artifacts:
+          path: /tmp/artifacts
 
 jobs:
   build:
@@ -47,9 +29,8 @@ jobs:
   build_suggest:
     <<: *build
     docker:
-      - image: singledigital/bay-circle:latest
+      - image: *builder-image
         environment:
-          <<: *environment
           INSTALL_SUGGEST: 1
           BEHAT_PROFILE: "--profile=suggest"
 
