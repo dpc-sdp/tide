@@ -5,7 +5,7 @@
     "license": "GPL-2.0+",
     "require": {
         "dpc-sdp/tide_api": "dev-master",
-        "dpc-sdp/tide_core": "dev-master",
+        "dpc-sdp/tide_core": "dev-feature/SDPA-1628_grants-import",
         "dpc-sdp/tide_event": "dev-master",
         "dpc-sdp/tide_landing_page": "dev-master",
         "dpc-sdp/tide_media": "dev-master",
