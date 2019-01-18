@@ -43,13 +43,10 @@ function tide_install() {
     ])
     ->save(TRUE);
 
-  $moduleHandler = \Drupal::service('module_handler');
-  if ($moduleHandler->moduleExists('bay')) {
-    // Workaround for redis module: it must be enabled before configuration can
-    // be bootstrapped. We are already using installation phase to exclude redis
-    // configuration in settings.php and to install the module itself.
-    if (drupal_get_path('module', 'bay') && drupal_get_path('module', 'redis')) {
-      \Drupal::service('module_installer')->install(['redis']);
-    }
+  // Workaround for redis module: it must be enabled before configuration can
+  // be bootstrapped. We are already using installation phase to exclude redis
+  // configuration in /bay/settings.php and to install the module itself.
+  if (file_exists(DRUPAL_ROOT . DIRECTORY_SEPARATOR . 'modules' . DIRECTORY_SEPARATOR . 'contrib' . DIRECTORY_SEPARATOR . 'redis')) {
+    \Drupal::service('module_installer')->install(['redis']);
   }
 }
