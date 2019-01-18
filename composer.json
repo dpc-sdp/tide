@@ -14,7 +14,7 @@
         "dpc-sdp/tide_search": "dev-master",
         "dpc-sdp/tide_site": "dev-master",
         "dpc-sdp/tide_test": "dev-master",
-        "dpc-sdp/tide_monsido": "dev-master",
+        "dpc-sdp/tide_monsido": "dev-feature/Update-to-Drupal-8.5.10",
         "dpc-sdp/tide_webform": "dev-master",
         "drupal/core": "8.5.10"
     },
