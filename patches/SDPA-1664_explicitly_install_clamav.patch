@@ -1,0 +1,22 @@
+diff --git a/tide_core.install b/tide_core.install
+index d7e43d4..1f13b15 100644
+--- a/tide_core.install
++++ b/tide_core.install
+@@ -192,10 +192,16 @@ function tide_core_update_8003() {
+   _tide_import_single_config('pathauto.pattern.content_title', $config_location);
+ }
+ 
++
+ /**
+- * Import ClamAV default config.
++ * Install and import ClamAV default config.
+  */
+ function tide_core_update_8004() {
++  // Install the module.
++  /** @var \Drupal\Core\Extension\ModuleInstallerInterface $module_installer */
++  $module_installer = \Drupal::service('module_installer');
++  $module_installer->install(['clamav']);
++
+   module_load_include('inc', 'tide_core', 'includes/helpers');
+   $config_location = [drupal_get_path('module', 'tide_core') . '/config/optional'];
+   _tide_import_single_config('clamav.settings', $config_location);
