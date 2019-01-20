@@ -2,6 +2,9 @@
 .gitattributes            export-ignore
 .gitignore                export-ignore
 .github                   export-ignore
+.circleci                 export-ignore
+.circleci/config.yml      export-ignore
+.env                      export-ignore
 tests                     export-ignore
 composer.json             export-ignore
 dev-init.sh               export-ignore
