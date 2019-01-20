@@ -1,10 +1,13 @@
 version: 2
 aliases:
   # Re-usable job to run different types of builds.
-  - &build
+  - &job-build
     working_directory: /app
     docker:
       - image: &builder-image integratedexperts/ci-builder
+        environment:
+          INSTALL_NEW_SITE: 1
+          LAGOON_ENVIRONMENT_TYPE: ci
     steps:
       - attach_workspace:
           at: /workspace
@@ -24,13 +27,15 @@ aliases:
 
 jobs:
   build:
-    <<: *build
+    <<: *job-build
 
   build_suggest:
-    <<: *build
+    <<: *job-build
     docker:
       - image: *builder-image
         environment:
+          INSTALL_NEW_SITE: 1
+          LAGOON_ENVIRONMENT_TYPE: ci
           INSTALL_SUGGEST: 1
           BEHAT_PROFILE: "--profile=suggest"
 
