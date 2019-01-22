@@ -4,37 +4,23 @@
     "type": "drupal-profile",
     "license": "GPL-2.0-or-later",
     "require": {
-        "dpc-sdp/tide_api": "dev-master",
-        "dpc-sdp/tide_core": "dev-master",
-        "dpc-sdp/tide_event": "dev-master",
-        "dpc-sdp/tide_landing_page": "dev-master",
-        "dpc-sdp/tide_media": "dev-master",
-        "dpc-sdp/tide_news": "dev-master",
-        "dpc-sdp/tide_page": "dev-master",
-        "dpc-sdp/tide_search": "dev-master",
-        "dpc-sdp/tide_site": "dev-master",
-        "dpc-sdp/tide_test": "dev-master",
-        "dpc-sdp/tide_monsido": "dev-master",
-        "dpc-sdp/tide_webform": "dev-master",
-        "drupal/core": "^8.6.0"
+        "dpc-sdp/tide_api": "dev-ci",
+        "dpc-sdp/tide_core": "dev-ci",
+        "dpc-sdp/tide_event": "dev-ci",
+        "dpc-sdp/tide_landing_page": "dev-ci",
+        "dpc-sdp/tide_media": "dev-ci",
+        "dpc-sdp/tide_monsido": "dev-ci",
+        "dpc-sdp/tide_news": "dev-ci",
+        "dpc-sdp/tide_page": "dev-ci",
+        "dpc-sdp/tide_search": "dev-ci",
+        "dpc-sdp/tide_site": "dev-ci",
+        "dpc-sdp/tide_test": "dev-ci",
+        "dpc-sdp/tide_webform": "dev-ci"
     },
     "repositories": {
         "drupal": {
             "type": "composer",
             "url": "https://packages.drupal.org/8"
-        }
-    },
-    "minimum-stability": "dev",
-    "prefer-stable": true,
-    "extra": {
-        "enable-patching": true,
-        "composer-exit-on-patch-failure": true,
-        "patches": {
-            "drupal/core": {
-                "Contextual links should not be added inside another link - https://www.drupal.org/node/2898875": "https://www.drupal.org/files/issues/2018-03-16/contextual_links_should-2898875-6.patch",
-                "RSS view with fields give wrong URL from path field - https://www.drupal.org/node/2673980#comment-12180229": "https://www.drupal.org/files/issues/rss_view_with_fields-2673980-28.patch",
-                "DateTimeIso8601::getDateTime() does not specify the storage timezone when constructing DrupalDateTime object - https://www.drupal.org/project/drupal/issues/3002164": "https://www.drupal.org/files/issues/2018-09-25/3002164-7.patch"
-            }
         }
     }
 }
