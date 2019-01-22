@@ -1,8 +1,12 @@
-vendor
-vendor-local
+# To ignore OS temporary files use global .gitignore
+# https://help.github.com/articles/ignoring-files/#create-a-global-gitignore
+
 /composer.lock
-build
+/composer.build.json
+/composer.build.lock
+/docroot
+/dpc-sdp
+.env.local
+docker-compose.override.yml
 screenshots
-composer.dev.json
-composer.build.json
-composer.build.lock
+vendor
