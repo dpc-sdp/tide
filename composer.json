@@ -5,7 +5,7 @@
     "license": "GPL-2.0+",
     "require": {
         "dpc-sdp/tide_api": "dev-master",
-        "dpc-sdp/tide_core": "dev-feature/Rollback-Drupal-8.5",
+        "dpc-sdp/tide_core": "dev-master",
         "dpc-sdp/tide_event": "dev-master",
         "dpc-sdp/tide_landing_page": "dev-master",
         "dpc-sdp/tide_media": "dev-master",
@@ -13,9 +13,9 @@
         "dpc-sdp/tide_page": "dev-master",
         "dpc-sdp/tide_search": "dev-master",
         "dpc-sdp/tide_site": "dev-master",
-        "dpc-sdp/tide_test": "dev-feature/Rollback-Drupal-8.5",
-        "dpc-sdp/tide_monsido": "dev-feature/Rollback-Drupal-8.5",
-        "dpc-sdp/tide_webform": "dev-feature/Rollback-Drupal-8.5",
+        "dpc-sdp/tide_test": "dev-master",
+        "dpc-sdp/tide_monsido": "dev-master",
+        "dpc-sdp/tide_webform": "dev-master",
         "drupal/core": "8.5.10"
     },
     "repositories": {
