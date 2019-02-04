@@ -5,7 +5,7 @@
     "license": "GPL-2.0-or-later",
     "require": {
         "dpc-sdp/tide_api": "^1.0",
-        "dpc-sdp/tide_core": "dev-feature/SDPA-309-Vocabulary-License-Type-Independent-Sites as ^1.0",
+        "dpc-sdp/tide_core": "dev-feature/SDPA-309-Vocabulary-License-Type-Independent-Sites as 1.0.0-alpha2",
         "dpc-sdp/tide_event": "^1.0",
         "dpc-sdp/tide_landing_page": "^1.0",
         "dpc-sdp/tide_media": "^1.0",
