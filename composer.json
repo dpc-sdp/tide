@@ -6,7 +6,7 @@
     "require": {
         "dpc-sdp/tide_api": "dev-feature/SDPA-1765_overwrite-configuration",
         "dpc-sdp/tide_core": "dev-feature/SDPA-309-Vocabulary-License-Type-Independent-Sites",
-        "dpc-sdp/tide_event": "^1.0",
+        "dpc-sdp/tide_event": "dev-feature/SDPA-1765_overwrite-configuration",
         "dpc-sdp/tide_landing_page": "^1.0",
         "dpc-sdp/tide_media": "dev-feature/SDPA-1765_overwrite-configuration",
         "dpc-sdp/tide_monsido": "^1.0",
