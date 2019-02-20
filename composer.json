@@ -4,7 +4,7 @@
     "type": "drupal-profile",
     "license": "GPL-2.0-or-later",
     "require": {
-        "dpc-sdp/tide_api": "^1.0",
+        "dpc-sdp/tide_api": "dev-feature/SDPA-2015-SA-CORE-2019-003",
         "dpc-sdp/tide_core": "^1.0",
         "dpc-sdp/tide_event": "^1.0",
         "dpc-sdp/tide_landing_page": "^1.0",
