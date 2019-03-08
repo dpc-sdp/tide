@@ -1,7 +1,9 @@
 # Tide
-Page content type for [Tide](https://github.com/dpc-sdp/tide) distribution for [Drupal 8](https://github.com/dpc-sdp)
+[Tide](https://github.com/dpc-sdp/tide) distribution for [Drupal 8](https://github.com/dpc-sdp)
 
 Tide is a Drupal 8 distribution focused on delivering an API first, headless Drupal content administration site.
+
+This package is merely a collection of all Tide modules that make up this distribution.
 
 [![CircleCI](https://circleci.com/gh/dpc-sdp/tide.svg?style=shield&circle-token=2a0e49166724ac193636fba5b458024e00342dce)](https://circleci.com/gh/dpc-sdp/tide)
 [![Release](https://img.shields.io/github/release/dpc-sdp/tide.svg)](https://github.com/dpc-sdp/tide/releases/latest)
@@ -10,11 +12,7 @@ Tide is a Drupal 8 distribution focused on delivering an API first, headless Dru
 [![Pull Requests](https://img.shields.io/github/issues-pr/dpc-sdp/tide_page.svg)](https://github.com/dpc-sdp/tide/pulls)
 
 ## What is in this package
-- content type
-- fields
-- blocks
-- views
-- JSONAPI module integration
+- references to all Tide modules
 
 ## Installation
 To install this package, add this custom repository to `repositories` section of
@@ -54,7 +52,6 @@ To start local development stack:
 3. Run `ahoy build`
  
 ## Related projects
-- [tide](https://github.com/dpc-sdp/tide)       
 - [tide_api](https://github.com/dpc-sdp/tide_api)         
 - [tide_core](https://github.com/dpc-sdp/tide_core)
 - [tide_event](https://github.com/dpc-sdp/tide_event)
