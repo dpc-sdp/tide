@@ -4,7 +4,7 @@
     "type": "drupal-profile",
     "license": "GPL-2.0-or-later",
     "require": {
-        "dpc-sdp/tide_api": "dev-feature/SDPA-1213_jsonapi_upgrade as 1.0",
+        "dpc-sdp/tide_api": "dev-feature/SDPA-2122_remove_preview_links as 1.0",
         "dpc-sdp/tide_core": "dev-feature/SDPA-1213_metatag_upgrade as 1.0",
         "dpc-sdp/tide_event": "dev-feature/SDPA-1213_jsonapi_upgrade as 1.0",
         "dpc-sdp/tide_landing_page": "dev-feature/SDPA-1213_jsonapi_upgrade as 1.0",
