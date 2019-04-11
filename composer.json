@@ -14,6 +14,7 @@
         "dpc-sdp/tide_page": "dev-develop",
         "dpc-sdp/tide_search": "dev-develop",
         "dpc-sdp/tide_site": "dev-develop",
+        "dpc-sdp/tide_data_driven_component": "dev-feature/SDPA-1339-add_data_drive_component",
         "dpc-sdp/tide_test": "^1.0",
         "dpc-sdp/tide_webform": "dev-develop"
     },
