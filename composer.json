@@ -4,18 +4,18 @@
     "type": "drupal-profile",
     "license": "GPL-2.0-or-later",
     "require": {
-        "dpc-sdp/tide_api": "dev-develop",
-        "dpc-sdp/tide_core": "dev-develop",
-        "dpc-sdp/tide_event": "dev-develop",
-        "dpc-sdp/tide_landing_page": "dev-develop",
-        "dpc-sdp/tide_media": "dev-develop",
-        "dpc-sdp/tide_monsido": "dev-develop",
-        "dpc-sdp/tide_news": "dev-develop",
-        "dpc-sdp/tide_page": "dev-develop",
-        "dpc-sdp/tide_search": "dev-develop",
-        "dpc-sdp/tide_site": "dev-develop",
+        "dpc-sdp/tide_api": "dev-release/1.2.0",
+        "dpc-sdp/tide_core": "dev-release/1.1.0",
+        "dpc-sdp/tide_event": "dev-release/1.2.0",
+        "dpc-sdp/tide_landing_page": "dev-release/1.1.0",
+        "dpc-sdp/tide_media": "dev-release/1.2.0",
+        "dpc-sdp/tide_monsido": "dev-release/1.1.0",
+        "dpc-sdp/tide_news": "dev-release/1.1.0",
+        "dpc-sdp/tide_page": "dev-release/1.2.0",
+        "dpc-sdp/tide_search": "dev-release/1.1.0",
+        "dpc-sdp/tide_site": "dev-release/1.21.0",
         "dpc-sdp/tide_test": "^1.0",
-        "dpc-sdp/tide_webform": "dev-develop"
+        "dpc-sdp/tide_webform": "dev-release/1.1.0"
     },
     "repositories": {
         "drupal": {
