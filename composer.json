@@ -13,7 +13,7 @@
         "dpc-sdp/tide_news": "dev-release/1.1.0",
         "dpc-sdp/tide_page": "dev-release/1.2.0",
         "dpc-sdp/tide_search": "dev-release/1.1.0",
-        "dpc-sdp/tide_site": "dev-release/1.21.0",
+        "dpc-sdp/tide_site": "dev-release/1.1.0",
         "dpc-sdp/tide_test": "^1.0",
         "dpc-sdp/tide_webform": "dev-release/1.1.0"
     },
