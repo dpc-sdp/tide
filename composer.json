@@ -5,8 +5,8 @@
     "license": "GPL-2.0-or-later",
     "require": {
         "dpc-sdp/tide_api": "1.2.0",
-        "dpc-sdp/tide_core": "hotfix/1.2.0",
-        "dpc-sdp/tide_event": "hotfix/1.2.1",
+        "dpc-sdp/tide_core": "dev-hotfix/1.2.0",
+        "dpc-sdp/tide_event": "dev-hotfix/1.2.1",
         "dpc-sdp/tide_landing_page": "1.1.0",
         "dpc-sdp/tide_media": "1.2.0",
         "dpc-sdp/tide_monsido": "1.1.0",
