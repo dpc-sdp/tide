@@ -5,10 +5,10 @@
     "license": "GPL-2.0-or-later",
     "require": {
         "dpc-sdp/tide_api": "1.2.0",
-        "dpc-sdp/tide_core": "1.1.0",
+        "dpc-sdp/tide_core": "dev-feature/SDPA-2523_redo_SDPA-309 as 1.1.0",
         "dpc-sdp/tide_event": "1.2.0",
         "dpc-sdp/tide_landing_page": "1.1.0",
-        "dpc-sdp/tide_media": "1.2.0",
+        "dpc-sdp/tide_media": "dev-feature/SDPA-2523_redo_SDPA-309 as 1.2.0",
         "dpc-sdp/tide_monsido": "1.1.0",
         "dpc-sdp/tide_news": "1.1.0",
         "dpc-sdp/tide_page": "1.2.0",
