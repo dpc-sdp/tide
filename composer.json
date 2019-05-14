@@ -4,18 +4,18 @@
     "type": "drupal-profile",
     "license": "GPL-2.0-or-later",
     "require": {
-        "dpc-sdp/tide_api": "dev-hotfix/1.2.2",
-        "dpc-sdp/tide_core": "1.2.0",
-        "dpc-sdp/tide_event": "dev-hotfix/1.2.2",
-        "dpc-sdp/tide_landing_page": "dev-hotfix/1.1.2",
+        "dpc-sdp/tide_api": "1.2.3",
+        "dpc-sdp/tide_core": "1.2.1",
+        "dpc-sdp/tide_event": "1.2.2",
+        "dpc-sdp/tide_landing_page": "1.1.2",
         "dpc-sdp/tide_media": "1.2.1",
         "dpc-sdp/tide_monsido": "1.1.1",
-        "dpc-sdp/tide_news": "dev-hotfix/1.1.2",
-        "dpc-sdp/tide_page": "dev-hotfix/1.2.2",
-        "dpc-sdp/tide_search": "dev-hotfix/1.1.2",
-        "dpc-sdp/tide_site": "dev-hotfix/1.1.2",
+        "dpc-sdp/tide_news": "1.1.2",
+        "dpc-sdp/tide_page": "1.2.2",
+        "dpc-sdp/tide_search": "1.1.2",
+        "dpc-sdp/tide_site": "1.1.2",
         "dpc-sdp/tide_test": "^1.0",
-        "dpc-sdp/tide_webform": "dev-hotfix/1.1.2"
+        "dpc-sdp/tide_webform": "1.1.2"
     },
     "repositories": {
         "drupal": {
