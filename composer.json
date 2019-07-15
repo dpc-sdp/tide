@@ -5,7 +5,7 @@
     "license": "GPL-2.0-or-later",
     "require": {
         "dpc-sdp/tide_api": "1.2.7",
-        "dpc-sdp/tide_core": "1.2.5",
+        "dpc-sdp/tide_core": "dev-feature/SDPA-2742-add-scheduled-transition-module",
         "dpc-sdp/tide_event": "1.2.5",
         "dpc-sdp/tide_landing_page": "1.1.6",
         "dpc-sdp/tide_media": "1.2.5",
