@@ -4,7 +4,7 @@
     "type": "drupal-profile",
     "license": "GPL-2.0-or-later",
     "require": {
-        "dpc-sdp/tide_api": "1.2.12",
+        "dpc-sdp/tide_api": "dev-feature/SDPA-3272-update-drupal-8-7 as 1.2.12",
         "dpc-sdp/tide_core": "dev-feature/SDPA-3272-update-drupal-8-7 as 1.4.0",
         "dpc-sdp/tide_event": "1.2.8",
         "dpc-sdp/tide_landing_page": "1.1.11",
