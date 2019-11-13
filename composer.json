@@ -12,6 +12,7 @@
         "dpc-sdp/tide_demo_content": "dev-develop",
         "dpc-sdp/tide_event": "1.2.8",
         "dpc-sdp/tide_event_atdw": "dev-develop",
+        "dpc-sdp/tide_grant": "dev-develop",
         "dpc-sdp/tide_landing_page": "1.1.11",
         "dpc-sdp/tide_media": "1.3.2",
         "dpc-sdp/tide_monsido": "1.1.5",
