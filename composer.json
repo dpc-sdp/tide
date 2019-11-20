@@ -28,13 +28,5 @@
             "type": "composer",
             "url": "https://packages.drupal.org/8"
         }
-    },
-    "extra": {
-        "enable_patching": true,
-        "patches": {
-            "dpc-sdp/tide_core": {
-                "Added version constraint for entity_reference_revisions - https://github.com/dpc-sdp/tide_core/pull/107": "https://patch-diff.githubusercontent.com/raw/dpc-sdp/tide_core/pull/107.diff"
-            }
-        }
     }
 }
