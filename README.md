@@ -50,7 +50,7 @@ your `composer.json`:
 
 Require this package as any other Composer package:
 ```bash
-composer require dpc/tide 
+composer require drupal/tide 
 ``` 
 
 # Contributing
