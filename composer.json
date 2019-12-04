@@ -4,18 +4,18 @@
     "type": "drupal-profile",
     "license": "GPL-2.0-or-later",
     "require": {
-        "dpc-sdp/tide_api": "dev-feature/SDPA-3272-update-drupal-8-7 as 1.2.12",
-        "dpc-sdp/tide_core": "dev-feature/SDPA-3272-update-drupal-8-7 as 1.4.0",
+        "dpc-sdp/tide_api": "1.2.12",
+        "dpc-sdp/tide_core": "1.4.4",
         "dpc-sdp/tide_event": "1.2.8",
         "dpc-sdp/tide_landing_page": "1.1.11",
-        "dpc-sdp/tide_media": "1.3.2",
+        "dpc-sdp/tide_media": "1.4.0",
         "dpc-sdp/tide_monsido": "1.1.5",
         "dpc-sdp/tide_news": "1.1.6",
         "dpc-sdp/tide_page": "1.2.6",
         "dpc-sdp/tide_search": "1.1.8",
-        "dpc-sdp/tide_site": "1.1.14",
+        "dpc-sdp/tide_site": "1.2.1",
         "dpc-sdp/tide_test": "^1.0",
-        "dpc-sdp/tide_webform": "1.1.11"
+        "dpc-sdp/tide_webform": "1.2.1"
     },
     "repositories": {
         "drupal": {
