@@ -19,6 +19,7 @@
         "dpc-sdp/tide_news": "1.1.6",
         "dpc-sdp/tide_page": "1.2.6",
         "dpc-sdp/tide_profile": "dev-develop",
+        "dpc-sdp/tide_publication": "dev-develop",
         "dpc-sdp/tide_search": "1.1.8",
         "dpc-sdp/tide_site": "1.3.0",
         "dpc-sdp/tide_test": "^1.0",
