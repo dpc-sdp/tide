@@ -5,7 +5,7 @@
     "license": "GPL-2.0-or-later",
     "require": {
         "dpc-sdp/tide_api": "1.4.0",
-        "dpc-sdp/tide_core": "dev-feature/bump_drupal_core as 1.5.2",
+        "dpc-sdp/tide_core": "1.5.3",
         "dpc-sdp/tide_event": "1.2.8",
         "dpc-sdp/tide_landing_page": "1.1.11",
         "dpc-sdp/tide_media": "1.5.0",
