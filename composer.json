@@ -7,7 +7,7 @@
         "dpc-sdp/tide_alert": "dev-develop",
         "dpc-sdp/tide_api": "1.4.0",
         "dpc-sdp/tide_authenticated_content": "dev-develop",
-        "dpc-sdp/tide_core": "dev-feature/SDPA-2794_migrate_sdp-dpc_modules as 1.5.2",
+        "dpc-sdp/tide_core": "dev-feature/SDPA-2794_migrate_sdp-dpc_modules as 1.5.3",
         "dpc-sdp/tide_data_driven_component": "dev-develop",
         "dpc-sdp/tide_demo_content": "dev-develop",
         "dpc-sdp/tide_event": "dev-feature/SDPA-2794_migrate_sdp-dpc_modules as 1.2.8",
