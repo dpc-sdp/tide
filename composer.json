@@ -8,7 +8,7 @@
         "dpc-sdp/tide_api": "1.4.0",
         "dpc-sdp/tide_authenticated_content": "dev-develop",
         "dpc-sdp/tide_core": "dev-feature/SDPA-2794_migrate_sdp-dpc_modules as 1.5.3",
-        "dpc-sdp/tide_demo_content": "dev-develop",
+        "dpc-sdp/tide_demo_content": "dev-feature/SDPA-3409-include-media-files-with-absolute-filepaths",
         "dpc-sdp/tide_event": "dev-feature/SDPA-2794_migrate_sdp-dpc_modules as 1.2.8",
         "dpc-sdp/tide_event_atdw": "dev-develop",
         "dpc-sdp/tide_grant": "dev-develop",
