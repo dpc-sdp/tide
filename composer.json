@@ -4,7 +4,7 @@
     "type": "drupal-profile",
     "license": "GPL-2.0-or-later",
     "require": {
-        "dpc-sdp/tide_alert": "1.0.0",
+        "dpc-sdp/tide_alert": "1.0.1",
         "dpc-sdp/tide_api": "1.5.0",
         "dpc-sdp/tide_authenticated_content": "1.0.2",
         "dpc-sdp/tide_core": "1.6.0",
