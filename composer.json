@@ -20,7 +20,7 @@
         "dpc-sdp/tide_profile": "1.0.2",
         "dpc-sdp/tide_publication": "1.0.6",
         "dpc-sdp/tide_search": "1.1.8",
-        "dpc-sdp/tide_site": "dev-feature/SDPSUP-1959-new_twitter_image as 1.1.14",
+        "dpc-sdp/tide_site": "dev-feature/SDPSUP-1959-new_twitter_image as 1.4.3",
         "dpc-sdp/tide_test": "^1.0",
         "dpc-sdp/tide_webform": "1.3.0"
     },
