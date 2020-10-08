@@ -13,6 +13,7 @@
         "dpc-sdp/tide_event_atdw": "1.0.0",
         "dpc-sdp/tide_grant": "1.0.5",
         "dpc-sdp/tide_landing_page": "dev-feature/SDPA-4541-Install-automated-listing",
+        "dpc-sdp/tide_automated_listing": "dev-feature/SDPA-4541-updates",
         "dpc-sdp/tide_media": "1.7.5",
         "dpc-sdp/tide_monsido": "1.1.5",
         "dpc-sdp/tide_news": "1.2.2",
