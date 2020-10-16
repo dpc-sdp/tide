@@ -7,7 +7,7 @@
         "dpc-sdp/tide_alert": "1.0.3",
         "dpc-sdp/tide_api": "1.5.1",
         "dpc-sdp/tide_authenticated_content": "1.0.3",
-        "dpc-sdp/tide_core": "1.6.12",
+        "dpc-sdp/tide_core": "dev-feature/SW-474-budget-update",
         "dpc-sdp/tide_demo_content": "1.1.3",
         "dpc-sdp/tide_event": "1.3.5",
         "dpc-sdp/tide_event_atdw": "1.0.0",
