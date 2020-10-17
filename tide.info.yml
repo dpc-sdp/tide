@@ -8,7 +8,6 @@ dependencies:
   - dpc-sdp:tide_alert
   - dpc-sdp:tide_authenticated_content
   - dpc-sdp:tide_api
-  - dpc-sdp:tide_publication
   - dpc-sdp:tide_media
   - dpc-sdp:tide_webform
   - dpc-sdp:tide_event
