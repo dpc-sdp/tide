@@ -4,7 +4,7 @@
     "type": "drupal-profile",
     "license": "GPL-2.0-or-later",
     "require": {
-        "dpc-sdp/tide_alert": "1.0.4",
+        "dpc-sdp/tide_alert": "dev-feature/SDPA-4916-alert-caching as 1.0.4",
         "dpc-sdp/tide_api": "1.5.4",
         "dpc-sdp/tide_authenticated_content": "2.0.1",
         "dpc-sdp/tide_core": "2.0.3",
