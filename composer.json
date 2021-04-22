@@ -7,7 +7,7 @@
         "dpc-sdp/tide_alert": "1.0.5",
         "dpc-sdp/tide_api": "1.5.4",
         "dpc-sdp/tide_authenticated_content": "2.0.2",
-        "dpc-sdp/tide_core": "2.0.6",
+        "dpc-sdp/tide_core": "dev-feature/remove-refactor_xss_attributes-3109650 as 2.0.6",
         "dpc-sdp/tide_demo_content": "1.1.6",
         "dpc-sdp/tide_event": "1.3.6",
         "dpc-sdp/tide_event_atdw": "1.0.1",
