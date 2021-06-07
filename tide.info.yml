@@ -5,6 +5,7 @@ package: Tide
 core: '8.x'
 dependencies:
   - dpc-sdp:tide_core
+  - dpc-sdp:tide_alert
   - dpc-sdp:tide_api
   - dpc-sdp:tide_media
   - dpc-sdp:tide_webform
