@@ -25,7 +25,7 @@
 # About the project
 [Tide](https://github.com/dpc-sdp/tide) is a Drupal 8 install profile that enables API first, headless content management system (CMS) maintained by [Victorian Government](vic.gov.au) as part of [Single Digital Presence](https://www.singledigitalpresence.vic.gov.au/) initiative.
 
-Tide offers Victorian Government agencies access to a stable, easy-to-use and flexible and unified toolkit to build and run websites easily and cost-effectively. Its main function is to provide a powerful central content repository that can 'serve' content to multiple sites and channels via APIs.
+Tide offers Victorian Government agencies access to a stable, easy-to-use, flexible and unified toolkit to build and run websites easily and cost-effectively. Its main function is to provide a powerful central content repository that can 'serve' content to one or multiple sites and channels via APIs.
 
 ## What is included
 The profile brings-in a mere collection of modules bundled into governed, stable and tested Drupal installation profile.
