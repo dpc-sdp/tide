@@ -90,7 +90,7 @@ Alternatively, if you use [Drush](https://github.com/drush-ops/drush) to run the
 drush site-install tide --site-name=MYSITE
 ``` 
 
-NOTE: There's a pending PR for `tide_core` module to enable composer to find required CKEditor libraries. If you are getting `no matching package found` message during composer require then as an interim solution you can add these custom repositories for resolve missing packages:
+NOTE: There's a pending PR for `tide_core` module to enable composer to find required CKEditor libraries. If you are getting `no matching package found` message during composer require then as an interim solution you can add these custom repositories to resolve missing packages:
 
 ```json
         "package/ckeditor-fakeobjects": {
