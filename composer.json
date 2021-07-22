@@ -4,6 +4,7 @@
     "type": "drupal-profile",
     "license": "GPL-2.0-or-later",
     "require": {
+        "ckeditor/fakeobjects": "4.16.1",
         "dpc-sdp/tide_alert": "1.0.5",
         "dpc-sdp/tide_api": "1.5.4",
         "dpc-sdp/tide_authenticated_content": "2.0.3",
@@ -28,6 +29,22 @@
         "drupal": {
             "type": "composer",
             "url": "https://packages.drupal.org/8"
+        },
+        "ckeditor.fakeobjects": {
+            "_webform": true,
+            "type": "package",
+            "package": {
+                "name": "ckeditor/fakeobjects",
+                "version": "4.16.1",
+                "type": "drupal-library",
+                "dist": {
+                    "url": "https://download.ckeditor.com/fakeobjects/releases/fakeobjects_4.16.1.zip",
+                    "type": "zip"
+                },
+                "require": {
+                    "composer/installers": "~1.0"
+                }
+            }
         }
     }
 }
