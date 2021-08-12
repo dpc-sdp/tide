@@ -23,18 +23,45 @@
 * [Attribution](#attribution)
 
 # About the project
-[Tide](https://github.com/dpc-sdp/tide) distribution for building websites on the Single Digital Presence platform
+[Tide](https://github.com/dpc-sdp/tide) is a Drupal 8 install profile that enables API first, headless content management system (CMS) maintained by [Victorian Government](vic.gov.au) as part of [Single Digital Presence](https://www.singledigitalpresence.vic.gov.au/) initiative.
 
-Tide is a Drupal 8 distribution focused on delivering an API first, headless Drupal content administration site.
+Tide offers Victorian Government agencies access to a stable, easy-to-use, flexible and unified toolkit to build and run websites easily and cost-effectively. Its main function is to provide a powerful central content repository that can 'serve' content to one or multiple sites and channels via APIs.
 
-This package is merely a collection of all Tide modules that make up this distribution.
+## What is included
+The profile brings-in a mere collection of modules bundled into governed, stable and tested Drupal installation profile.
 
-## What is in this package
-- references to all Tide modules
+The modules are split based on the features or functionality they provide and can be used either as part of the Tide profile or as a standalone (provided that other dependency modules installed as well).
 
-# Use
-To install this package, add this custom repository to `repositories` section of
-your `composer.json`:
+List of modules that are included as part of the profile:
+
+| Name | Machine name | Category | Repository | Description |
+| :---         |     :---:      |     :---:      |     :---:      |          :--- |
+| Tide Authenticated Content   | tide_authenticated_content   | Utility    | https://github.com/dpc-sdp/tide_authenticated_content    | Adds configuration that allows restricted content entities to be exposed via custom API endpoints based on user authentication status. This module depends on Tide Event, Tide Landing Page, Tide Media and Tide Site. |
+| Tide Alert   | tide_alert     | Utility    | https://github.com/dpc-sdp/tide_alert    | Provides pre-configured Alert content type (dismissible messages at the top of pages - e.g. emergency update, status message etc). This module depends on Tide Media.   |
+| Tide API   | tide_api     | Utility    | https://github.com/dpc-sdp/tide_api    | Exposes content entities to API endpoints. It is required for sites to run headless.    |
+| Tide Core     | tide_core      | Utility      | https://github.com/dpc-sdp/tide_core   | Core configurations and settings. This is a dependency for all other Tide modules.  |
+| Tide Demo Content     | tide_demo_content     | Utility    | https://github.com/dpc-sdp/tide_demo_content   | Provides demo content for Tide modules.  |
+| Tide Event     | tide_event     | Content type      | https://github.com/dpc-sdp/tide_event   | Provides pre-configured Event content type and fields that allows agencies to easily create Event content.  |
+| Tide Event ADTW    | tide_event_adtw     | Content type      | https://github.com/dpc-sdp/tide_event_adtw   | Provides integration with Australian Tourism Data Warehouse (ADTW) that imports event listings and creates Event content on the site.  |
+| Tide Grant     | tide_grant     | Content type      | https://github.com/dpc-sdp/tide_core   | Provides pre-configured Event content type and fields that allows agencies to easily create Event content. This module depends on Tide Media.  |
+| Tide Landing Page   | tide_landing_page     | Content type    | https://github.com/dpc-sdp/tide_landing_page    | Provides Landing page content type with fields. Based on paragraphs, it allows to create pages with complex layouts.    |
+| Tide Media     | tide_media      | Utility      | https://github.com/dpc-sdp/tide_media   | Provides new pre-configured Media types (Document, Audio, Video, Embed Video, File) and components (Timelines,  CTA image) ready to be added to content pages.  |
+| Tide Monsido     | tide_monsido      | 3rd party integration      | https://github.com/dpc-sdp/tide_monsido   | Adds integration with [Monsido]([https://monsido.com/](https://monsido.com/)) platform.  |
+| Tide News     | tide_news      | Content type      | https://github.com/dpc-sdp/tide_news   | Provides pre-configured News content type and Featured News page component. This module depends on Tide Media. |
+| Tide Page   | tide_page     | Content type    | https://github.com/dpc-sdp/tide_api    | Provides pre-configured Page content type that allows for creation of simple content pages. This module depends on Tide Media.   |
+| Tide Publication     | tide_publication      | Content type      | https://github.com/dpc-sdp/tide_publication   | Provides pre-configured Page content type that allows for creation of Publication pages. This module depends on Tide Landing Page.  |
+| Tide Profile     | tide_profile      | Content type      | https://github.com/dpc-sdp/tide_profile   | Provides pre-configured Page content type that allows for creation of people's profile pages. This module depends on Tide Media and Tide Landing Page.  |
+| Tide Search     | tide_search      | Utility      | https://github.com/dpc-sdp/tide_core   | Adds enriched search functionality to the site ([Search API](https://www.drupal.org/project/search_api) and [Elasticsearch Connector](https://www.drupal.org/project/elasticsearch_connector)).  |
+| Tide Site     | tide_site      | Utility      | https://github.com/dpc-sdp/tide_core   | Adds the capability for multi-site and multi-section content sharing. This module depends on Tide Media. |
+| Tide Test   | tide_test     | Utility    | https://github.com/dpc-sdp/tide_api    | Provides a Test content type with sample [Behat](https://behat.org/) scripts as well as framework to easily run tests for other modules. |
+| Tide Webform     | tide_webform      | Utility      | https://github.com/dpc-sdp/tide_core   | Adds support for webforms and contains pre-configured Content Rating form implementation.  |
+
+# Installation
+
+Since Tide is an installation profile you will need to have an existing  Drupal 8 codebase with [Composer package manager added](https://www.drupal.org/docs/installing-drupal/add-composer-to-an-existing-site).
+Alternatively, you can [download Drupal via composer](https://www.drupal.org/docs/develop/using-composer/using-composer-to-install-drupal-and-manage-dependencies)
+
+Once Drupal codebase and Composer manager are ready, you can then add Tide as project dependency. To ensure you are on the latest release of Tide add this  github repository to `repositories` section of your `composer.json`:
 
 ```json
 {
@@ -42,16 +69,92 @@ your `composer.json`:
       "dpc-sdp/tide": {
           "type": "vcs",
           "no-api": true,
-          "url": "https://github.com/dpc-sdp/tide_page.git"
+          "url": "https://github.com/dpc-sdp/tide.git"
       }
   }
 }
 ```
 
-Require this package as any other Composer package:
+> Note, Tide is also available on [Drupal.org](https://www.drupal.org/project/tide), however it is not currently up-to-date.
+
+Now from root directory of your `composer.json` file require this package as any other Composer package using the following bash command:
 ```bash
-composer require drupal/tide 
+composer require dpc-sdp/tide 
 ``` 
+
+Upon successful completion of composer command you should end up with a `tide` folder inside of `/profiles/contrib/`. You are now ready to run the installation script. Point your browser to the base URL of your website and select "Tide" option as profile in the installation wizard.
+
+Alternatively, if you use [Drush](https://github.com/drush-ops/drush) to run the installation in one command:
+
+```bash
+drush site-install tide --site-name=MYSITE
+``` 
+
+NOTE: There's a pending PR for `tide_core` module to enable composer to find required CKEditor libraries. If you are getting `no matching package found` message during composer require then as an interim solution you can add these custom repositories to resolve missing packages:
+
+```json
+        "package/ckeditor-fakeobjects": {
+            "type": "package",
+            "package": {
+                "name": "ckeditor/fakeobjects",
+                "type": "drupal-library",
+                "version": "4.5.11",
+                "dist": {
+                    "type": "zip",
+                    "url": "https://download.ckeditor.com/fakeobjects/releases/fakeobjects_4.5.11.zip",
+                    "reference": "master"
+                },
+                "require": {
+                    "composer/installers": "~1.0"
+                }
+            }
+        },
+        "package/ckeditor-iframe": {
+            "type": "package",
+            "package": {
+                "name": "ckeditor/iframe",
+                "type": "drupal-library",
+                "version": "4.5.11",
+                "dist": {
+                    "type": "zip",
+                    "url": "https://download.ckeditor.com/iframe/releases/iframe_4.5.11.zip",
+                    "reference": "master"
+                },
+                "require": {
+                    "composer/installers": "~1.0"
+                }
+            }
+        },
+        "package/ckeditor-liststyle": {
+            "type": "package",
+            "package": {
+                "name": "ckeditor/liststyle",
+                "type": "drupal-library",
+                "version": "4.8.0",
+                "dist": {
+                    "type": "zip",
+                    "url": "https://download.ckeditor.com/liststyle/releases/liststyle_4.8.0.zip",
+                    "reference": "master"
+                },
+                "require": {
+                    "composer/installers": "~1.0"
+                }
+            }
+        },
+        "package/ckeditor-templates": {
+            "type": "package",
+            "package": {
+                "name": "ckeditor/templates",
+                "type": "drupal-library",
+                "version": "4.5.7",
+                "dist": {
+                    "type": "zip",
+                    "url": "https://download.ckeditor.com/templates/releases/templates_4.5.7.zip",
+                    "reference": "master"
+                }
+            }
+        }
+```
 
 # Contributing
 [Open an issue](https://github.com/dpc-sdp) on GitHub or submit a pull request with suggested changes.
@@ -70,14 +173,21 @@ To start local development stack:
 3. Run `ahoy build`
  
 # Related projects
+- [tide_authenticated_content](https://github.com/dpc-sdp/tide_authenticated_content)
+- [tide_alert]([https://github.com/dpc-sdp/tide_alert](https://github.com/dpc-sdp/tide_alert))
 - [tide_api](https://github.com/dpc-sdp/tide_api)         
 - [tide_core](https://github.com/dpc-sdp/tide_core)
+- [tide_demo_content]([https://github.com/dpc-sdp/tide_demo_content](https://github.com/dpc-sdp/tide_demo_content))
 - [tide_event](https://github.com/dpc-sdp/tide_event)
+- [tide_event_adtw](https://github.com/dpc-sdp/tide_event_adtw)
+- [tide_grant](https://github.com/dpc-sdp/tide_grant)     
 - [tide_landing_page](https://github.com/dpc-sdp/tide_landing_page)
 - [tide_media](https://github.com/dpc-sdp/tide_media)     
 - [tide_monsido](https://github.com/dpc-sdp/tide_monsido) 
 - [tide_news](https://github.com/dpc-sdp/tide_news)       
-- [tide_page](https://github.com/dpc-sdp/tide_page)       
+- [tide_page](https://github.com/dpc-sdp/tide_page)
+- [tide_publication](https://github.com/dpc-sdp/tide_publication)       
+- [tide_profile](https://github.com/dpc-sdp/tide_profile)          
 - [tide_search](https://github.com/dpc-sdp/tide_search)   
 - [tide_site](https://github.com/dpc-sdp/tide_site)       
 - [tide_test](https://github.com/dpc-sdp/tide_test)       
