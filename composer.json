@@ -7,7 +7,7 @@
         "dpc-sdp/tide_alert": "dev-compatible-with-drupal-9 as 1.0.5",
         "dpc-sdp/tide_api": "dev-compatible-with-drupal-9 as 1.5.4",
         "dpc-sdp/tide_authenticated_content": "dev-compatible-with-drupal-9 as 2.0.3",
-        "dpc-sdp/tide_core": "dev-compatible-with-drupal-9 as 2.0.14",
+        "dpc-sdp/tide_core": "dev-feature/SDPA-5396-drupalcore-9 as 2.0.14",
         "dpc-sdp/tide_demo_content": "dev-compatible-with-drupal-9 as 1.1.7",
         "dpc-sdp/tide_event": "dev-compatible-with-drupal-9 as 1.3.7",
         "dpc-sdp/tide_event_atdw": "dev-compatible-with-drupal-9 as 1.0.2",
