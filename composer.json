@@ -33,36 +33,36 @@
             "_webform": true,
             "type": "package",
             "package": {
-              "name": "choices/choices",
-              "version": "9.0.1",
-              "type": "drupal-library",
-              "extra": {
-                "installer-name": "choices"
-              },
-              "dist": {
-                "url": "https://github.com/jshjohnson/Choices/archive/v9.0.1.zip",
-                "type": "zip"
-              },
-              "require": {
-                "composer/installers": "~1.0"
-              }
+                "name": "choices/choices",
+                "version": "9.0.1",
+                "type": "drupal-library",
+                "extra": {
+                    "installer-name": "choices"
+                },
+                "dist": {
+                    "url": "https://github.com/jshjohnson/Choices/archive/v9.0.1.zip",
+                    "type": "zip"
+                },
+                "require": {
+                    "composer/installers": "~1.0"
+                }
             }
-          },
-          "ckeditor/fakeobjects": {
+        },
+        "ckeditor/fakeobjects": {
             "_webform": true,
             "type": "package",
             "package": {
-              "name": "ckeditor/fakeobjects",
-              "version": "4.16.1",
-              "type": "drupal-library",
-              "dist": {
-                "url": "https://download.ckeditor.com/fakeobjects/releases/fakeobjects_4.16.1.zip",
-                "type": "zip"
-              },
-              "require": {
-                "composer/installers": "~1.0"
-              }
+                "name": "ckeditor/fakeobjects",
+                "version": "4.16.1",
+                "type": "drupal-library",
+                "dist": {
+                    "url": "https://download.ckeditor.com/fakeobjects/releases/fakeobjects_4.16.1.zip",
+                    "type": "zip"
+                },
+                "require": {
+                    "composer/installers": "~1.0"
+                }
             }
-          }
+        }
     }
 }
