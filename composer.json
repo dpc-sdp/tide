@@ -1,7 +1,7 @@
 {
     "name": "dpc-sdp/tide",
     "description": "Tide Drupal 8 profile",
-    "type": "drupal-profile",
+    "type": "project",
     "license": "GPL-2.0-or-later",
     "repositories": [
         {
