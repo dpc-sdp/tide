@@ -1,5 +1,5 @@
 <p align="center"><a href="https://www.drupal.org/project/tide" target="_blank"><img src="docs/SDP_Tide_product_logo_JPG.JPG" alt="SDP logo" height="150"></a></p>
-<p align="center"><i>Tide is a Drupal 8 distribution focused on delivering an API first, headless Drupal content administration site.</i></p>
+<p align="center"><i>Tide is a Drupal 9 distribution focused on delivering an API first, headless Drupal content administration site.</i></p>
 
 <p align="center">
 <a href="https://circleci.com/gh/dpc-sdp/tide"><img src="https://circleci.com/gh/dpc-sdp/tide.svg?style=svg&circle-token=2725c08f9f9c81b430b5c302d4843b20b8deec86"></a>
@@ -25,7 +25,7 @@
 # About the project
 [Tide](https://github.com/dpc-sdp/tide) distribution for building websites on the Single Digital Presence platform
 
-Tide is a Drupal 8 distribution focused on delivering an API first, headless Drupal content administration site.
+Tide is a Drupal 9 distribution focused on delivering an API first, headless Drupal content administration site.
 
 This package is merely a collection of all Tide modules that make up this distribution.
 
