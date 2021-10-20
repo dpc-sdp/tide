@@ -1,33 +1,33 @@
 {
     "name": "dpc-sdp/tide",
-    "description": "Tide Drupal 8 profile",
+    "description": "Tide Drupal 9 profile",
     "type": "drupal-profile",
     "license": "GPL-2.0-or-later",
     "require": {
-        "dpc-sdp/tide_alert": "1.0.5",
-        "dpc-sdp/tide_api": "1.5.5",
-        "dpc-sdp/tide_authenticated_content": "2.0.4",
-        "dpc-sdp/tide_core": "2.0.15",
-        "dpc-sdp/tide_demo_content": "1.1.7",
-        "dpc-sdp/tide_event": "1.3.7",
-        "dpc-sdp/tide_event_atdw": "1.0.3",
-        "dpc-sdp/tide_grant": "1.0.10",
-        "dpc-sdp/tide_landing_page": "2.0.8",
-        "dpc-sdp/tide_media": "1.7.11",
-        "dpc-sdp/tide_monsido": "1.1.6",
-        "dpc-sdp/tide_news": "1.2.5",
-        "dpc-sdp/tide_page": "1.3.5",
-        "dpc-sdp/tide_profile": "1.0.4",
-        "dpc-sdp/tide_publication": "1.0.13",
-        "dpc-sdp/tide_search": "1.1.12",
-        "dpc-sdp/tide_site": "2.0.5",
-        "dpc-sdp/tide_test": "^1.0",
-        "dpc-sdp/tide_webform": "1.3.4"
+        "dpc-sdp/tide_alert": "3.0.0",
+        "dpc-sdp/tide_api": "3.0.0",
+        "dpc-sdp/tide_authenticated_content": "3.0.0",
+        "dpc-sdp/tide_core": "3.0.0",
+        "dpc-sdp/tide_demo_content": "3.0.0",
+        "dpc-sdp/tide_event": "3.0.0",
+        "dpc-sdp/tide_event_atdw": "3.0.0",
+        "dpc-sdp/tide_grant": "3.0.0",
+        "dpc-sdp/tide_landing_page": "3.0.0",
+        "dpc-sdp/tide_media": "3.0.0",
+        "dpc-sdp/tide_monsido": "3.0.0",
+        "dpc-sdp/tide_news": "3.0.0",
+        "dpc-sdp/tide_page": "3.0.0",
+        "dpc-sdp/tide_profile": "3.0.0",
+        "dpc-sdp/tide_publication": "3.0.0",
+        "dpc-sdp/tide_search": "3.0.0",
+        "dpc-sdp/tide_site": "3.0.0",
+        "dpc-sdp/tide_test": "3.0.0",
+        "dpc-sdp/tide_webform": "3.0.0"
     },
     "repositories": {
         "drupal": {
             "type": "composer",
-            "url": "https://packages.drupal.org/8"
+            "url": "https://packages.drupal.org/9"
         }
     }
 }
