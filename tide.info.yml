@@ -11,7 +11,6 @@ dependencies:
   - dpc-sdp:tide_webform
   - dpc-sdp:tide_event
   - dpc-sdp:tide_news
-  - dpc-sdp:tide_page
   - dpc-sdp:tide_landing_page
   - dpc-sdp:tide_publication
   - dpc-sdp:tide_search
