@@ -49,4 +49,15 @@ function tide_install() {
   if (file_exists(DRUPAL_ROOT . DIRECTORY_SEPARATOR . 'modules' . DIRECTORY_SEPARATOR . 'contrib' . DIRECTORY_SEPARATOR . 'redis')) {
     \Drupal::service('module_installer')->install(['redis']);
   }
+  // These viewes are replaced by custom views provided by tide_site.
+  $view_ids = [
+    'content',
+    'moderated_content',
+  ];
+  foreach ($view_ids as $view_id) {
+    $view = \Drupal::entityTypeManager()->getStorage('view')->load($view_id);
+    if ($view) {
+      $view->setStatus(FALSE)->save();
+    }
+  }
 }
