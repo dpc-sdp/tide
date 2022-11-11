@@ -27,7 +27,7 @@ function tide_install() {
     ->save(TRUE);
 
   // Set the path to the logo and favicon files based on install directory.
-  $profile_path = drupal_get_path('profile', 'tide');
+  $profile_path = \Drupal::service('extension.list.profile')->getPath('tide');
   \Drupal::configFactory()
     ->getEditable('system.theme.global')
     ->set('logo', [
