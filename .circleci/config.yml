@@ -25,6 +25,15 @@ aliases:
       - store_artifacts:
           path: /tmp/artifacts
 
+  # Job to perform merge to reference branch after a merge to develop.
+  - &merge-to-reference
+    steps:
+      - run:
+          name: Merge to reference branch
+          command: .circleci/merge-to-reference.sh
+          no_output_timeout: 30m
+
+
 jobs:
   build:
     <<: *job-build
@@ -38,6 +47,10 @@ jobs:
           LAGOON_ENVIRONMENT_TYPE: ci
           INSTALL_SUGGEST: 1
           BEHAT_PROFILE: "--profile=suggest"
+  
+  merge_to_reference:
+    <<: *merge-to-reference
+
 
 workflows:
   version: 2
@@ -45,3 +58,11 @@ workflows:
     jobs:
       - build
       - build_suggest
+
+  mergetoreference:
+    jobs:
+      - merge_to_reference:
+          filters:
+            branches:
+              only:
+                - develop
