@@ -28,6 +28,9 @@ aliases:
   # Job to perform merge to reference branch after a merge to develop.
   - &merge-to-reference
     steps:
+      - attach_workspace:
+          at: /workspace
+      - checkout
       - run:
           name: Merge to reference branch
           command: .circleci/merge-to-reference.sh
@@ -50,13 +53,6 @@ jobs:
   
   merge_to_reference:
     <<: *merge-to-reference
-    docker:
-      - image: *builder-image
-        environment:
-          INSTALL_NEW_SITE: 1
-          LAGOON_ENVIRONMENT_TYPE: ci
-          INSTALL_SUGGEST: 1
-          BEHAT_PROFILE: "--profile=suggest"
 
 workflows:
   version: 2
