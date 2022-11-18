@@ -22,7 +22,9 @@
         "dpc-sdp/tide_search": "3.0.5",
         "dpc-sdp/tide_site": "3.0.8",
         "dpc-sdp/tide_test": "3.0.1",
-        "dpc-sdp/tide_webform": "3.0.6"
+        "dpc-sdp/tide_webform": "3.0.6",
+        "dpc-sdp/random": "3.0.6",
+        "dpc-sdp/non_tide": "3.0.6"
     },
     "repositories": {
         "drupal": {
