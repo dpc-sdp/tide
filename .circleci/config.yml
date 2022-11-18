@@ -1,5 +1,16 @@
 version: 2
 aliases:
+
+  # Fingerprint of the SSH deploy key of the project used to pull code.
+  # The value can be found in CircleCI UI -> SSH Permissions.
+
+  - &step_configure_git
+    run:
+      name: Configure git
+      command: |
+        git config --global user.email "$DEPLOY_USER_EMAIL" && git config --global user.name "$DEPLOY_USER_NAME"
+        
+
   # Re-usable job to run different types of builds.
   - &job-build
     working_directory: /app
@@ -31,6 +42,8 @@ aliases:
       - attach_workspace:
           at: /workspace
       - checkout
+      - *step_configure_git
+      # Init environment for development.
       - run:
           name: Merge to reference branch
           command: .circleci/merge-to-reference.sh
@@ -55,12 +68,9 @@ jobs:
     <<: *merge-to-reference
     docker:
       - image: *builder-image
-        environment:
-          INSTALL_NEW_SITE: 1
-          LAGOON_ENVIRONMENT_TYPE: ci
-          INSTALL_SUGGEST: 1
-          BEHAT_PROFILE: "--profile=suggest"
-
+        auth:
+          username: $DOCKERHUB_USERNAME
+          password: $DOCKERHUB_PASSWORD
 workflows:
   version: 2
   main:
