@@ -50,7 +50,13 @@ jobs:
   
   merge_to_reference:
     <<: *merge-to-reference
-
+    docker:
+      - image: *builder-image
+        environment:
+          INSTALL_NEW_SITE: 1
+          LAGOON_ENVIRONMENT_TYPE: ci
+          INSTALL_SUGGEST: 1
+          BEHAT_PROFILE: "--profile=suggest"
 
 workflows:
   version: 2
