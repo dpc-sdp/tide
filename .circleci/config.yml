@@ -1,6 +1,6 @@
 version: 2
 aliases:
-
+  - &ssh_key_fingerprint "36:03:e3:ca:b3:0b:82:18:e2:e9:ae:5d:81:17:86:b1"
   # Fingerprint of the SSH deploy key of the project used to pull code.
   # The value can be found in CircleCI UI -> SSH Permissions.
 
@@ -71,6 +71,11 @@ jobs:
         auth:
           username: $DOCKERHUB_USERNAME
           password: $DOCKERHUB_PASSWORD
+        environment:
+          LAGOON_ENVIRONMENT_TYPE: ci
+          SSH_KEY_FINGERPRINT: *ssh_key_fingerprint
+          DEPLOY_USER_EMAIL: sdp.devs@dpc.vic.gov.au
+          DEPLOY_USER_NAME: sdpdeploy
 workflows:
   version: 2
   main:
