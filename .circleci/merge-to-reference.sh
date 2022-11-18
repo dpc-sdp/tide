@@ -7,8 +7,10 @@ echo "==> Checking out reference branch"
 git checkout reference
 echo "==> Merging develop to reference branch"
 git merge develop
-echo "==> Making sure composer.json is unchanged"
-git checkout composer.json
+echo "==> Replacing composer require entries starting with dpc-sdp with value dev-reference"
+cat composer.json | jq '.require |= with_entries(
+  if (.key | test("dpc-sdp/tide"))
+  then .value = "dev-reference" else . end)' > composer.json.backup && mv -f composer.json.backup composer.json
 echo "==> Add all changes"
 git add .
 git commit -m "Merge changes from develop."
