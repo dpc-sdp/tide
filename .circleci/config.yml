@@ -65,4 +65,4 @@ workflows:
           filters:
             branches:
               only:
-                - develop
+                - develop2
