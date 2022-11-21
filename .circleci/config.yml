@@ -1,6 +1,6 @@
 version: 2
 aliases:
-  - &ssh_key_fingerprint "36:03:e3:ca:b3:0b:82:18:e2:e9:ae:5d:81:17:86:b1"
+  - &ssh_key_fingerprint "d0:50:76:43:5e:8d:05:c2:a1:bb:77:fb:88:45:df:80"
   # Fingerprint of the SSH deploy key of the project used to pull code.
   # The value can be found in CircleCI UI -> SSH Permissions.
 
