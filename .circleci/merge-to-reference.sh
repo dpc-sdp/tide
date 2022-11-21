@@ -8,6 +8,7 @@ git checkout reference
 echo "==> Merging develop to reference branch"
 git merge develop2
 git checkout --theirs composer.json
+git add .
 echo "==> Replacing composer require entries starting with dpc-sdp with value dev-reference"
 cat composer.json | jq '.require |= with_entries(
   if (.key | test("dpc-sdp/tide"))
