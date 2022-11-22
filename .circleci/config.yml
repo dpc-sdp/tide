@@ -13,7 +13,7 @@ aliases:
 
   # Re-usable job to run different types of builds.
   - &job-build
-    working_directory: /app
+    working_directory: &working-directory /app
     docker:
       - image: &builder-image singledigital/bay-ci-builder:4.x
         environment:
@@ -38,6 +38,17 @@ aliases:
 
   # Job to perform merge to reference branch after a merge to develop.
   - &merge-to-reference
+    working_directory: *working-directory
+    docker:
+      - image: *builder-image
+        auth:
+          username: $DOCKERHUB_USERNAME
+          password: $DOCKERHUB_PASSWORD
+        environment:
+          LAGOON_ENVIRONMENT_TYPE: ci
+          SSH_KEY_FINGERPRINT: *ssh_key_fingerprint
+          DEPLOY_USER_EMAIL: sdp.devs@dpc.vic.gov.au
+          DEPLOY_USER_NAME: sdpdeploy
     steps:
       - attach_workspace:
           at: /workspace
@@ -55,18 +66,18 @@ aliases:
 
 
 jobs:
-  # build:
-  #   <<: *job-build
+  build:
+    <<: *job-build
 
-  # build_suggest:
-  #   <<: *job-build
-  #   docker:
-  #     - image: *builder-image
-  #       environment:
-  #         INSTALL_NEW_SITE: 1
-  #         LAGOON_ENVIRONMENT_TYPE: ci
-  #         INSTALL_SUGGEST: 1
-  #         BEHAT_PROFILE: "--profile=suggest"
+  build_suggest:
+    <<: *job-build
+    docker:
+      - image: *builder-image
+        environment:
+          INSTALL_NEW_SITE: 1
+          LAGOON_ENVIRONMENT_TYPE: ci
+          INSTALL_SUGGEST: 1
+          BEHAT_PROFILE: "--profile=suggest"
   
   merge_to_reference:
     <<: *merge-to-reference
@@ -78,10 +89,10 @@ jobs:
         
 workflows:
   version: 2
-  # main:
-  #   jobs:
-  #     - build
-  #     - build_suggest
+  main:
+    jobs:
+      - build
+      - build_suggest
 
   mergetoreference:
     jobs:
