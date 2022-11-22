@@ -60,6 +60,11 @@ aliases:
           fingerprints:
             - *ssh_key_fingerprint
       - run:
+          name: Add SSH key into container environment variable
+          command: |
+            SSH_KEY_FILE="${SSH_KEY_FINGERPRINT//:}" && SSH_KEY_FILE="id_rsa_${SSH_KEY_FILE//\"}" && export $SSH_KEY_FILE
+            cp ~/.ssh/$SSH_KEY_FILE /app/bay_key
+      - run:
           name: Merge to reference branch
           command: .circleci/merge-to-reference.sh
           no_output_timeout: 30m
