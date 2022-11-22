@@ -8,7 +8,7 @@ aliases:
     run:
       name: Configure git
       command: |
-        git config --global user.email "$DEPLOY_USER_EMAIL" && git config --global user.name "$DEPLOY_USER_NAME"
+        git config --global user.email "sdp.devs@dpc.vic.gov.au" && git config --global user.name "sdpdeploy"
         
 
   # Re-usable job to run different types of builds.
@@ -43,7 +43,11 @@ aliases:
           at: /workspace
       - checkout
       - *step_configure_git
-      # Init environment for development.
+      - setup_remote_docker:
+          docker_layer_caching: true
+      - add_ssh_keys:
+          fingerprints:
+            - *ssh_key_fingerprint
       - run:
           name: Merge to reference branch
           command: .circleci/merge-to-reference.sh
@@ -51,31 +55,23 @@ aliases:
 
 
 jobs:
-  build:
-    <<: *job-build
+  # build:
+  #   <<: *job-build
 
-  build_suggest:
-    <<: *job-build
-    docker:
-      - image: *builder-image
-        environment:
-          INSTALL_NEW_SITE: 1
-          LAGOON_ENVIRONMENT_TYPE: ci
-          INSTALL_SUGGEST: 1
-          BEHAT_PROFILE: "--profile=suggest"
+  # build_suggest:
+  #   <<: *job-build
+  #   docker:
+  #     - image: *builder-image
+  #       environment:
+  #         INSTALL_NEW_SITE: 1
+  #         LAGOON_ENVIRONMENT_TYPE: ci
+  #         INSTALL_SUGGEST: 1
+  #         BEHAT_PROFILE: "--profile=suggest"
   
   merge_to_reference:
     <<: *merge-to-reference
-    docker:
-      - image: *builder-image
-        auth:
-          username: $DOCKERHUB_USERNAME
-          password: $DOCKERHUB_PASSWORD
-        environment:
-          LAGOON_ENVIRONMENT_TYPE: ci
-          SSH_KEY_FINGERPRINT: *ssh_key_fingerprint
-          DEPLOY_USER_EMAIL: sdp.devs@dpc.vic.gov.au
-          DEPLOY_USER_NAME: sdpdeploy
+
+        
 workflows:
   version: 2
   main:
