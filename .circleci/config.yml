@@ -74,10 +74,10 @@ jobs:
         
 workflows:
   version: 2
-  main:
-    jobs:
-      - build
-      - build_suggest
+  # main:
+  #   jobs:
+  #     - build
+  #     - build_suggest
 
   mergetoreference:
     jobs:
