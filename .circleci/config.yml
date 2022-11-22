@@ -8,7 +8,7 @@ aliases:
     run:
       name: Configure git
       command: |
-        git config --global user.email "sdp.devs@dpc.vic.gov.au" && git config --global user.name "sdpdeploy"
+        git config --global user.email "$DEPLOY_USER_EMAIL" && git config --global user.name "$DEPLOY_USER_NAME"
         
 
   # Re-usable job to run different types of builds.
@@ -59,11 +59,6 @@ aliases:
       - add_ssh_keys:
           fingerprints:
             - *ssh_key_fingerprint
-      - run:
-          name: Add SSH key into container environment variable
-          command: |
-            SSH_KEY_FILE="${SSH_KEY_FINGERPRINT//:}" && SSH_KEY_FILE="id_rsa_${SSH_KEY_FILE//\"}" && export $SSH_KEY_FILE
-            cp ~/.ssh/$SSH_KEY_FILE /app/bay_key
       - run:
           name: Merge to reference branch
           command: .circleci/merge-to-reference.sh
