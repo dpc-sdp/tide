@@ -81,10 +81,6 @@ jobs:
   
   merge_to_reference:
     <<: *merge-to-reference
-    docker:
-      - image: *builder-image
-        environment:
-          LAGOON_ENVIRONMENT_TYPE: ci
 
         
 workflows:
