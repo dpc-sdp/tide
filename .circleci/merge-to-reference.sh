@@ -10,7 +10,7 @@ git merge develop2
 git checkout --theirs composer.json
 git add .
 echo "==> Replacing composer require entries starting with dpc-sdp with value dev-reference"
-cat composer.json | jq '.require |= with_entries(
+cat composer.json | gojq '.require |= with_entries(
   if (.key | test("dpc-sdp/tide"))
   then .value = "dev-reference" else . end)' > composer.json.backup && mv -f composer.json.backup composer.json
 echo "==> Add all changes"
