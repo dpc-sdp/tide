@@ -12,8 +12,7 @@ git add .
 echo "==> Replacing composer require entries starting with dpc-sdp with value dev-reference"
 cat composer.json | gojq '.require |= with_entries(
   if (.key | test("dpc-sdp/tide"))
-  then .value = "dev-reference" else . end)' > composer.json.backup 
-mv -f composer.json.backup composer.json
+  then .value = "dev-reference" else . end)' > composer.json.backup && mv -f composer.json.backup composer.json
 # cat composer.json| gojq '.require |= with_entries(
 #   select( .key | test("^dpc"))) | map_values("dev-reference")' > composer.json.backup
 # mv -f composer.json.backup composer.json
