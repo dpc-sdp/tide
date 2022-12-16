@@ -1,8 +1,18 @@
 version: 2
 aliases:
+  - &ssh_key_fingerprint "36:03:e3:ca:b3:0b:82:18:e2:e9:ae:5d:81:17:86:b1"
+  # Fingerprint of the SSH deploy key of the project used to pull code.
+  # The value can be found in CircleCI UI -> SSH Permissions.
+
+  - &step_configure_git
+    run:
+      name: Configure git
+      command: |
+        git config --global user.email "$DEPLOY_USER_EMAIL" && git config --global user.name "$DEPLOY_USER_NAME"
+        
   # Re-usable job to run different types of builds.
   - &job-build
-    working_directory: /app
+    working_directory: &working-directory /app
     docker:
       - image: &builder-image singledigital/bay-ci-builder:4.x
         environment:
@@ -25,6 +35,35 @@ aliases:
       - store_artifacts:
           path: /tmp/artifacts
 
+  # Job to perform merge to reference branch after a merge to develop.
+  - &merge-to-reference
+    working_directory: *working-directory
+    docker:
+      - image: *builder-image
+        auth:
+          username: $DOCKERHUB_USERNAME
+          password: $DOCKERHUB_PASSWORD
+        environment:
+          LAGOON_ENVIRONMENT_TYPE: ci
+          SSH_KEY_FINGERPRINT: *ssh_key_fingerprint
+          DEPLOY_USER_EMAIL: sdp.devs@dpc.vic.gov.au
+          DEPLOY_USER_NAME: sdpdeploy
+    steps:
+      - attach_workspace:
+          at: /workspace
+      - checkout
+      - *step_configure_git
+      - setup_remote_docker:
+          docker_layer_caching: true
+      - add_ssh_keys:
+          fingerprints:
+            - *ssh_key_fingerprint
+      - run:
+          name: Merge to reference branch
+          command: .circleci/merge-to-reference.sh
+          no_output_timeout: 30m
+
+
 jobs:
   build:
     <<: *job-build
@@ -38,10 +77,22 @@ jobs:
           LAGOON_ENVIRONMENT_TYPE: ci
           INSTALL_SUGGEST: 1
           BEHAT_PROFILE: "--profile=suggest"
+  
+  merge_to_reference:
+    <<: *merge-to-reference
 
+        
 workflows:
   version: 2
   main:
     jobs:
       - build
       - build_suggest
+
+  mergetoreference:
+    jobs:
+      - merge_to_reference:
+          filters:
+            branches:
+              only:
+                - develop
