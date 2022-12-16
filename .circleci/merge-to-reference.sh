@@ -13,7 +13,7 @@ echo "==> Replacing composer require entries starting with dpc-sdp with value de
 # cat composer.json | gojq '.require |= with_entries(
 #   if (.key | test("dpc-sdp/tide"))
 #   then .value = "dev-reference" else . end)' > composer.json.backup && mv -f composer.json.backup composer.json
-cat composer.json| gojq '.require | with_entries(
+cat composer.json| gojq '.require |= with_entries(
   select( .key | test("^dpc"))) | map_values("dev-reference")' > composer.json.backup
 mv -f composer.json.backup composer.json
 echo "==> Add all changes"
