@@ -1,7 +1,7 @@
 {
     "name": "dpc-sdp/tide",
     "description": "Tide Drupal 9 profile",
-    "type": "drupal-profile",
+    "type": "drupal-profil",
     "license": "GPL-2.0-or-later",
     "require": {
         "dpc-sdp/tide_alert": "3.0.1",
