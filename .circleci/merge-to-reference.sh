@@ -16,6 +16,6 @@ cat composer.json | gojq '.require |= with_entries(
 mv -f composer.json.backup composer.json
 echo "==> Add all changes"
 git add .
-git commit -m "Merge changes from develop."
+git commit -m "Merge changes from develop2."
 echo "==> Push the changes to remote reference branch"
 git push origin --force reference
