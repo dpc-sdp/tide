@@ -87,7 +87,11 @@ workflows:
   main:
     jobs:
       - build
-      - build_suggest
+      - build_suggest:
+          filters:
+            branches:
+              ignore:
+                - reference
 
   mergetoreference:
     jobs:
