@@ -14,7 +14,7 @@ aliases:
   - &job-build
     working_directory: &working-directory /app
     docker:
-      - image: &builder-image singledigital/bay-ci-builder:4.x
+      - image: &builder-image singledigital/bay-ci-builder:5.x
         environment:
           INSTALL_NEW_SITE: 1
           LAGOON_ENVIRONMENT_TYPE: ci
