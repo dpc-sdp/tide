@@ -28,10 +28,10 @@
         "drupal": {
             "type": "composer",
             "url": "https://packages.drupal.org/9"
+        },
+        "asset-packagist": {
+            "type": "composer",
+            "url": "https://asset-packagist.org"
         }
-    },
-    "asset-packagist": {
-        "type": "composer",
-        "url": "https://asset-packagist.org"
     }
 }
