@@ -3,6 +3,10 @@
   "license": "GPL-2.0-or-later",
   "name": "dpc-sdp/tide",
   "repositories": {
+    "asset-packagist": {
+      "type": "composer",
+      "url": "https://asset-packagist.org"
+    },
     "drupal": {
       "type": "composer",
       "url": "https://packages.drupal.org/9"
