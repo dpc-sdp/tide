@@ -22,7 +22,7 @@
         "dpc-sdp/tide_search": "3.0.6",
         "dpc-sdp/tide_site": "3.0.13",
         "dpc-sdp/tide_test": "3.0.2",
-        "dpc-sdp/tide_webform": "3.0.9"
+        "dpc-sdp/tide_webform": "dev-feature/SDPAP-6788-export-webform-submissions-not-marked-as-processed-for-batch-process as 3.0.9"
     },
     "repositories": {
         "drupal": {
