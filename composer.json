@@ -5,29 +5,39 @@
     "license": "GPL-2.0-or-later",
     "require": {
         "dpc-sdp/tide_alert": "3.0.2",
-        "dpc-sdp/tide_api": "3.0.9",
-        "dpc-sdp/tide_authenticated_content": "3.0.6",
-        "dpc-sdp/tide_core": "3.2.6",
-        "dpc-sdp/tide_demo_content": "3.0.10",
-        "dpc-sdp/tide_event": "3.0.3",
+        "dpc-sdp/tide_api": "3.0.10",
+        "dpc-sdp/tide_authenticated_content": "3.0.7",
+        "dpc-sdp/tide_core": "3.2.8",
+        "dpc-sdp/tide_demo_content": "3.0.11",
+        "dpc-sdp/tide_event": "3.0.4",
         "dpc-sdp/tide_event_atdw": "3.0.1",
-        "dpc-sdp/tide_grant": "3.0.3",
-        "dpc-sdp/tide_landing_page": "3.0.12",
-        "dpc-sdp/tide_media": "3.0.9",
+        "dpc-sdp/tide_grant": "3.0.4",
+        "dpc-sdp/tide_landing_page": "3.0.14",
+        "dpc-sdp/tide_media": "3.0.10",
         "dpc-sdp/tide_monsido": "3.0.1",
         "dpc-sdp/tide_news": "3.0.4",
         "dpc-sdp/tide_page": "3.0.3",
         "dpc-sdp/tide_profile": "3.0.1",
-        "dpc-sdp/tide_publication": "3.0.3",
+        "dpc-sdp/tide_publication": "3.0.4",
         "dpc-sdp/tide_search": "3.0.6",
-        "dpc-sdp/tide_site": "3.0.13",
+        "dpc-sdp/tide_site": "3.0.14",
         "dpc-sdp/tide_test": "3.0.2",
-        "dpc-sdp/tide_webform": "3.0.9"
+        "dpc-sdp/tide_webform": "3.0.11"
     },
     "repositories": {
         "drupal": {
             "type": "composer",
-            "url": "https://packages.drupal.org/9"
+            "url": "https://packages.drupal.org/9",
+            "canonical": false
+        },
+        "drupal/entity_embed": {
+            "type": "git",
+            "url": "https://git.drupalcode.org/issue/entity_embed-3272732.git"
+        },
+        "drupal/video_embed_field": {
+            "type": "vcs",
+            "no-api": true,
+            "url": "https://git.drupalcode.org/issue/video_embed_field-3311063.git"
         },
         "asset-packagist": {
             "type": "composer",
