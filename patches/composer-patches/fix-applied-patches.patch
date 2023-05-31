@@ -1,0 +1,13 @@
+diff --git a/src/Patches.php b/src/Patches.php
+index 70c5b83..53da82c 100644
+--- a/src/Patches.php
++++ b/src/Patches.php
+@@ -115,7 +115,7 @@ class Patches implements PluginInterface, EventSubscriberInterface {
+           $this->installedPatches[$package->getName()] = $extra['patches'];
+         }
+         $patches = isset($extra['patches']) ? $extra['patches'] : array();
+-        $tmp_patches = array_merge_recursive($tmp_patches, $patches);
++        $tmp_patches = $this->arrayMergeRecursiveDistinct($tmp_patches, $patches);
+       }
+ 
+       if ($tmp_patches == FALSE) {
