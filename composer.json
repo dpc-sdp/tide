@@ -6,7 +6,7 @@
     "require": {
         "dpc-sdp/tide_alert": "dev-feature/SRM-947-d10-update",
         "dpc-sdp/tide_api": "dev-feature/SRM-948-d10-update",
-        "dpc-sdp/tide_core": "dev-feature/SRM-870-d10-update",
+        "dpc-sdp/tide_core": "dev-feature/SDPAP-7910-mfa",
         "dpc-sdp/tide_demo_content": "dev-feature/SRM-980-d10-update",
         "dpc-sdp/tide_event": "dev-feature/SRM-871-d10-update",
         "dpc-sdp/tide_grant": "dev-feature/SRM-958-d10-update",
