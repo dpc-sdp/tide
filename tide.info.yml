@@ -2,7 +2,7 @@ name: 'Tide'
 description: 'Tide profile.'
 type: profile
 package: Tide
-core_version_requirement: ^8.9 || ^9
+core_version_requirement: ^9 || ^10
 dependencies:
   - dpc-sdp:tide_core
   - dpc-sdp:tide_alert
@@ -15,6 +15,5 @@ dependencies:
   - dpc-sdp:tide_publication
   - dpc-sdp:tide_search
   - dpc-sdp:tide_site
-  - dpc-sdp:tide_site_simple_sitemap
 themes:
   - seven

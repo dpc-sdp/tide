@@ -1,5 +1,5 @@
 {
-  "description": "Tide Drupal 9 profile",
+  "description": "Tide Drupal 10 profile",
   "license": "GPL-2.0-or-later",
   "name": "dpc-sdp/tide",
   "repositories": {
@@ -9,23 +9,19 @@
     },
     "drupal": {
       "type": "composer",
-      "url": "https://packages.drupal.org/9"
+      "url": "https://packages.drupal.org/10"
     }
   },
   "require": {
     "dpc-sdp/tide_alert": "dev-reference",
     "dpc-sdp/tide_api": "dev-reference",
-    "dpc-sdp/tide_authenticated_content": "dev-reference",
     "dpc-sdp/tide_core": "dev-reference",
     "dpc-sdp/tide_demo_content": "dev-reference",
     "dpc-sdp/tide_event": "dev-reference",
-    "dpc-sdp/tide_event_atdw": "dev-reference",
     "dpc-sdp/tide_grant": "dev-reference",
     "dpc-sdp/tide_landing_page": "dev-reference",
     "dpc-sdp/tide_media": "dev-reference",
-    "dpc-sdp/tide_monsido": "dev-reference",
     "dpc-sdp/tide_news": "dev-reference",
-    "dpc-sdp/tide_page": "dev-reference",
     "dpc-sdp/tide_profile": "dev-reference",
     "dpc-sdp/tide_publication": "dev-reference",
     "dpc-sdp/tide_search": "dev-reference",
