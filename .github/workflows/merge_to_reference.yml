@@ -1,0 +1,31 @@
+name: merge_to_reference
+
+on:
+  push:
+    branches:
+      - develop
+        
+jobs:
+  set_status_in_progress:
+    name: set_status_in_progress
+    if: always()
+    uses: dpc-sdp/github-actions/.github/workflows/set_status.yml@main
+    secrets: inherit
+    with:
+      context: 'tide_merge_to_reference'
+      description: 'Merge to reference running...'
+      state: 'pending'
+      target_url: ${{ github.event.repository.html_url }}/actions/runs/${{ github.run_id }}
+  tide_merge_to_reference:
+    name: tide_merge_to_reference
+    uses: dpc-sdp/github-actions/.github/workflows/tide_merge_to_reference.yml@main
+  set_status:
+    name: set_status
+    needs: [tide_merge_to_reference]
+    if: always()
+    uses: dpc-sdp/github-actions/.github/workflows/set_status.yml@main
+    secrets: inherit
+    with:
+      context: 'tide_merge_to_reference'
+      description: 'Merge to reference running...'
+      target_url: ${{ github.event.repository.html_url }}/actions/runs/${{ github.run_id }}
