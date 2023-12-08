@@ -1,0 +1,36 @@
+name: build
+
+on: push
+        
+jobs:
+  set_status_in_progress:
+    name: set_status_in_progress
+    if: always()
+    uses: dpc-sdp/github-actions/.github/workflows/set_status.yml@main
+    secrets: inherit
+    with:
+      context: 'tide_build'
+      description: 'Tide Build running...'
+      state: 'pending'
+      target_url: ${{ github.event.repository.html_url }}/actions/runs/${{ github.run_id }}
+  tide_build:
+    name: tide_build
+    secrets: inherit
+    uses: dpc-sdp/github-actions/.github/workflows/tide_build.yml@main
+    with:
+      module_build: true
+      runner: biggy-tide
+  export_config:
+    name: export_config
+    secrets: inherit
+    uses: dpc-sdp/github-actions/.github/workflows/export_config.yml@main
+  set_status:
+    name: set_status
+    needs: [tide_build]
+    if: always()
+    uses: dpc-sdp/github-actions/.github/workflows/set_status.yml@main
+    secrets: inherit
+    with:
+      context: 'tide_build'
+      description: 'Tide Build'
+      target_url: ${{ github.event.repository.html_url }}/actions/runs/${{ github.run_id }}

@@ -1,0 +1,14 @@
+name: dorg_git_sync
+
+on:
+  push:
+    branches:
+      - master
+    tags:
+      - '*'
+
+jobs:
+  dorg_git_sync:
+    name: dorg_git_sync
+    uses: dpc-sdp/github-actions/.github/workflows/dorg_git_sync.yml@main
+    secrets: inherit
