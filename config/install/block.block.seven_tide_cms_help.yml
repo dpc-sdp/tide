@@ -4,9 +4,9 @@ dependencies:
   module:
     - tide_cms_support
   theme:
-    - seven
+    - claro
 id: seven_tide_cms_help
-theme: seven
+theme: claro
 region: help
 weight: -100
 provider: null

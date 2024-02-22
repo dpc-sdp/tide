@@ -4,9 +4,9 @@ dependencies:
   module:
     - system
   theme:
-    - seven
+    - claro
 id: seven_content
-theme: seven
+theme: claro
 region: content
 weight: 0
 provider: null
