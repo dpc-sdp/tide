@@ -18,12 +18,12 @@ function tide_install() {
     return;
   }
 
-  // Set the default and admin theme to Seven. It is important to set themes
-  // only to enabled ones (and we are enabling Seven in profile dependencies).
+  // Set the default and admin theme to Claro. It is important to set themes
+  // only to enabled ones (and we are enabling Claro in profile dependencies).
   \Drupal::configFactory()
     ->getEditable('system.theme')
-    ->set('default', 'seven')
-    ->set('admin', 'seven')
+    ->set('default', 'claro')
+    ->set('admin', 'claro')
     ->save(TRUE);
 
   // Set the path to the logo and favicon files based on install directory.
