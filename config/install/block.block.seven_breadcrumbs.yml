@@ -4,9 +4,9 @@ dependencies:
   module:
     - system
   theme:
-    - seven
+    - claro
 id: seven_breadcrumbs
-theme: seven
+theme: claro
 region: breadcrumb
 weight: 0
 provider: null
