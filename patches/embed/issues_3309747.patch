@@ -1,0 +1,453 @@
+From 28b1923cbc23d87e6181aae29b0f5e9d53a5a51e Mon Sep 17 00:00:00 2001
+From: Balint Pekker <balint.pekker@cheppers.com>
+Date: Mon, 19 Sep 2022 07:42:12 +0200
+Subject: [PATCH 1/6] Issue #3309747: Support CKEditor4 and CKEditor5
+
+---
+ src/Access/EmbedButtonEditorAccessCheck.php | 21 +++++++++++++++------
+ 1 file changed, 15 insertions(+), 6 deletions(-)
+
+diff --git a/src/Access/EmbedButtonEditorAccessCheck.php b/src/Access/EmbedButtonEditorAccessCheck.php
+index 01463b6..6415109 100644
+--- a/src/Access/EmbedButtonEditorAccessCheck.php
++++ b/src/Access/EmbedButtonEditorAccessCheck.php
+@@ -78,20 +78,29 @@ class EmbedButtonEditorAccessCheck implements AccessInterface {
+    *   currently only capable of detecting buttons used by CKEditor.
+    */
+   protected function checkButtonEditorAccess(EmbedButtonInterface $embed_button, EditorInterface $editor) {
+-    if ($editor->getEditor() !== 'ckeditor') {
++    if (!in_array($editor->getEditor(), ['ckeditor', 'ckeditor5'])) {
+       throw new HttpException(500, 'Currently, only CKEditor is supported.');
+     }
+ 
+     $has_button = FALSE;
+     $settings = $editor->getSettings();
+-    foreach ($settings['toolbar']['rows'] as $row) {
+-      foreach ($row as $group) {
+-        if (in_array($embed_button->id(), $group['items'])) {
+-          $has_button = TRUE;
+-          break 2;
++    if ($editor->getEditor() === 'ckeditor') {
++      foreach ($settings['toolbar']['rows'] as $row) {
++        foreach ($row as $group) {
++          if (in_array($embed_button->id(), $group['items'])) {
++            $has_button = TRUE;
++            break 2;
++          }
+         }
+       }
+     }
++    elseif ($editor->getEditor() === 'ckeditor5') {
++      // The schema for CKEditor5 has changed, therefore we need to check for
++      // the toolbar items differently.
++      if ($settings['toolbar']['items'] && in_array($embed_button->id(), $settings['toolbar']['items'])) {
++        $has_button = TRUE;
++      }
++    }
+ 
+     return AccessResult::allowedIf($has_button)
+       ->addCacheableDependency($embed_button)
+-- 
+GitLab
+
+
+From 4816e59c99d99b093432176cdacc668456c4438a Mon Sep 17 00:00:00 2001
+From: leet <tomos.lee@gov.wales>
+Date: Mon, 30 Jan 2023 15:43:05 +0000
+Subject: [PATCH 2/6] added composer.json
+
+---
+ composer.json | 7 +++++++
+ 1 file changed, 7 insertions(+)
+ create mode 100644 composer.json
+
+diff --git a/composer.json b/composer.json
+new file mode 100644
+index 0000000..3da6f15
+--- /dev/null
++++ b/composer.json
+@@ -0,0 +1,7 @@
++{
++  "name": "drupal/embed",
++  "type": "drupal-module",
++  "license": "GPL-2.0-or-later",
++  "minimum-stability": "stable",
++  "require": {}
++}
+-- 
+GitLab
+
+
+From bce0441fbd18dc653b9af4031c2bb261b0edaa00 Mon Sep 17 00:00:00 2001
+From: znerol <znerol@63999.no-reply.drupal.org>
+Date: Thu, 4 May 2023 20:53:38 +0200
+Subject: [PATCH 3/6] Add basic CKE5 access test
+
+---
+ .../EmbedButtonCKEditor5AccessCheckTest.php   | 133 ++++++++++++++++++
+ 1 file changed, 133 insertions(+)
+ create mode 100644 tests/src/Functional/EmbedButtonCKEditor5AccessCheckTest.php
+
+diff --git a/tests/src/Functional/EmbedButtonCKEditor5AccessCheckTest.php b/tests/src/Functional/EmbedButtonCKEditor5AccessCheckTest.php
+new file mode 100644
+index 0000000..830c23b
+--- /dev/null
++++ b/tests/src/Functional/EmbedButtonCKEditor5AccessCheckTest.php
+@@ -0,0 +1,133 @@
++<?php
++
++namespace Drupal\Tests\embed\Functional;
++
++use Drupal\editor\Entity\Editor;
++use Drupal\Tests\system\Functional\Cache\AssertPageCacheContextsAndTagsTrait;
++
++/**
++ * Tests EmbedButtonEditorAccessCheck.
++ *
++ * @group embed
++ */
++class EmbedButtonCKEditor5AccessCheckTest extends EmbedTestBase {
++
++  use AssertPageCacheContextsAndTagsTrait;
++
++  const SUCCESS = 'Success!';
++
++  /**
++   * Modules to enable.
++   *
++   * @var array
++   */
++  public static $modules = [
++    'ckeditor5',
++  ];
++
++  /**
++   * {@inheritdoc}
++   */
++  protected $defaultTheme = 'stark';
++
++  /**
++   * {@inheritdoc}
++   */
++  public function setUp(): void {
++    parent::setUp();
++    if (version_compare(\Drupal::VERSION, '9.3', '<')) {
++      $this->markTestSkipped('This test requires Drupal 9.3 or higher');
++    }
++  }
++
++  /**
++   * Tests \Drupal\embed\Access\EmbedButtonEditorAccessCheck.
++   */
++  public function testEmbedButtonEditorAccessCheck() {
++    // The anonymous user should have access to the plain_text format, but it
++    // hasn't been configured to use an editor yet.
++    $this->getRoute('plain_text', 'embed_test_default');
++    $this->assertSession()->statusCodeEquals(404);
++    $this->assertCacheContext('route');
++    $this->assertSession()->responseHeaderNotContains('X-Drupal-Cache-Tags', 'config:editor.editor.embed_test');
++    $this->assertSession()->responseHeaderNotContains('X-Drupal-Cache-Tags', 'config:embed.button.embed_test_default');
++
++    // The anonymous user should not have permission to use embed_test format.
++    $this->getRoute('embed_test', 'embed_test_default');
++    $this->assertSession()->statusCodeEquals(403);
++    $this->assertCacheContext('route');
++    $this->assertSession()->responseHeaderNotContains('X-Drupal-Cache-Tags', 'config:editor.editor.embed_test');
++    $this->assertSession()->responseHeaderNotContains('X-Drupal-Cache-Tags', 'config:embed.button.embed_test_default');
++
++    // Now login a user that can use the embed_test format.
++    $this->drupalLogin($this->webUser);
++
++    $this->getRoute('plain_text', 'embed_test_default');
++    $this->assertSession()->statusCodeEquals(404);
++    $this->assertCacheContext('route');
++    $this->assertSession()->responseHeaderNotContains('X-Drupal-Cache-Tags', 'config:editor.editor.plain_text');
++    $this->assertSession()->responseHeaderNotContains('X-Drupal-Cache-Tags', 'config:embed.button.embed_test_default');
++
++    // Add an empty configuration for the plain_text editor configuration.
++    $editor = Editor::create([
++      'format' => 'plain_text',
++      'editor' => 'ckeditor5',
++    ]);
++    $editor->save();
++    $this->getRoute('plain_text', 'embed_test_default');
++    $this->assertSession()->statusCodeEquals(403);
++    $this->assertCacheContext('route');
++    $this->assertSession()->responseHeaderContains('X-Drupal-Cache-Tags', 'config:editor.editor.plain_text');
++    $this->assertSession()->responseHeaderContains('X-Drupal-Cache-Tags', 'config:embed.button.embed_test_default');
++
++    $this->getRoute('embed_test', 'embed_test_default');
++    $this->assertSession()->statusCodeEquals(200);
++    $this->assertCacheContext('route');
++    $this->assertSession()->responseHeaderContains('X-Drupal-Cache-Tags', 'config:editor.editor.embed_test');
++    $this->assertSession()->responseHeaderContains('X-Drupal-Cache-Tags', 'config:embed.button.embed_test_default');
++    $this->assertSession()->pageTextContains(static::SUCCESS);
++
++    // Test route with an empty request.
++    $this->getRoute('embed_test', 'embed_test_default', '');
++    $this->assertSession()->statusCodeEquals(404);
++    $this->assertCacheContext('route');
++    $this->assertSession()->responseHeaderContains('X-Drupal-Cache-Tags', 'config:editor.editor.embed_test');
++    $this->assertSession()->responseHeaderContains('X-Drupal-Cache-Tags', 'config:embed.button.embed_test_default');
++
++    // Test route with an invalid text format.
++    $this->getRoute('invalid_editor', 'embed_test_default');
++    $this->assertSession()->statusCodeEquals(404);
++    $this->assertCacheContext('route');
++    $this->assertSession()->responseHeaderNotContains('X-Drupal-Cache-Tags', 'config:editor.editor.invalid_editor');
++    $this->assertSession()->responseHeaderNotContains('X-Drupal-Cache-Tags', 'config:embed.button.embed_test_default');
++
++    // Test route with an invalid embed button.
++    $this->getRoute('embed_test', 'invalid_button');
++    $this->assertSession()->statusCodeEquals(404);
++    $this->assertCacheContext('route');
++    $this->assertSession()->responseHeaderNotContains('X-Drupal-Cache-Tags', 'config:editor.editor.embed_test');
++    $this->assertSession()->responseHeaderNotContains('X-Drupal-Cache-Tags', 'config:embed.button.invalid_button');
++  }
++
++  /**
++   * Performs a request to the embed_test.test_access route.
++   *
++   * @param string $editor_id
++   *   ID of the editor.
++   * @param string $embed_button_id
++   *   ID of the embed button.
++   * @param string $value
++   *   The query string value to include.
++   *
++   * @return string
++   *   The retrieved HTML string.
++   */
++  public function getRoute($editor_id, $embed_button_id, $value = NULL) {
++    $url = 'embed-test/access/' . $editor_id . '/' . $embed_button_id;
++    if (!isset($value)) {
++      $value = static::SUCCESS;
++    }
++    return $this->drupalGet($url, ['query' => ['value' => $value]]);
++  }
++
++}
+-- 
+GitLab
+
+
+From aff2aa50ebe359f9bffc0b294d6927c81139923b Mon Sep 17 00:00:00 2001
+From: znerol <znerol@63999.no-reply.drupal.org>
+Date: Thu, 4 May 2023 22:53:24 +0200
+Subject: [PATCH 4/6] Ensure that CKE4 is not enabled in CKE5 test
+
+---
+ .../EmbedButtonCKEditor5AccessCheckTest.php   | 25 +++++++++++-----
+ .../EmbedButtonEditorAccessCheckTest.php      | 30 +++++++++++++++++++
+ tests/src/Functional/EmbedTestBase.php        | 18 -----------
+ 3 files changed, 48 insertions(+), 25 deletions(-)
+
+diff --git a/tests/src/Functional/EmbedButtonCKEditor5AccessCheckTest.php b/tests/src/Functional/EmbedButtonCKEditor5AccessCheckTest.php
+index 830c23b..268617c 100644
+--- a/tests/src/Functional/EmbedButtonCKEditor5AccessCheckTest.php
++++ b/tests/src/Functional/EmbedButtonCKEditor5AccessCheckTest.php
+@@ -3,6 +3,7 @@
+ namespace Drupal\Tests\embed\Functional;
+ 
+ use Drupal\editor\Entity\Editor;
++use Drupal\filter\Entity\FilterFormat;
+ use Drupal\Tests\system\Functional\Cache\AssertPageCacheContextsAndTagsTrait;
+ 
+ /**
+@@ -17,13 +18,9 @@ class EmbedButtonCKEditor5AccessCheckTest extends EmbedTestBase {
+   const SUCCESS = 'Success!';
+ 
+   /**
+-   * Modules to enable.
+-   *
+-   * @var array
++   * {@inheritdoc}
+    */
+-  public static $modules = [
+-    'ckeditor5',
+-  ];
++  public static $modules = ['ckeditor5'];
+ 
+   /**
+    * {@inheritdoc}
+@@ -34,10 +31,24 @@ class EmbedButtonCKEditor5AccessCheckTest extends EmbedTestBase {
+    * {@inheritdoc}
+    */
+   public function setUp(): void {
+-    parent::setUp();
+     if (version_compare(\Drupal::VERSION, '9.3', '<')) {
+       $this->markTestSkipped('This test requires Drupal 9.3 or higher');
+     }
++
++    parent::setUp();
++
++    $editor = Editor::create([
++      'format' => 'embed_test',
++      'editor' => 'ckeditor5',
++      'settings' => [
++        'toolbar' => [
++          'items' => [
++            'embed_test_default',
++          ],
++        ],
++      ],
++    ]);
++    $editor->save();
+   }
+ 
+   /**
+diff --git a/tests/src/Functional/EmbedButtonEditorAccessCheckTest.php b/tests/src/Functional/EmbedButtonEditorAccessCheckTest.php
+index e8cdf78..219ff74 100644
+--- a/tests/src/Functional/EmbedButtonEditorAccessCheckTest.php
++++ b/tests/src/Functional/EmbedButtonEditorAccessCheckTest.php
+@@ -3,6 +3,7 @@
+ namespace Drupal\Tests\embed\Functional;
+ 
+ use Drupal\editor\Entity\Editor;
++use Drupal\filter\Entity\FilterFormat;
+ use Drupal\Tests\system\Functional\Cache\AssertPageCacheContextsAndTagsTrait;
+ 
+ /**
+@@ -16,11 +17,40 @@ class EmbedButtonEditorAccessCheckTest extends EmbedTestBase {
+ 
+   const SUCCESS = 'Success!';
+ 
++  /**
++   * {@inheritdoc}
++   */
++  public static $modules = ['ckeditor'];
++
+   /**
+    * {@inheritdoc}
+    */
+   protected $defaultTheme = 'stark';
+ 
++  /**
++   * {@inheritdoc}
++   */
++  public function setUp(): void {
++    parent::setUp();
++
++    $editor_group = [
++      'name' => 'Embed',
++      'items' => [
++        'embed_test_default',
++      ],
++    ];
++    $editor = Editor::create([
++      'format' => 'embed_test',
++      'editor' => 'ckeditor',
++      'settings' => [
++        'toolbar' => [
++          'rows' => [[$editor_group]],
++        ],
++      ],
++    ]);
++    $editor->save();
++  }
++
+   /**
+    * Tests \Drupal\embed\Access\EmbedButtonEditorAccessCheck.
+    */
+diff --git a/tests/src/Functional/EmbedTestBase.php b/tests/src/Functional/EmbedTestBase.php
+index 312a828..6a082fa 100644
+--- a/tests/src/Functional/EmbedTestBase.php
++++ b/tests/src/Functional/EmbedTestBase.php
+@@ -25,7 +25,6 @@ abstract class EmbedTestBase extends BrowserTestBase {
+     'embed',
+     'embed_test',
+     'editor',
+-    'ckeditor',
+   ];
+ 
+   /**
+@@ -61,23 +60,6 @@ abstract class EmbedTestBase extends BrowserTestBase {
+     ]);
+     $format->save();
+ 
+-    $editor_group = [
+-      'name' => 'Embed',
+-      'items' => [
+-        'embed_test_default',
+-      ],
+-    ];
+-    $editor = Editor::create([
+-      'format' => 'embed_test',
+-      'editor' => 'ckeditor',
+-      'settings' => [
+-        'toolbar' => [
+-          'rows' => [[$editor_group]],
+-        ],
+-      ],
+-    ]);
+-    $editor->save();
+-
+     // Create a user with required permissions.
+     $this->adminUser = $this->drupalCreateUser([
+       'administer embed buttons',
+-- 
+GitLab
+
+
+From f5be4cb2692692b086b2a7be973791efc8754552 Mon Sep 17 00:00:00 2001
+From: znerol <znerol@63999.no-reply.drupal.org>
+Date: Thu, 4 May 2023 22:57:11 +0200
+Subject: [PATCH 5/6] Remove spurious use statement
+
+---
+ tests/src/Functional/EmbedButtonCKEditor5AccessCheckTest.php | 1 -
+ tests/src/Functional/EmbedButtonEditorAccessCheckTest.php    | 1 -
+ 2 files changed, 2 deletions(-)
+
+diff --git a/tests/src/Functional/EmbedButtonCKEditor5AccessCheckTest.php b/tests/src/Functional/EmbedButtonCKEditor5AccessCheckTest.php
+index 268617c..2ea10c5 100644
+--- a/tests/src/Functional/EmbedButtonCKEditor5AccessCheckTest.php
++++ b/tests/src/Functional/EmbedButtonCKEditor5AccessCheckTest.php
+@@ -3,7 +3,6 @@
+ namespace Drupal\Tests\embed\Functional;
+ 
+ use Drupal\editor\Entity\Editor;
+-use Drupal\filter\Entity\FilterFormat;
+ use Drupal\Tests\system\Functional\Cache\AssertPageCacheContextsAndTagsTrait;
+ 
+ /**
+diff --git a/tests/src/Functional/EmbedButtonEditorAccessCheckTest.php b/tests/src/Functional/EmbedButtonEditorAccessCheckTest.php
+index 219ff74..2d3cf5b 100644
+--- a/tests/src/Functional/EmbedButtonEditorAccessCheckTest.php
++++ b/tests/src/Functional/EmbedButtonEditorAccessCheckTest.php
+@@ -3,7 +3,6 @@
+ namespace Drupal\Tests\embed\Functional;
+ 
+ use Drupal\editor\Entity\Editor;
+-use Drupal\filter\Entity\FilterFormat;
+ use Drupal\Tests\system\Functional\Cache\AssertPageCacheContextsAndTagsTrait;
+ 
+ /**
+-- 
+GitLab
+
+
+From 6d6362916c28426bb3dca2e688e45125feb9ab79 Mon Sep 17 00:00:00 2001
+From: znerol <znerol@63999.no-reply.drupal.org>
+Date: Thu, 4 May 2023 23:02:37 +0200
+Subject: [PATCH 6/6] Remove another spurious use statement
+
+---
+ tests/src/Functional/EmbedTestBase.php | 1 -
+ 1 file changed, 1 deletion(-)
+
+diff --git a/tests/src/Functional/EmbedTestBase.php b/tests/src/Functional/EmbedTestBase.php
+index 6a082fa..7ecafb6 100644
+--- a/tests/src/Functional/EmbedTestBase.php
++++ b/tests/src/Functional/EmbedTestBase.php
+@@ -2,7 +2,6 @@
+ 
+ namespace Drupal\Tests\embed\Functional;
+ 
+-use Drupal\editor\Entity\Editor;
+ use Drupal\file\Entity\File;
+ use Drupal\filter\Entity\FilterFormat;
+ use Drupal\Tests\BrowserTestBase;
+-- 
+GitLab
+

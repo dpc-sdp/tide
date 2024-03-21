@@ -18,16 +18,16 @@ function tide_install() {
     return;
   }
 
-  // Set the default and admin theme to Seven. It is important to set themes
-  // only to enabled ones (and we are enabling Seven in profile dependencies).
+  // Set the default and admin theme to Claro. It is important to set themes
+  // only to enabled ones (and we are enabling Claro in profile dependencies).
   \Drupal::configFactory()
     ->getEditable('system.theme')
-    ->set('default', 'seven')
-    ->set('admin', 'seven')
+    ->set('default', 'claro')
+    ->set('admin', 'claro')
     ->save(TRUE);
 
   // Set the path to the logo and favicon files based on install directory.
-  $profile_path = drupal_get_path('profile', 'tide');
+  $profile_path = \Drupal::service('extension.list.profile')->getPath('tide');
   \Drupal::configFactory()
     ->getEditable('system.theme.global')
     ->set('logo', [
@@ -48,5 +48,16 @@ function tide_install() {
   // configuration in /bay/settings.php and to install the module itself.
   if (file_exists(DRUPAL_ROOT . DIRECTORY_SEPARATOR . 'modules' . DIRECTORY_SEPARATOR . 'contrib' . DIRECTORY_SEPARATOR . 'redis')) {
     \Drupal::service('module_installer')->install(['redis']);
+  }
+  // These viewes are replaced by custom views provided by tide_site.
+  $view_ids = [
+    'content',
+    'moderated_content',
+  ];
+  foreach ($view_ids as $view_id) {
+    $view = \Drupal::entityTypeManager()->getStorage('view')->load($view_id);
+    if ($view) {
+      $view->setStatus(FALSE)->save();
+    }
   }
 }

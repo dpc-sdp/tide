@@ -4,9 +4,9 @@ dependencies:
   module:
     - user
   theme:
-    - seven
+    - claro
 id: seven_login
-theme: seven
+theme: claro
 region: content
 weight: 10
 provider: null

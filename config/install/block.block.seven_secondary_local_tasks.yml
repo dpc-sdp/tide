@@ -2,9 +2,9 @@ langcode: en
 status: true
 dependencies:
   theme:
-    - seven
+    - claro
 id: seven_secondary_local_tasks
-theme: seven
+theme: claro
 region: pre_content
 weight: 0
 provider: null
