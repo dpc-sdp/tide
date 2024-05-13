@@ -16,9 +16,9 @@
         "dpc-sdp/tide_profile": "4.1.0",
         "dpc-sdp/tide_publication": "4.1.1",
         "dpc-sdp/tide_search": "4.1.0",
-        "dpc-sdp/tide_site": "4.1.0",
+        "dpc-sdp/tide_site": "4.1.1",
         "dpc-sdp/tide_test": "4.0.0",
-        "dpc-sdp/tide_webform": "4.1.0"
+        "dpc-sdp/tide_webform": "4.1.1"
     },
     "repositories": {
         "drupal": {
