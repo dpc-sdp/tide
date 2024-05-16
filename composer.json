@@ -6,7 +6,7 @@
     "require": {
         "dpc-sdp/tide_alert": "4.1.0",
         "dpc-sdp/tide_api": "4.1.0",
-        "dpc-sdp/tide_core": "4.1.0",
+        "dpc-sdp/tide_core": "4.1.1",
         "dpc-sdp/tide_demo_content": "4.1.0",
         "dpc-sdp/tide_event": "4.1.0",
         "dpc-sdp/tide_grant": "4.1.0",
