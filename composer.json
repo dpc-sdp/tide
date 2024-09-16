@@ -14,18 +14,15 @@
   },
   "require": {
     "dpc-sdp/tide_alert": "dev-reference",
-    "dpc-sdp/tide_api": "dev-reference",
     "dpc-sdp/tide_core": "dev-reference",
     "dpc-sdp/tide_demo_content": "dev-reference",
     "dpc-sdp/tide_event": "dev-reference",
     "dpc-sdp/tide_grant": "dev-reference",
     "dpc-sdp/tide_landing_page": "dev-reference",
-    "dpc-sdp/tide_media": "dev-reference",
     "dpc-sdp/tide_news": "dev-reference",
     "dpc-sdp/tide_profile": "dev-reference",
     "dpc-sdp/tide_publication": "dev-reference",
     "dpc-sdp/tide_search": "dev-reference",
-    "dpc-sdp/tide_site": "dev-reference",
     "dpc-sdp/tide_test": "dev-reference",
     "dpc-sdp/tide_webform": "dev-reference"
   },
