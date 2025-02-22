@@ -4,7 +4,7 @@
     "type": "drupal-profile",
     "license": "GPL-2.0-or-later",
     "require": {
-        "dpc-sdp/tide_core": "dev-develop"
+        "dpc-sdp/tide_core": "5.0.6-ALPHA"
     },
     "repositories": {
         "drupal": {
