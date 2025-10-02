@@ -1,0 +1,489 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="446d7dc9-c59b-4c31-98c5-7f52d5eb20ce" name="Changes" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerConfigs">
+    <option name="configs">
+      <option value="$PROJECT_DIR$/docroot/modules/contrib/tide_news/composer.json" />
+      <option value="$PROJECT_DIR$/docroot/modules/contrib/jquery_ui_datepicker/composer.json" />
+      <option value="$PROJECT_DIR$/docroot/core/tests/Drupal/Tests/Composer/Plugin/Scaffold/fixtures/empty-file/composer.json" />
+      <option value="$PROJECT_DIR$/docroot/core/tests/Drupal/Tests/Composer/Plugin/Scaffold/fixtures/empty-fixture/composer.json" />
+      <option value="$PROJECT_DIR$/docroot/modules/contrib/scheduled_transitions/composer.json" />
+      <option value="$PROJECT_DIR$/docroot/modules/contrib/token/composer.json" />
+      <option value="$PROJECT_DIR$/docroot/modules/contrib/jquery_ui_touch_punch/composer.json" />
+      <option value="$PROJECT_DIR$/docroot/modules/contrib/fakeobjects/composer.json" />
+      <option value="$PROJECT_DIR$/docroot/modules/contrib/tide_page/composer.json" />
+      <option value="$PROJECT_DIR$/docroot/modules/contrib/field_group/composer.json" />
+      <option value="$PROJECT_DIR$/docroot/modules/contrib/override_node_options/composer.json" />
+      <option value="$PROJECT_DIR$/docroot/core/modules/system/tests/fixtures/HtaccessTest/composer.json" />
+      <option value="$PROJECT_DIR$/docroot/core/tests/Drupal/Tests/Composer/Plugin/Scaffold/fixtures/empty-fixture-allowing-core/composer.json" />
+      <option value="$PROJECT_DIR$/docroot/core/tests/Drupal/Tests/Composer/Plugin/Scaffold/fixtures/scaffold-override-fixture/composer.json" />
+      <option value="$PROJECT_DIR$/docroot/core/tests/Drupal/Tests/Composer/Plugin/Scaffold/fixtures/project-with-illegal-dir-scaffold/composer.json" />
+      <option value="$PROJECT_DIR$/docroot/core/tests/Drupal/Tests/Composer/Plugin/Scaffold/fixtures/project-with-empty-scaffold-path/composer.json" />
+      <option value="$PROJECT_DIR$/docroot/core/tests/Drupal/Tests/Composer/Plugin/Scaffold/fixtures/drupal-core-fixture/composer.json" />
+      <option value="$PROJECT_DIR$/docroot/modules/contrib/simple_oauth/composer.json" />
+      <option value="$PROJECT_DIR$/docroot/modules/contrib/tide_site/composer.json" />
+      <option value="$PROJECT_DIR$/docroot/core/tests/Drupal/Tests/Composer/Plugin/Scaffold/fixtures/drupal-assets-fixture/composer.json" />
+      <option value="$PROJECT_DIR$/docroot/modules/contrib/better_exposed_filters/composer.json" />
+      <option value="$PROJECT_DIR$/docroot/modules/contrib/google_analytics/composer.json" />
+      <option value="$PROJECT_DIR$/docroot/core/lib/Drupal/Component/DependencyInjection/composer.json" />
+      <option value="$PROJECT_DIR$/docroot/modules/contrib/jira_rest/composer.json" />
+      <option value="$PROJECT_DIR$/docroot/modules/contrib/ctools/composer.json" />
+      <option value="$PROJECT_DIR$/docroot/modules/contrib/focal_point/composer.json" />
+      <option value="$PROJECT_DIR$/docroot/modules/contrib/tide_profile/composer.json" />
+      <option value="$PROJECT_DIR$/docroot/modules/contrib/tide_test/composer.json" />
+      <option value="$PROJECT_DIR$/docroot/modules/contrib/jsonapi_extras/composer.json" />
+      <option value="$PROJECT_DIR$/docroot/modules/contrib/user_expire/composer.json" />
+      <option value="$PROJECT_DIR$/docroot/modules/contrib/stage_file_proxy/composer.json" />
+      <option value="$PROJECT_DIR$/docroot/modules/contrib/webform/modules/webform_scheduled_email/composer.json" />
+      <option value="$PROJECT_DIR$/docroot/modules/contrib/tide_search/composer.json" />
+      <option value="$PROJECT_DIR$/docroot/modules/contrib/quick_node_clone/composer.json" />
+      <option value="$PROJECT_DIR$/docroot/modules/contrib/tide_monsido/composer.json" />
+      <option value="$PROJECT_DIR$/docroot/modules/contrib/config_split/composer.json" />
+      <option value="$PROJECT_DIR$/docroot/modules/contrib/video_embed_field/composer.json" />
+      <option value="$PROJECT_DIR$/docroot/modules/contrib/jwt/composer.json" />
+      <option value="$PROJECT_DIR$/docroot/modules/contrib/config_perms/composer.json" />
+      <option value="$PROJECT_DIR$/docroot/modules/contrib/tide_webform/composer.json" />
+      <option value="$PROJECT_DIR$/docroot/modules/contrib/tide_publication/composer.json" />
+      <option value="$PROJECT_DIR$/docroot/modules/contrib/paragraphs/composer.json" />
+      <option value="$PROJECT_DIR$/docroot/modules/contrib/simple_sitemap/composer.json" />
+      <option value="$PROJECT_DIR$/docroot/modules/contrib/content_lock/composer.json" />
+      <option value="$PROJECT_DIR$/docroot/modules/contrib/hotjar/composer.json" />
+      <option value="$PROJECT_DIR$/docroot/modules/contrib/elasticsearch_connector/composer.json" />
+      <option value="$PROJECT_DIR$/docroot/modules/contrib/token_filter/composer.json" />
+      <option value="$PROJECT_DIR$/docroot/modules/contrib/yaml_content/composer.json" />
+      <option value="$PROJECT_DIR$/docroot/modules/contrib/key/composer.json" />
+      <option value="$PROJECT_DIR$/docroot/modules/contrib/wysiwyg_template/composer.json" />
+      <option value="$PROJECT_DIR$/docroot/modules/contrib/config_filter/composer.json" />
+      <option value="$PROJECT_DIR$/docroot/modules/contrib/token_conditions/composer.json" />
+      <option value="$PROJECT_DIR$/docroot/modules/contrib/linkit/composer.json" />
+      <option value="$PROJECT_DIR$/docroot/modules/contrib/entity_embed/composer.json" />
+      <option value="$PROJECT_DIR$/docroot/modules/contrib/config_ignore/composer.json" />
+      <option value="$PROJECT_DIR$/docroot/modules/contrib/dynamic_entity_reference/composer.json" />
+      <option value="$PROJECT_DIR$/docroot/modules/contrib/site_alert/composer.json" />
+      <option value="$PROJECT_DIR$/docroot/modules/contrib/admin_audit_trail/composer.json" />
+      <option value="$PROJECT_DIR$/docroot/modules/contrib/svg_image/composer.json" />
+      <option value="$PROJECT_DIR$/docroot/modules/contrib/login_redirect_per_role/composer.json" />
+      <option value="$PROJECT_DIR$/docroot/modules/contrib/tide_core/composer.json" />
+      <option value="$PROJECT_DIR$/docroot/modules/contrib/ckeditor_liststyle/composer.json" />
+      <option value="$PROJECT_DIR$/docroot/modules/contrib/crop/composer.json" />
+      <option value="$PROJECT_DIR$/docroot/modules/contrib/viewsreference/composer.json" />
+      <option value="$PROJECT_DIR$/docroot/modules/contrib/inline_entity_form/composer.json" />
+      <option value="$PROJECT_DIR$/docroot/modules/contrib/field_permissions/composer.json" />
+      <option value="$PROJECT_DIR$/docroot/modules/contrib/pathauto/composer.json" />
+      <option value="$PROJECT_DIR$/docroot/modules/contrib/migrate_tools/composer.json" />
+      <option value="$PROJECT_DIR$/docroot/modules/contrib/smart_trim/composer.json" />
+      <option value="$PROJECT_DIR$/docroot/modules/contrib/fast_404/composer.json" />
+      <option value="$PROJECT_DIR$/docroot/modules/contrib/m4032404/composer.json" />
+      <option value="$PROJECT_DIR$/docroot/modules/contrib/select2/composer.json" />
+      <option value="$PROJECT_DIR$/docroot/modules/contrib/dbal/composer.json" />
+      <option value="$PROJECT_DIR$/docroot/modules/contrib/address/composer.json" />
+      <option value="$PROJECT_DIR$/docroot/modules/contrib/diff/composer.json" />
+      <option value="$PROJECT_DIR$/docroot/modules/contrib/ckeditor_iframe/composer.json" />
+      <option value="$PROJECT_DIR$/docroot/modules/contrib/entity_usage/composer.json" />
+      <option value="$PROJECT_DIR$/docroot/modules/contrib/jsonapi_resources/composer.json" />
+      <option value="$PROJECT_DIR$/docroot/modules/contrib/tide_alert/composer.json" />
+      <option value="$PROJECT_DIR$/docroot/modules/contrib/key_value_field/composer.json" />
+      <option value="$PROJECT_DIR$/docroot/libraries/jquery.inputmask/composer.json" />
+      <option value="$PROJECT_DIR$/docroot/modules/contrib/ckeditor5_embedded_content/composer.json" />
+      <option value="$PROJECT_DIR$/docroot/modules/contrib/seckit/composer.json" />
+      <option value="$PROJECT_DIR$/docroot/modules/contrib/allowed_formats/composer.json" />
+      <option value="$PROJECT_DIR$/docroot/modules/contrib/ckeditor_config/composer.json" />
+      <option value="$PROJECT_DIR$/docroot/modules/contrib/webform/composer.json" />
+      <option value="$PROJECT_DIR$/docroot/modules/contrib/tide_event/composer.json" />
+      <option value="$PROJECT_DIR$/docroot/libraries/jquery.timepicker/composer.json" />
+      <option value="$PROJECT_DIR$/docroot/core/lib/Drupal/Component/Uuid/composer.json" />
+      <option value="$PROJECT_DIR$/docroot/modules/contrib/password_policy/composer.json" />
+      <option value="$PROJECT_DIR$/docroot/modules/contrib/jsonapi_menu_items/composer.json" />
+      <option value="$PROJECT_DIR$/docroot/modules/contrib/password_strength/composer.json" />
+      <option value="$PROJECT_DIR$/docroot/core/lib/Drupal/Component/Graph/composer.json" />
+      <option value="$PROJECT_DIR$/docroot/core/lib/Drupal/Component/Bridge/composer.json" />
+      <option value="$PROJECT_DIR$/docroot/modules/contrib/entity_reference_revisions/composer.json" />
+      <option value="$PROJECT_DIR$/docroot/modules/contrib/redirect/composer.json" />
+      <option value="$PROJECT_DIR$/docroot/core/lib/Drupal/Component/Diff/composer.json" />
+      <option value="$PROJECT_DIR$/docroot/modules/contrib/tide_authenticated_content/composer.json" />
+      <option value="$PROJECT_DIR$/docroot/modules/contrib/tide_grant/composer.json" />
+      <option value="$PROJECT_DIR$/docroot/modules/contrib/tide_core/modules/tide_jira/composer.json" />
+      <option value="$PROJECT_DIR$/docroot/core/lib/Drupal/Component/Render/composer.json" />
+      <option value="$PROJECT_DIR$/docroot/modules/contrib/queue_mail/composer.json" />
+      <option value="$PROJECT_DIR$/docroot/modules/contrib/smtp/composer.json" />
+      <option value="$PROJECT_DIR$/docroot/modules/contrib/migrate_file/composer.json" />
+      <option value="$PROJECT_DIR$/docroot/core/lib/Drupal/Component/Plugin/composer.json" />
+      <option value="$PROJECT_DIR$/docroot/libraries/jquery-ui-touch-punch/composer.json" />
+      <option value="$PROJECT_DIR$/docroot/modules/contrib/tide_demo_content/composer.json" />
+      <option value="$PROJECT_DIR$/docroot/libraries/jquery.intl-tel-input/composer.json" />
+      <option value="$PROJECT_DIR$/docroot/modules/contrib/views_menu_children_filter/composer.json" />
+      <option value="$PROJECT_DIR$/docroot/core/lib/Drupal/Component/Utility/composer.json" />
+      <option value="$PROJECT_DIR$/docroot/modules/contrib/embed/composer.json" />
+      <option value="$PROJECT_DIR$/docroot/modules/contrib/link_field_autocomplete_filter/composer.json" />
+      <option value="$PROJECT_DIR$/docroot/core/lib/Drupal/Component/Version/composer.json" />
+      <option value="$PROJECT_DIR$/docroot/core/lib/Drupal/Component/Datetime/composer.json" />
+      <option value="$PROJECT_DIR$/docroot/modules/contrib/search_api/composer.json" />
+      <option value="$PROJECT_DIR$/docroot/core/composer.json" />
+      <option value="$PROJECT_DIR$/docroot/modules/contrib/username_enumeration_prevention/composer.json" />
+      <option value="$PROJECT_DIR$/docroot/modules/contrib/tide_media/composer.json" />
+      <option value="$PROJECT_DIR$/docroot/core/lib/Drupal/Component/Assertion/composer.json" />
+      <option value="$PROJECT_DIR$/docroot/modules/contrib/permissions_by_term/composer.json" />
+      <option value="$PROJECT_DIR$/docroot/core/lib/Drupal/Component/Gettext/composer.json" />
+      <option value="$PROJECT_DIR$/docroot/modules/contrib/migrate_plus/composer.json" />
+      <option value="$PROJECT_DIR$/docroot/modules/contrib/tide_core/modules/tide_oauth/composer.json" />
+      <option value="$PROJECT_DIR$/docroot/modules/contrib/metatag/composer.json" />
+      <option value="$PROJECT_DIR$/docroot/modules/contrib/tide_landing_page/composer.json" />
+      <option value="$PROJECT_DIR$/docroot/modules/contrib/role_delegation/composer.json" />
+      <option value="$PROJECT_DIR$/docroot/core/lib/Drupal/Component/FileSystem/composer.json" />
+      <option value="$PROJECT_DIR$/docroot/core/lib/Drupal/Component/PhpStorage/composer.json" />
+      <option value="$PROJECT_DIR$/docroot/core/lib/Drupal/Component/ClassFinder/composer.json" />
+      <option value="$PROJECT_DIR$/dpc-sdp/tide/composer.json" />
+      <option value="$PROJECT_DIR$/docroot/core/lib/Drupal/Component/Discovery/composer.json" />
+      <option value="$PROJECT_DIR$/docroot/modules/contrib/schemata/composer.json" />
+      <option value="$PROJECT_DIR$/docroot/core/lib/Drupal/Component/FileCache/composer.json" />
+      <option value="$PROJECT_DIR$/docroot/core/lib/Drupal/Component/Annotation/composer.json" />
+      <option value="$PROJECT_DIR$/docroot/core/lib/Drupal/Component/EventDispatcher/composer.json" />
+      <option value="$PROJECT_DIR$/docroot/core/lib/Drupal/Component/Transliteration/composer.json" />
+      <option value="$PROJECT_DIR$/docroot/modules/contrib/tide_core/modules/tide_edit_protection/composer.json" />
+      <option value="$PROJECT_DIR$/docroot/modules/contrib/entity_hierarchy/composer.json" />
+      <option value="$PROJECT_DIR$/docroot/core/lib/Drupal/Component/FrontMatter/composer.json" />
+      <option value="$PROJECT_DIR$/docroot/core/lib/Drupal/Component/FileSecurity/composer.json" />
+      <option value="$PROJECT_DIR$/docroot/modules/contrib/tide_core/modules/tide_spell_checker/composer.json" />
+      <option value="$PROJECT_DIR$/docroot/modules/contrib/tide_event_atdw/composer.json" />
+      <option value="$PROJECT_DIR$/docroot/core/lib/Drupal/Component/ProxyBuilder/composer.json" />
+      <option value="$PROJECT_DIR$/docroot/core/lib/Drupal/Component/Serialization/composer.json" />
+      <option value="$PROJECT_DIR$/docroot/modules/contrib/tide_core/modules/tide_ui_restriction/composer.json" />
+      <option value="$PROJECT_DIR$/docroot/modules/contrib/entity_browser/composer.json" />
+      <option value="$PROJECT_DIR$/docroot/modules/contrib/tide_api/composer.json" />
+      <option value="$PROJECT_DIR$/docroot/core/lib/Drupal/Component/HttpFoundation/composer.json" />
+    </option>
+  </component>
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
+    <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
+    <execution />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitToolBoxStore">
+    <option name="recentBranches">
+      <RecentBranches>
+        <option name="branchesForRepo">
+          <list>
+            <RecentBranchesForRepo>
+              <option name="branches">
+                <list>
+                  <RecentBranch>
+                    <option name="branchName" value="master" />
+                    <option name="lastUsedInstant" value="1723703401" />
+                  </RecentBranch>
+                  <RecentBranch>
+                    <option name="branchName" value="develop" />
+                    <option name="lastUsedInstant" value="1723703394" />
+                  </RecentBranch>
+                </list>
+              </option>
+              <option name="repositoryRootUrl" value="file://$PROJECT_DIR$" />
+            </RecentBranchesForRepo>
+          </list>
+        </option>
+      </RecentBranches>
+    </option>
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/composer.json" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="/opt/homebrew/Cellar/php/8.2.4/bin/php">
+    <include_path>
+      <path value="$PROJECT_DIR$/vendor/longwave/laminas-diactoros" />
+      <path value="$PROJECT_DIR$/vendor/phpmailer/phpmailer" />
+      <path value="$PROJECT_DIR$/vendor/alchemy/zippy" />
+      <path value="$PROJECT_DIR$/vendor/giggsey/locale" />
+      <path value="$PROJECT_DIR$/vendor/paragonie/random_compat" />
+      <path value="$PROJECT_DIR$/vendor/giggsey/libphonenumber-for-php" />
+      <path value="$PROJECT_DIR$/vendor/webflo/drupal-finder" />
+      <path value="$PROJECT_DIR$/vendor/tolerance/tolerance" />
+      <path value="$PROJECT_DIR$/vendor/ezyang/htmlpurifier" />
+      <path value="$PROJECT_DIR$/vendor/mikey179/vfsstream" />
+      <path value="$PROJECT_DIR$/vendor/psy/psysh" />
+      <path value="$PROJECT_DIR$/vendor/dealerdirect/phpcodesniffer-composer-installer" />
+      <path value="$PROJECT_DIR$/vendor/makinacorpus/php-lucene" />
+      <path value="$PROJECT_DIR$/vendor/nikic/php-parser" />
+      <path value="$PROJECT_DIR$/vendor/vlucas/phpdotenv" />
+      <path value="$PROJECT_DIR$/vendor/phpstan/phpdoc-parser" />
+      <path value="$PROJECT_DIR$/vendor/theseer/tokenizer" />
+      <path value="$PROJECT_DIR$/vendor/instaclick/php-webdriver" />
+      <path value="$PROJECT_DIR$/vendor/ralouphie/getallheaders" />
+      <path value="$PROJECT_DIR$/vendor/e0ipso/shaper" />
+      <path value="$PROJECT_DIR$/vendor/phpoption/phpoption" />
+      <path value="$PROJECT_DIR$/vendor/bjeavons/zxcvbn-php" />
+      <path value="$PROJECT_DIR$/vendor/mkalkbrenner/php-htmldiff-advanced" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/complexity" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/recursion-context" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/resource-operations" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/environment" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/code-unit" />
+      <path value="$PROJECT_DIR$/vendor/ezimuel/ringphp" />
+      <path value="$PROJECT_DIR$/vendor/respect/stringifier" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/exporter" />
+      <path value="$PROJECT_DIR$/vendor/ezimuel/guzzlestreams" />
+      <path value="$PROJECT_DIR$/vendor/respect/validation" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/cli-parser" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/version" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/diff" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/lines-of-code" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/object-enumerator" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/comparator" />
+      <path value="$PROJECT_DIR$/vendor/previousnext/nested-set" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/type" />
+      <path value="$PROJECT_DIR$/vendor/league/uri-interfaces" />
+      <path value="$PROJECT_DIR$/vendor/league/container" />
+      <path value="$PROJECT_DIR$/vendor/league/oauth2-server" />
+      <path value="$PROJECT_DIR$/vendor/league/event" />
+      <path value="$PROJECT_DIR$/vendor/league/uri" />
+      <path value="$PROJECT_DIR$/vendor/monolog/monolog" />
+      <path value="$PROJECT_DIR$/vendor/weitzman/drupal-test-traits" />
+      <path value="$PROJECT_DIR$/vendor/steverhoades/oauth2-openid-connect-server" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/global-state" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/code-unit-reverse-lookup" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/object-reflector" />
+      <path value="$PROJECT_DIR$/vendor/psr/log" />
+      <path value="$PROJECT_DIR$/vendor/psr/cache" />
+      <path value="$PROJECT_DIR$/vendor/psr/http-message" />
+      <path value="$PROJECT_DIR$/vendor/ubirak/rest-api-behat-extension" />
+      <path value="$PROJECT_DIR$/vendor/psr/http-client" />
+      <path value="$PROJECT_DIR$/vendor/oomphinc/composer-installers-extender" />
+      <path value="$PROJECT_DIR$/vendor/psr/container" />
+      <path value="$PROJECT_DIR$/vendor/psr/http-factory" />
+      <path value="$PROJECT_DIR$/vendor/fabpot/goutte" />
+      <path value="$PROJECT_DIR$/vendor/psr/clock" />
+      <path value="$PROJECT_DIR$/vendor/chi-teck/drupal-code-generator" />
+      <path value="$PROJECT_DIR$/vendor/consolidation/output-formatters" />
+      <path value="$PROJECT_DIR$/vendor/consolidation/annotated-command" />
+      <path value="$PROJECT_DIR$/vendor/consolidation/self-update" />
+      <path value="$PROJECT_DIR$/vendor/consolidation/robo" />
+      <path value="$PROJECT_DIR$/vendor/consolidation/log" />
+      <path value="$PROJECT_DIR$/vendor/consolidation/site-process" />
+      <path value="$PROJECT_DIR$/vendor/consolidation/filter-via-dot-access-data" />
+      <path value="$PROJECT_DIR$/vendor/consolidation/site-alias" />
+      <path value="$PROJECT_DIR$/vendor/consolidation/config" />
+      <path value="$PROJECT_DIR$/vendor/justinrainbow/json-schema" />
+      <path value="$PROJECT_DIR$/vendor/php-http/curl-client" />
+      <path value="$PROJECT_DIR$/vendor/php-http/client-common" />
+      <path value="$PROJECT_DIR$/vendor/php-http/promise" />
+      <path value="$PROJECT_DIR$/vendor/php-http/message" />
+      <path value="$PROJECT_DIR$/vendor/php-http/discovery" />
+      <path value="$PROJECT_DIR$/vendor/php-http/message-factory" />
+      <path value="$PROJECT_DIR$/vendor/sirbrillig/phpcs-variable-analysis" />
+      <path value="$PROJECT_DIR$/vendor/php-http/httplug" />
+      <path value="$PROJECT_DIR$/vendor/masterminds/html5" />
+      <path value="$PROJECT_DIR$/vendor/drupal/coder" />
+      <path value="$PROJECT_DIR$/vendor/drupal/core-composer-scaffold" />
+      <path value="$PROJECT_DIR$/vendor/drupal/console-core" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/php-code-coverage" />
+      <path value="$PROJECT_DIR$/vendor/drupal/drupal-driver" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/phpunit" />
+      <path value="$PROJECT_DIR$/vendor/drupal/drupal-extension" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/php-text-template" />
+      <path value="$PROJECT_DIR$/vendor/drupal/console-en" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/php-invoker" />
+      <path value="$PROJECT_DIR$/vendor/drupal/console" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/php-file-iterator" />
+      <path value="$PROJECT_DIR$/vendor/drupal/console-extend-plugin" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/php-timer" />
+      <path value="$PROJECT_DIR$/vendor/enshrined/svg-sanitize" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-mbstring" />
+      <path value="$PROJECT_DIR$/vendor/symfony/process" />
+      <path value="$PROJECT_DIR$/vendor/symfony/translation" />
+      <path value="$PROJECT_DIR$/vendor/symfony/serializer" />
+      <path value="$PROJECT_DIR$/vendor/symfony/yaml" />
+      <path value="$PROJECT_DIR$/vendor/symfony/debug" />
+      <path value="$PROJECT_DIR$/vendor/mtdowling/jmespath.php" />
+      <path value="$PROJECT_DIR$/vendor/egulias/email-validator" />
+      <path value="$PROJECT_DIR$/vendor/symfony/string" />
+      <path value="$PROJECT_DIR$/vendor/symfony/service-contracts" />
+      <path value="$PROJECT_DIR$/vendor/symfony/validator" />
+      <path value="$PROJECT_DIR$/vendor/symfony/translation-contracts" />
+      <path value="$PROJECT_DIR$/vendor/symfony/browser-kit" />
+      <path value="$PROJECT_DIR$/vendor/symfony/lock" />
+      <path value="$PROJECT_DIR$/vendor/symfony/dom-crawler" />
+      <path value="$PROJECT_DIR$/vendor/cweagans/composer-patches" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php81" />
+      <path value="$PROJECT_DIR$/vendor/symfony/http-kernel" />
+      <path value="$PROJECT_DIR$/vendor/symfony/http-foundation" />
+      <path value="$PROJECT_DIR$/vendor/symfony/var-dumper" />
+      <path value="$PROJECT_DIR$/vendor/symfony/event-dispatcher" />
+      <path value="$PROJECT_DIR$/vendor/symfony/options-resolver" />
+      <path value="$PROJECT_DIR$/vendor/nodespark/des-connector" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-iconv" />
+      <path value="$PROJECT_DIR$/vendor/symfony/console" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-intl-idn" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php73" />
+      <path value="$PROJECT_DIR$/vendor/symfony/filesystem" />
+      <path value="$PROJECT_DIR$/vendor/phpdocumentor/reflection-docblock" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php72" />
+      <path value="$PROJECT_DIR$/vendor/phpdocumentor/type-resolver" />
+      <path value="$PROJECT_DIR$/vendor/symfony/event-dispatcher-contracts" />
+      <path value="$PROJECT_DIR$/vendor/phpdocumentor/reflection-common" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-ctype" />
+      <path value="$PROJECT_DIR$/vendor/symfony/property-access" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/deprecations" />
+      <path value="$PROJECT_DIR$/vendor/symfony/mime" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/event-manager" />
+      <path value="$PROJECT_DIR$/vendor/symfony/property-info" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/collections" />
+      <path value="$PROJECT_DIR$/vendor/symfony/config" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/instantiator" />
+      <path value="$PROJECT_DIR$/vendor/symfony/error-handler" />
+      <path value="$PROJECT_DIR$/vendor/symfony/phpunit-bridge" />
+      <path value="$PROJECT_DIR$/vendor/defuse/php-encryption" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php80" />
+      <path value="$PROJECT_DIR$/vendor/symfony/psr-http-message-bridge" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/lexer" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-intl-normalizer" />
+      <path value="$PROJECT_DIR$/vendor/composer" />
+      <path value="$PROJECT_DIR$/vendor/netresearch/jsonmapper" />
+      <path value="$PROJECT_DIR$/vendor/symfony/css-selector" />
+      <path value="$PROJECT_DIR$/vendor/symfony/dependency-injection" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-intl-grapheme" />
+      <path value="$PROJECT_DIR$/vendor/symfony/http-client-contracts" />
+      <path value="$PROJECT_DIR$/vendor/symfony/routing" />
+      <path value="$PROJECT_DIR$/vendor/twig/twig" />
+      <path value="$PROJECT_DIR$/vendor/symfony/finder" />
+      <path value="$PROJECT_DIR$/vendor/symfony/deprecation-contracts" />
+      <path value="$PROJECT_DIR$/vendor/symfony/expression-language" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/annotations" />
+      <path value="$PROJECT_DIR$/vendor/phpspec/prophecy-phpunit" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/dbal" />
+      <path value="$PROJECT_DIR$/vendor/symfony-cmf/routing" />
+      <path value="$PROJECT_DIR$/vendor/phpspec/prophecy" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/cache" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/reflection" />
+      <path value="$PROJECT_DIR$/vendor/typo3/phar-stream-wrapper" />
+      <path value="$PROJECT_DIR$/vendor/seld/jsonlint" />
+      <path value="$PROJECT_DIR$/vendor/seld/phar-utils" />
+      <path value="$PROJECT_DIR$/vendor/easyrdf/easyrdf" />
+      <path value="$PROJECT_DIR$/vendor/stecman/symfony-console-completion" />
+      <path value="$PROJECT_DIR$/vendor/stack/builder" />
+      <path value="$PROJECT_DIR$/vendor/enlightn/security-checker" />
+      <path value="$PROJECT_DIR$/vendor/firebase/php-jwt" />
+      <path value="$PROJECT_DIR$/vendor/react/promise" />
+      <path value="$PROJECT_DIR$/vendor/commerceguys/addressing" />
+      <path value="$PROJECT_DIR$/vendor/laminas/laminas-servicemanager" />
+      <path value="$PROJECT_DIR$/vendor/laminas/laminas-escaper" />
+      <path value="$PROJECT_DIR$/vendor/laminas/laminas-feed" />
+      <path value="$PROJECT_DIR$/vendor/laminas/laminas-stdlib" />
+      <path value="$PROJECT_DIR$/vendor/grasmash/yaml-expander" />
+      <path value="$PROJECT_DIR$/vendor/grasmash/expander" />
+      <path value="$PROJECT_DIR$/vendor/npm-asset/select2" />
+      <path value="$PROJECT_DIR$/vendor/atoum/atoum" />
+      <path value="$PROJECT_DIR$/vendor/pear/console_getopt" />
+      <path value="$PROJECT_DIR$/vendor/asm89/stack-cors" />
+      <path value="$PROJECT_DIR$/vendor/drevops/behat-steps" />
+      <path value="$PROJECT_DIR$/vendor/pear/archive_tar" />
+      <path value="$PROJECT_DIR$/vendor/drevops/behat-screenshot" />
+      <path value="$PROJECT_DIR$/vendor/pear/pear-core-minimal" />
+      <path value="$PROJECT_DIR$/vendor/pear/pear_exception" />
+      <path value="$PROJECT_DIR$/vendor/friends-of-behat/mink-browserkit-driver" />
+      <path value="$PROJECT_DIR$/vendor/squizlabs/php_codesniffer" />
+      <path value="$PROJECT_DIR$/vendor/phar-io/manifest" />
+      <path value="$PROJECT_DIR$/vendor/elasticsearch/elasticsearch" />
+      <path value="$PROJECT_DIR$/vendor/phar-io/version" />
+      <path value="$PROJECT_DIR$/vendor/friends-of-behat/mink-extension" />
+      <path value="$PROJECT_DIR$/vendor/clue/stream-filter" />
+      <path value="$PROJECT_DIR$/vendor/lesstif/php-jira-rest-client" />
+      <path value="$PROJECT_DIR$/vendor/lcobucci/clock" />
+      <path value="$PROJECT_DIR$/vendor/lcobucci/jwt" />
+      <path value="$PROJECT_DIR$/vendor/slevomat/coding-standard" />
+      <path value="$PROJECT_DIR$/vendor/caxy/php-htmldiff" />
+      <path value="$PROJECT_DIR$/vendor/phpcompatibility/php-compatibility" />
+      <path value="$PROJECT_DIR$/vendor/behat/behat" />
+      <path value="$PROJECT_DIR$/vendor/behat/mink-goutte-driver" />
+      <path value="$PROJECT_DIR$/vendor/behat/mink-selenium2-driver" />
+      <path value="$PROJECT_DIR$/vendor/drush/drush" />
+      <path value="$PROJECT_DIR$/vendor/behat/mink" />
+      <path value="$PROJECT_DIR$/vendor/behat/gherkin" />
+      <path value="$PROJECT_DIR$/vendor/dflydev/dot-access-configuration" />
+      <path value="$PROJECT_DIR$/vendor/behat/transliterator" />
+      <path value="$PROJECT_DIR$/vendor/dflydev/dot-access-data" />
+      <path value="$PROJECT_DIR$/vendor/dflydev/placeholder-resolver" />
+      <path value="$PROJECT_DIR$/vendor/ruflin/elastica" />
+      <path value="$PROJECT_DIR$/vendor/myclabs/deep-copy" />
+      <path value="$PROJECT_DIR$/vendor/webmozart/assert" />
+      <path value="$PROJECT_DIR$/vendor/webmozart/path-util" />
+      <path value="$PROJECT_DIR$/vendor/guzzlehttp/promises" />
+      <path value="$PROJECT_DIR$/vendor/guzzlehttp/psr7" />
+      <path value="$PROJECT_DIR$/vendor/nyholm/dsn" />
+      <path value="$PROJECT_DIR$/vendor/guzzlehttp/guzzle" />
+    </include_path>
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 4
+}</component>
+  <component name="ProjectId" id="2Owv2cuhxKn2LPJT9r72ZuP40oy" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "mono-repo-test",
+    "last_opened_file_path": "/Users/vincent.gao/vicgovt/tide/patches",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.general",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/patches" />
+      <recent name="$PROJECT_DIR$" />
+    </key>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-1d06a55b98c1-0b3e54e931b4-JavaScript-PS-241.17890.8" />
+        <option value="bundled-php-predefined-ba97393d7c68-48a1a656d44e-com.jetbrains.php.sharedIndexes-PS-241.17890.8" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="446d7dc9-c59b-4c31-98c5-7f52d5eb20ce" name="Changes" comment="" />
+      <created>1682484252276</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1682484252276</updated>
+      <workItem from="1682484253417" duration="2006000" />
+      <workItem from="1685513523020" duration="2317000" />
+      <workItem from="1685589460488" duration="615000" />
+      <workItem from="1685678032511" duration="687000" />
+      <workItem from="1686020498397" duration="926000" />
+      <workItem from="1686285745057" duration="1545000" />
+      <workItem from="1698793058518" duration="1324000" />
+      <workItem from="1723703324038" duration="2341000" />
+      <workItem from="1725328067545" duration="2409000" />
+      <workItem from="1726550300173" duration="725000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
