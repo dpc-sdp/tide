@@ -1,36 +1,50 @@
 name: build
 
-on: push
-        
+on:
+  push:
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
-  set_status_in_progress:
-    name: set_status_in_progress
-    if: always()
-    uses: dpc-sdp/github-actions/.github/workflows/set_status.yml@main
-    secrets: inherit
-    with:
-      context: 'tide_build'
-      description: 'Tide Build running...'
-      state: 'pending'
-      target_url: ${{ github.event.repository.html_url }}/actions/runs/${{ github.run_id }}
   tide_build:
     name: tide_build
-    secrets: inherit
-    uses: dpc-sdp/github-actions/.github/workflows/tide_build.yml@main
-    with:
-      module_build: true
-      runner: biggy-tide
-  export_config:
-    name: export_config
-    secrets: inherit
-    uses: dpc-sdp/github-actions/.github/workflows/export_config.yml@main
-  set_status:
-    name: set_status
-    needs: [tide_build]
-    if: always()
-    uses: dpc-sdp/github-actions/.github/workflows/set_status.yml@main
-    secrets: inherit
-    with:
-      context: 'tide_build'
-      description: 'Tide Build'
-      target_url: ${{ github.event.repository.html_url }}/actions/runs/${{ github.run_id }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Validate composer configuration
+        run: composer validate --ansi --strict --no-check-all --no-check-lock
+
+      - name: Install DDEV
+        uses: ddev/github-action-setup-ddev@v1
+        with:
+          autostart: false
+
+      - name: Start DDEV
+        run: ddev start -y
+
+      - name: Build Drupal site (poser)
+        run: ddev poser
+
+      - name: Symlink profile into the site
+        run: ddev symlink-project
+
+      - name: Install site with the Tide profile
+        run: ddev install-site
+
+      - name: Verify installation
+        run: |
+          ddev drush status --fields=bootstrap,install-profile,drupal-version
+          ddev drush pm:list --status=enabled --filter=tide
+
+  # TODO: export_config previously used the ahoy-based reusable workflow
+  # (dpc-sdp/github-actions/.github/workflows/export_config.yml) and needs a
+  # DDEV-based rewrite before this branch is merged.
+  # export_config:
+  #   name: export_config
+  #   secrets: inherit
+  #   uses: dpc-sdp/github-actions/.github/workflows/export_config.yml@main
