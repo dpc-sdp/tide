@@ -3,17 +3,281 @@
     "description": "Tide Drupal 10 profile",
     "type": "drupal-profile",
     "license": "GPL-2.0-or-later",
+    "minimum-stability": "dev",
+    "prefer-stable": true,
     "require": {
         "dpc-sdp/tide_core": "dev-develop"
+    },
+    "require-dev": {
+        "drush/drush": "^13"
     },
     "repositories": {
         "drupal": {
             "type": "composer",
-            "url": "https://packages.drupal.org/10"
+            "url": "https://packages.drupal.org/8",
+            "exclude": ["drupal/token_conditions", "drupal/create_menus_permission"]
+        },
+        "choices": {
+            "_webform": true,
+            "type": "package",
+            "package": {
+                "name": "choices/choices",
+                "version": "9.0.1",
+                "type": "drupal-library",
+                "extra": {
+                    "installer-name": "choices"
+                },
+                "dist": {
+                    "url": "https://github.com/jshjohnson/Choices/archive/v9.0.1.zip",
+                    "type": "zip"
+                },
+                "require": {
+                    "composer/installers": "~1.0"
+                }
+            }
+        },
+        "codemirror": {
+            "_webform": true,
+            "type": "package",
+            "package": {
+                "name": "codemirror/codemirror",
+                "version": "5.65.12",
+                "type": "drupal-library",
+                "extra": {
+                    "installer-name": "codemirror"
+                },
+                "dist": {
+                    "url": "https://github.com/components/codemirror/archive/5.65.12.zip",
+                    "type": "zip"
+                },
+                "require": {
+                    "composer/installers": "~1.0"
+                }
+            }
+        },
+        "jquery.inputmask": {
+            "_webform": true,
+            "type": "package",
+            "package": {
+                "name": "jquery/inputmask",
+                "version": "5.0.8",
+                "type": "drupal-library",
+                "extra": {
+                    "installer-name": "jquery.inputmask"
+                },
+                "dist": {
+                    "url": "https://github.com/RobinHerbots/jquery.inputmask/archive/5.0.8.zip",
+                    "type": "zip"
+                },
+                "require": {
+                    "composer/installers": "~1.0"
+                }
+            }
+        },
+        "jquery.intl-tel-input": {
+            "_webform": true,
+            "type": "package",
+            "package": {
+                "name": "jquery/intl-tel-input",
+                "version": "17.0.19",
+                "type": "drupal-library",
+                "extra": {
+                    "installer-name": "jquery.intl-tel-input"
+                },
+                "dist": {
+                    "url": "https://github.com/jackocnr/intl-tel-input/archive/v17.0.19.zip",
+                    "type": "zip"
+                },
+                "require": {
+                    "composer/installers": "~1.0"
+                }
+            }
+        },
+        "progress-tracker": {
+            "_webform": true,
+            "type": "package",
+            "package": {
+                "name": "progress-tracker/progress-tracker",
+                "version": "2.0.7",
+                "type": "drupal-library",
+                "extra": {
+                    "installer-name": "progress-tracker"
+                },
+                "dist": {
+                    "url": "https://github.com/NigelOToole/progress-tracker/archive/refs/tags/2.0.7.zip",
+                    "type": "zip"
+                },
+                "require": {
+                    "composer/installers": "~1.0"
+                }
+            }
         },
         "asset-packagist": {
             "type": "composer",
             "url": "https://asset-packagist.org"
+        },
+        "drupal/create_menus_permission": {
+            "type": "vcs",
+            "no-api": true,
+            "url": "https://github.com/dpc-sdp/create_menus_permission.git"
+        },
+        "ckeditor.autogrow": {
+            "_webform": true,
+            "type": "package",
+            "package": {
+                "name": "ckeditor/autogrow",
+                "version": "4.16.1",
+                "type": "drupal-library",
+                "dist": {
+                    "url": "https://download.ckeditor.com/autogrow/releases/autogrow_4.16.1.zip",
+                    "type": "zip"
+                },
+                "require": {
+                    "composer/installers": "~1.0"
+                }
+            }
+        },
+        "ckeditor.codemirror": {
+            "_webform": true,
+            "type": "package",
+            "package": {
+                "name": "ckeditor/codemirror",
+                "version": "v1.17.12",
+                "type": "drupal-library",
+                "dist": {
+                    "url": "https://github.com/w8tcha/CKEditor-CodeMirror-Plugin/releases/download/v1.17.12/CKEditor-CodeMirror-Plugin.zip",
+                    "type": "zip"
+                },
+                "require": {
+                    "composer/installers": "~1.0"
+                }
+            }
+        },
+        "ckeditor.image": {
+            "_webform": true,
+            "type": "package",
+            "package": {
+                "name": "ckeditor/image",
+                "version": "4.16.1",
+                "type": "drupal-library",
+                "dist": {
+                    "url": "https://download.ckeditor.com/image/releases/image_4.16.1.zip",
+                    "type": "zip"
+                },
+                "require": {
+                    "composer/installers": "~1.0"
+                }
+            }
+        },
+        "ckeditor.link": {
+            "_webform": true,
+            "type": "package",
+            "package": {
+                "name": "ckeditor/link",
+                "version": "4.16.1",
+                "type": "drupal-library",
+                "dist": {
+                    "url": "https://download.ckeditor.com/link/releases/link_4.16.1.zip",
+                    "type": "zip"
+                },
+                "require": {
+                    "composer/installers": "~1.0"
+                }
+            }
+        },
+        "jquery.timepicker": {
+            "_webform": true,
+            "type": "package",
+            "package": {
+                "name": "jquery/timepicker",
+                "version": "1.14.0",
+                "type": "drupal-library",
+                "extra": {
+                    "installer-name": "jquery.timepicker"
+                },
+                "dist": {
+                    "url": "https://github.com/jonthornton/jquery-timepicker/archive/refs/tags/1.14.0.zip",
+                    "type": "zip"
+                },
+                "require": {
+                    "composer/installers": "~1.0"
+                }
+            }
+        },
+        "jquery.textcounter": {
+            "_webform": true,
+            "type": "package",
+            "package": {
+                "name": "jquery/textcounter",
+                "version": "0.9.1",
+                "type": "drupal-library",
+                "extra": {
+                    "installer-name": "jquery.textcounter"
+                },
+                "dist": {
+                    "url": "https://github.com/ractoon/jQuery-Text-Counter/archive/0.9.1.zip",
+                    "type": "zip"
+                },
+                "require": {
+                    "composer/installers": "~1.0"
+                }
+            }
+        },
+        "drupal/token_conditions": {
+            "type": "vcs",
+            "no-api": true,
+            "url": "https://github.com/dpc-sdp/token_conditions.git",
+            "exclude": [
+                "dev-1.x",
+                "1.x-dev"
+            ]
+        }
+    },
+    "extra": {
+        "enable-patching": true,
+        "composer-exit-on-patch-failure": true,
+        "drupal-scaffold": {
+            "file-mapping": {
+                "[project-root]/.gitattributes": false
+            }
+        },
+        "installer-paths": {
+            "web/core": [
+                "type:drupal-core"
+            ],
+            "web/libraries/{$name}": [
+                "type:drupal-library",
+                "type:bower-asset",
+                "type:npm-asset"
+            ],
+            "web/modules/contrib/{$name}": [
+                "type:drupal-module"
+            ],
+            "web/profiles/contrib/{$name}": [
+                "type:drupal-profile"
+            ],
+            "web/themes/contrib/{$name}": [
+                "type:drupal-theme"
+            ],
+            "drush/{$name}": [
+                "type:drupal-drush"
+            ]
+        },
+        "installer-types": ["bower-asset", "npm-asset"]
+    },
+    "config": {
+        "allow-plugins": {
+            "composer/installers": true,
+            "oomphinc/composer-installers-extender": true,
+            "php-http/discovery": true,
+            "cweagans/composer-patches": true,
+            "drupal/core-composer-scaffold": true,
+            "dealerdirect/phpcodesniffer-composer-installer": true,
+            "phpstan/extension-installer": true,
+            "tbachert/spi": true
+        },
+        "audit": {
+            "block-insecure": false
         }
     }
 }

@@ -1,0 +1,21 @@
+# ClamAV daemon for the drupal/clamav module (hard dependency of tide_core).
+# Replaces the `clamav` service from the legacy Ahoy docker-compose stack.
+# The hostname override to this service is applied by `ddev install-site`.
+services:
+  clamav:
+    container_name: ddev-${DDEV_SITENAME}-clamav
+    hostname: clamav
+    image: clamav/clamav-debian:stable
+    expose:
+      - "3310"
+    environment:
+      - CLAMAV_NO_MILTERD=true
+    labels:
+      com.ddev.site-name: ${DDEV_SITENAME}
+      com.ddev.approot: ${DDEV_APPROOT}
+    volumes:
+      - clamav:/var/lib/clamav
+      - ".:/mnt/ddev_config"
+
+volumes:
+  clamav:

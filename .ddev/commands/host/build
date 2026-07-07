@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+
+## Description: Full rebuild from scratch: wipe web/ and vendor/, then start, poser, symlink-project and install-site.
+## Usage: build
+## Example: "ddev build"
+
+set -eu -o pipefail
+
+cd "${DDEV_APPROOT}"
+
+# Drupal locks sites/default read-only after install; unlock it so rm can succeed.
+if [ -d web/sites/default ]; then
+  chmod -R u+w web/sites/default
+fi
+rm -rf web vendor
+
+ddev start
+ddev poser
+ddev symlink-project
+ddev install-site
