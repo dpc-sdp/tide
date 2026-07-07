@@ -6,7 +6,7 @@
     "minimum-stability": "dev",
     "prefer-stable": true,
     "require": {
-        "dpc-sdp/tide_core": "dev-develop"
+        "dpc-sdp/tide_core": "dev-move-to-ddev"
     },
     "require-dev": {
         "drush/drush": "^13"
