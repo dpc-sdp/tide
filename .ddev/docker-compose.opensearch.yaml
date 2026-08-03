@@ -1,0 +1,34 @@
+# OpenSearch service aligned with the SDP Bay OpenSearch image.
+services:
+  opensearch:
+    container_name: ddev-${DDEV_SITENAME}-opensearch
+    hostname: ${DDEV_SITENAME}-opensearch
+    build:
+      context: ..
+      dockerfile: .ddev/opensearch/Dockerfile
+      args:
+        BAY_IMAGE_VERSION: ${BAY_IMAGE_VERSION:-6.x}
+    expose:
+      - "9200"
+    environment:
+      - DISABLE_INSTALL_DEMO_CONFIG=true
+      - DISABLE_SECURITY_PLUGIN=true
+      - "OPENSEARCH_JAVA_OPTS=-Xms512m -Xmx512m"
+      - VIRTUAL_HOST=${DDEV_HOSTNAME}
+      - HTTP_EXPOSE=9200:9200
+      - HTTPS_EXPOSE=9201:9200
+    labels:
+      com.ddev.site-name: ${DDEV_SITENAME}
+      com.ddev.approot: ${DDEV_APPROOT}
+    volumes:
+      - opensearch:/usr/share/opensearch/data
+      - ".:/mnt/ddev_config"
+    healthcheck:
+      test: ["CMD-SHELL", "curl --fail --silent 'localhost:9200/_cluster/health?wait_for_status=yellow&timeout=5s'"]
+
+  web:
+    depends_on:
+      - opensearch
+
+volumes:
+  opensearch:
