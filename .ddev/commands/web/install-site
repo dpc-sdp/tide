@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+
+## Description: Install a fresh Drupal site using the Tide installation profile.
+## Usage: install-site
+## Example: "ddev install-site"
+## ExecRaw: true
+
+set -eu -o pipefail
+
+DRUPAL_PROFILE=${DRUPAL_PROFILE:-tide}
+DRUPAL_ADMIN_NAME=${DRUPAL_ADMIN_NAME:-admin}
+DRUPAL_ADMIN_PASSWORD=${DRUPAL_ADMIN_PASSWORD:-admin}
+
+drush site:install "${DRUPAL_PROFILE}" -y \
+  --account-name="${DRUPAL_ADMIN_NAME}" \
+  --account-pass="${DRUPAL_ADMIN_PASSWORD}" \
+  --site-name="Single Digital Presence Content Management System" \
+  install_configure_form.enable_update_status_module=NULL \
+  install_configure_form.enable_update_status_emails=NULL
+
+drush user:unblock "${DRUPAL_ADMIN_NAME}"
+
+echo "==> Pointing ClamAV at the local ddev service"
+drush -y config:set clamav.settings mode_daemon_tcpip.hostname clamav
+drush -y config:set clamav.settings mode_daemon_tcpip.port 3310
+
+drush cache:rebuild
+drush user:login --no-browser

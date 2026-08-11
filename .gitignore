@@ -2,10 +2,14 @@
 # https://help.github.com/articles/ignoring-files/#create-a-global-gitignore
 
 /composer.lock
+/composer.contrib.json
+/composer.contrib.lock
 /composer.build.json
 /composer.build.lock
 /docroot
+/web
 /dpc-sdp
+.idea
 .env.local
 docker-compose.override.yml
 screenshots

@@ -61,13 +61,58 @@ composer require drupal/tide
 is a maintainer of this package.
 
 # Development and maintenance
-Development is powered by [Dev-Tools](https://github.com/dpc-sdp/dev-tools). Please refer to Dev-Tools' 
-page for [system requirements](https://github.com/dpc-sdp/dev-tools/#prerequisites) and other details.
+Local development is powered by [DDEV](https://ddev.readthedocs.io/) with the
+[ddev-drupal-contrib](https://github.com/ddev/ddev-drupal-contrib) add-on. The profile
+repository is the project root; a disposable Drupal site is built into `web/` and the
+profile is made available to it via per-file symlinks — code changes at the repository
+root take effect immediately, no sync step required.
 
-To start local development stack:
-1. Checkout this project 
-2. Run `./dev-tools.sh`
-3. Run `ahoy build`
+To build a fresh local development site in one step:
+
+1. Checkout this project.
+2. Run `ddev build` — removes the generated `web/` and `vendor/` directories, starts
+   the services, installs the dependencies, symlinks the profile and installs the site.
+
+Alternatively, run each build step separately:
+
+1. Run `ddev start` — starts web, db, OpenSearch, selenium-chrome and clamav services.
+2. Run `ddev poser` — installs Drupal core (version pinned by `DRUPAL_CORE` in `.ddev/config.yaml`), `dpc-sdp/tide_core` and all dependencies into `web/` and `vendor/`.
+3. Run `ddev symlink-project` — symlinks this profile into `web/profiles/custom/tide` (re-run after adding/removing root-level files; also runs automatically on `ddev start`).
+4. Run `ddev install-site` — installs a fresh site using the `tide` installation profile.
+
+Day-to-day commands:
+- `ddev drush <command>` — run Drush.
+- `ddev ssh` — shell into the web container.
+
+Contributed-module patches are applied from `dpc-sdp/tide_core`'s `composer.json`
+(`extra.patches`) via `cweagans/composer-patches` — enabled by `extra.enable-patching`
+in this repository's `composer.json`. Patch files referenced with relative paths live
+in `/patches` in this repository, as they resolve against the Composer root.
+
+### Troubleshooting OpenSearch startup
+
+If `ddev start` reports that the OpenSearch container exited or failed to become
+healthy, inspect its logs:
+
+```bash
+ddev logs -s opensearch
+```
+
+If the logs report that `vm.max_map_count` is too low:
+
+```text
+ERROR: [1] bootstrap checks failed
+[1]: max virtual memory areas vm.max_map_count [65530] is too low, increase to at least [262144]
+```
+
+Increase the limit and start DDEV again:
+
+```bash
+docker run --privileged --rm --pid=host alpine sysctl -w vm.max_map_count=262144
+ddev start
+```
+
+The setting may need to be applied again after restarting Docker.
  
 # Related projects
 - [tide_api](https://github.com/dpc-sdp/tide_api)         
