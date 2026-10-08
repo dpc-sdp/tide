@@ -1,21 +1,26 @@
 {
     "name": "dpc-sdp/tide",
-    "description": "Tide Drupal 10 profile",
+    "description": "Tide Drupal 11 profile",
     "type": "drupal-profile",
     "license": "GPL-2.0-or-later",
     "minimum-stability": "dev",
     "prefer-stable": true,
     "require": {
-        "dpc-sdp/tide_core": "dev-move-to-ddev"
+        "dpc-sdp/tide_core": "dev-develop"
     },
     "require-dev": {
         "drush/drush": "^13"
     },
     "repositories": {
+        "dpc-sdp/tide_core": {
+            "type": "vcs",
+            "no-api": true,
+            "url": "https://github.com/dpc-sdp/tide_core.git"
+        },
         "drupal": {
             "type": "composer",
             "url": "https://packages.drupal.org/8",
-            "exclude": ["drupal/token_conditions", "drupal/create_menus_permission"]
+            "exclude": ["drupal/token_conditions", "drupal/ckeditor5_embedded_content", "drupal/user_created_by_field"]
         },
         "choices": {
             "_webform": true,
@@ -116,10 +121,15 @@
             "type": "composer",
             "url": "https://asset-packagist.org"
         },
-        "drupal/create_menus_permission": {
+        "drupal/ckeditor5_embedded_content": {
             "type": "vcs",
             "no-api": true,
-            "url": "https://github.com/dpc-sdp/create_menus_permission.git"
+            "url": "https://git.drupalcode.org/issue/ckeditor5_embedded_content-3567622.git"
+        },
+        "drupal/user_created_by_field": {
+            "type": "vcs",
+            "no-api": true,
+            "url": "https://git.drupalcode.org/issue/user_created_by_field-3617759.git"
         },
         "ckeditor.autogrow": {
             "_webform": true,
@@ -274,7 +284,8 @@
             "drupal/core-composer-scaffold": true,
             "dealerdirect/phpcodesniffer-composer-installer": true,
             "phpstan/extension-installer": true,
-            "tbachert/spi": true
+            "tbachert/spi": true,
+            "symfony/runtime": true
         },
         "audit": {
             "block-insecure": false

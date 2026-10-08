@@ -40,6 +40,8 @@ jobs:
         run: |
           ddev drush status --fields=bootstrap,install-profile,drupal-version
           ddev drush pm:list --status=enabled --filter=tide
+          ddev drush php:eval 'if (!str_starts_with(\Drupal::VERSION, "11.") || \Drupal::config("core.extension")->get("profile") !== "tide" || !\Drupal::moduleHandler()->moduleExists("tide_core")) { throw new \RuntimeException("Expected the Tide profile and tide_core on Drupal 11."); }'
+          ddev exec curl --location --fail --silent --show-error http://web/user/login -o /dev/null
 
   # TODO: export_config previously used the ahoy-based reusable workflow
   # (dpc-sdp/github-actions/.github/workflows/export_config.yml) and needs a

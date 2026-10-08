@@ -1,5 +1,5 @@
 name: tide
-type: drupal10
+type: drupal11
 docroot: web
 php_version: "8.3"
 webserver_type: nginx-fpm
@@ -18,7 +18,7 @@ web_environment:
     # Drupal core version used by `ddev poser` (drupal.org gitlab_templates
     # expand_composer_json.php). Keep in sync with drupal/core required by
     # dpc-sdp/tide_core (and with tide_core's own .ddev/config.yaml).
-    - DRUPAL_CORE=10.6.x
+    - DRUPAL_CORE=11.4.x
 
 hooks:
   post-import-db:

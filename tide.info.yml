@@ -2,7 +2,7 @@ name: 'Tide'
 description: 'Tide profile.'
 type: profile
 package: Tide
-core_version_requirement: ^9 || ^10
+core_version_requirement: ^11
 dependencies:
   - dpc-sdp:tide_core
   - dpc-sdp:tide_alert
@@ -15,5 +15,13 @@ dependencies:
   - dpc-sdp:tide_publication
   - dpc-sdp:tide_search
   - dpc-sdp:tide_site
+# Tide's install hooks enable these modules. Include them in the initial batch
+# to avoid nested installs resetting Drupal 11's container partway through it.
+install:
+  - tide_tfa
+  - view_password
+  # Required by the shipped data importer permissions and publication fields.
+  - workbench
+  - tide_data_driven_component
 themes:
   - claro

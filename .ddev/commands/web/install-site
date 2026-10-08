@@ -11,6 +11,18 @@ DRUPAL_PROFILE=${DRUPAL_PROFILE:-tide}
 DRUPAL_ADMIN_NAME=${DRUPAL_ADMIN_NAME:-admin}
 DRUPAL_ADMIN_PASSWORD=${DRUPAL_ADMIN_PASSWORD:-admin}
 
+# Tide's secure media fields require the private stream wrapper during install.
+# Keep this in settings.php: DDEV regenerates settings.ddev.php on restart.
+mkdir -p "${DDEV_APPROOT}/private"
+TIDE_SETTINGS_PATH="${DDEV_DOCROOT}/sites/default/settings.php"
+if ! grep -Fq '// Tide DDEV private file system.' "${TIDE_SETTINGS_PATH}"; then
+  cat >> "${TIDE_SETTINGS_PATH}" <<'PHP'
+
+// Tide DDEV private file system.
+$settings['file_private_path'] = dirname($app_root) . '/private';
+PHP
+fi
+
 drush site:install "${DRUPAL_PROFILE}" -y \
   --account-name="${DRUPAL_ADMIN_NAME}" \
   --account-pass="${DRUPAL_ADMIN_PASSWORD}" \
