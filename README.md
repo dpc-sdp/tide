@@ -1,10 +1,10 @@
 <p align="center"><a href="https://www.drupal.org/project/tide" target="_blank"><img src="docs/SDP_Tide_product_logo_JPG.JPG" alt="SDP logo" height="150"></a></p>
-<p align="center"><i>Tide is a Drupal 9 distribution focused on delivering an API first, headless Drupal content administration site.</i></p>
+<p align="center"><i>Tide is a Drupal 11 distribution focused on delivering an API first, headless Drupal content administration site.</i></p>
 
 <p align="center">
-<a href="https://circleci.com/gh/dpc-sdp/tide"><img src="https://circleci.com/gh/dpc-sdp/tide.svg?style=svg&circle-token=2725c08f9f9c81b430b5c302d4843b20b8deec86"></a>
+<a href="https://github.com/dpc-sdp/tide/actions/workflows/build.yml"><img src="https://github.com/dpc-sdp/tide/actions/workflows/build.yml/badge.svg"></a>
 <a href="https://github.com/dpc-sdp/tide/releases/latest"><img src="https://img.shields.io/github/release/dpc-sdp/tide.svg"></a>
-<a href="https://www.drupal.org/8"><img src="https://img.shields.io/badge/Drupal-8-blue.svg"></a>
+<a href="https://www.drupal.org/about/11"><img src="https://img.shields.io/badge/Drupal-11-blue.svg"></a>
 <a href="https://github.com/dpc-sdp/tide/blob/master/LICENSE.txt"><img src="https://img.shields.io/badge/licence-GPL2-blue.svg"></a>
 <a href="https://github.com/dpc-sdp/tide/pulls"><img src="https://img.shields.io/github/issues-pr/dpc-sdp/tide_page.svg"></a>
 </p>
@@ -25,7 +25,7 @@
 # About the project
 [Tide](https://github.com/dpc-sdp/tide) distribution for building websites on the Single Digital Presence platform
 
-Tide is a Drupal 9 distribution focused on delivering an API first, headless Drupal content administration site.
+Tide is a Drupal 11 distribution focused on delivering an API first, headless Drupal content administration site.
 
 This package is merely a collection of all Tide modules that make up this distribution.
 
@@ -42,7 +42,7 @@ your `composer.json`:
       "dpc-sdp/tide": {
           "type": "vcs",
           "no-api": true,
-          "url": "https://github.com/dpc-sdp/tide_page.git"
+          "url": "https://github.com/dpc-sdp/tide.git"
       }
   }
 }
@@ -50,7 +50,7 @@ your `composer.json`:
 
 Require this package as any other Composer package:
 ```bash
-composer require drupal/tide 
+composer require dpc-sdp/tide
 ``` 
 
 # Contributing
@@ -61,13 +61,73 @@ composer require drupal/tide
 is a maintainer of this package.
 
 # Development and maintenance
-Development is powered by [Dev-Tools](https://github.com/dpc-sdp/dev-tools). Please refer to Dev-Tools' 
-page for [system requirements](https://github.com/dpc-sdp/dev-tools/#prerequisites) and other details.
+Local development is powered by [DDEV](https://ddev.readthedocs.io/) with the
+[ddev-drupal-contrib](https://github.com/ddev/ddev-drupal-contrib) add-on. The profile
+repository is the project root; a disposable Drupal site is built into `web/` and the
+profile is made available to it via per-file symlinks — code changes at the repository
+root take effect immediately, no sync step required.
 
-To start local development stack:
-1. Checkout this project 
-2. Run `./dev-tools.sh`
-3. Run `ahoy build`
+The development build uses PHP 8.3, MariaDB 10.6 and Drupal 11.4.x, matching
+`dpc-sdp/tide_core` on `develop`. Its Drupal issue-fork repositories must also be
+declared in this project's `composer.json`, because Composer only reads repository
+definitions from the root package.
+The explicit `tide_core` Git repository also preserves the patch order declared
+on `develop`; some of its patches depend on earlier patches in the same package.
+
+To build a fresh local development site in one step:
+
+1. Checkout this project.
+2. Run `ddev build` — stops DDEV, removes the generated `web/` and `vendor/` directories, starts
+   the services, installs the dependencies, symlinks the profile and installs the site.
+
+`ddev build` and `ddev install-site` replace the local database. Export any data
+you need with `ddev export-db --file=../tide-backup.sql.gz` before reinstalling, and copy
+any uploads out of `web/` before running `ddev build`.
+When Mutagen is enabled, the build also resets its cached project files.
+
+Alternatively, run each build step separately:
+
+1. Run `ddev start` — starts web, db, OpenSearch, selenium-chrome and clamav services.
+2. Run `ddev poser` — installs Drupal core (version pinned by `DRUPAL_CORE` in `.ddev/config.yaml`), `dpc-sdp/tide_core` and all dependencies into `web/` and `vendor/`.
+3. Run `ddev symlink-project` — symlinks this profile into `web/profiles/custom/tide` (re-run after adding/removing root-level files; also runs automatically on `ddev start`).
+4. Run `ddev install-site` — installs a fresh site using the `tide` installation profile.
+
+Day-to-day commands:
+- `ddev drush <command>` — run Drush.
+- `ddev ssh` — shell into the web container.
+
+Private uploads are stored in `private/`, outside the web root. OpenSearch is
+available to containers at `http://opensearch:9200`; its host HTTP/HTTPS ports are
+9202/9203 so it can run alongside a local Bay stack using 9200/9201.
+
+Contributed-module patches are applied from `dpc-sdp/tide_core`'s `composer.json`
+(`extra.patches`) via `cweagans/composer-patches` — enabled by `extra.enable-patching`
+in this repository's `composer.json`.
+
+### Troubleshooting OpenSearch startup
+
+If `ddev start` reports that the OpenSearch container exited or failed to become
+healthy, inspect its logs:
+
+```bash
+ddev logs -s opensearch
+```
+
+If the logs report that `vm.max_map_count` is too low:
+
+```text
+ERROR: [1] bootstrap checks failed
+[1]: max virtual memory areas vm.max_map_count [65530] is too low, increase to at least [262144]
+```
+
+Increase the limit and start DDEV again:
+
+```bash
+docker run --privileged --rm --pid=host alpine sysctl -w vm.max_map_count=262144
+ddev start
+```
+
+The setting may need to be applied again after restarting Docker.
  
 # Related projects
 - [tide_api](https://github.com/dpc-sdp/tide_api)         

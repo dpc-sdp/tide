@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+
+## Command provided by https://github.com/ddev/ddev-drupal-contrib
+## Customized for Tide: only expose non-ignored project files.
+## Description: Symlink profile files into the development site.
+## Usage: symlink-project
+## Example: "ddev symlink-project"
+## ExecRaw: true
+
+set -eu -o pipefail
+
+cd "$DDEV_COMPOSER_ROOT" || exit
+# Include new profile files, but never link generated directories (especially
+# private uploads) or hidden development configuration into the public web root.
+PROJECT_FILES=$(git ls-files --cached --others --exclude-standard | awk -F/ '$1 !~ /^\./ && $1 != "symlink_project.php" && $1 != "expand_composer_json.php" { print $1 }' | sort -u)
+# Symlink name using underscores.
+# @see https://www.drupal.org/docs/develop/creating-modules/naming-and-placing-your-drupal-module
+DRUPAL_PROJECT_FOLDER="${DDEV_DOCROOT}/${DRUPAL_PROJECTS_PATH}/${DDEV_SITENAME//-/_}"
+rm -rf "${DRUPAL_PROJECT_FOLDER}"
+mkdir -p "${DRUPAL_PROJECT_FOLDER}"
+while IFS= read -r project_file; do
+  if [[ -e "${DDEV_COMPOSER_ROOT}/${project_file}" ]]; then
+    ln -s "${DDEV_COMPOSER_ROOT}/${project_file}" "${DRUPAL_PROJECT_FOLDER}/${project_file}"
+  fi
+done <<< "${PROJECT_FILES}"
