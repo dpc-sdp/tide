@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+
+## Command provided by https://github.com/ddev/ddev-drupal-contrib
+## Customized for Tide: discard generated Composer files even after a failed build.
+## Description: Expand composer.json and run composer install.
+## Usage: poser [flags] [args]
+## Example: "ddev poser" or "ddev poser --prefer-source"
+## ExecRaw: true
+## MutagenSync: true
+
+set -eu -o pipefail
+
+export COMPOSER=composer.contrib.json
+trap 'rm -f composer.contrib.json composer.contrib.lock' EXIT
+# A previous interrupted build must not pin a newly expanded manifest to stale dependencies.
+rm -f composer.contrib.lock
+.ddev/commands/web/expand-composer-json
+composer install "$@"
+touch $DDEV_DOCROOT/core/.env
